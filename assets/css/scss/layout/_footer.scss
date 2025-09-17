@@ -1,0 +1,38 @@
+.siteFooter {
+
+  &__inner {
+
+  }
+
+  &__contacts {
+
+  }
+
+  &__socials {
+
+  }
+}
+
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:before {
+    content: '';
+    background: currentColor;
+    mask: no-repeat center;
+    mask-size: contain;
+    width: 24px;
+    height: 24px;
+  }
+
+  &--instagram:before { mask-image: var(--icon-instagram); }
+  &--youtube:before { mask-image: var(--icon-youtube); }
+  &--facebook:before { mask-image: var(--icon-facebook); }
+  &--x:before { mask-image: var(--icon-x); }
+  &--pinterest:before { mask-image: var(--icon-pinterest); }
+  &--linkedin:before { mask-image: var(--icon-linkedin); }
+  &--tiktok:before { mask-image: var(--icon-tiktok); }
+}

@@ -1,0 +1,29 @@
+.hero {
+  position: relative;
+  margin: 0;
+
+  &__imageContainer {
+    position: relative;
+    padding-bottom: 56%;
+    @include breakpoint( $tablet ) {
+      padding-bottom: 25%;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__overlay {
+
+  }
+
+  &__textContainer {
+    padding: var(--section-margin) 0;
+  }
+}

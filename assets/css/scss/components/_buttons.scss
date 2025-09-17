@@ -1,0 +1,25 @@
+button, .button {
+  outline: 1px solid transparent;
+  outline-offset: 2px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  text-decoration: none;
+  transition: background-color .3s, border-color .3s, color .3s, outline-color .3s;
+
+  &:focus {
+    outline-color: currentColor;
+  }
+
+  &:active {
+    outline: none;
+  }
+
+  &--fullWidth {
+    width: 100%;
+  }
+}
