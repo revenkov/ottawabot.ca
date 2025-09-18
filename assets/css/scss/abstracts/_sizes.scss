@@ -14,14 +14,14 @@ $laptop: $md;
 $desktop: $lg;
 
 :root {
-  --container-max-width: 1400px;
+  --container-max-width: 1800px;
   --container-padding-x: 20px;
-  --header-height: 80px;
+  --header-height: 168px;
   --section-margin: 50px;
   @include breakpoint( $tablet ) {
     --container-padding-x: 30px;
   }
   @include breakpoint( $laptop ) {
-    --container-padding-x: 40px;
+    --container-padding-x: 36px;
   }
 }

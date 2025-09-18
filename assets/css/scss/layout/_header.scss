@@ -1,9 +1,9 @@
 .siteHeader {
-  position: sticky;
+  position: relative;
   left: 0;
   top: 0;
   width: 100%;
-  background: #000000;
+  background: #ffffff;
   z-index: 3000;
   transition: background-color .3s;
 
@@ -21,7 +21,7 @@
   }
 
   &__logoImage {
-    width: 200px;
+    width: 236px;
   }
 
   &--sticky {
