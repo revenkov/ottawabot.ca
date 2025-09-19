@@ -30,6 +30,9 @@ use Selectrum\WalkerNavMenu;
                 <a class="siteHeader__logoContainer" href="<?php echo home_url(); ?>" title="<?php bloginfo( 'blog_name' ); ?>">
                     <img class="siteHeader__logoImage" src="<?php echo selectrum_get_image_url('logo.svg'); ?>" alt="<?php bloginfo( 'blog_name' ); ?>">
                 </a>
+                <div class="siteHeader__socials">
+                    <?php get_template_part('parts/socials'); ?>
+                </div>
                 <button class="btnMenu" id="btnMenu">
                     <span class="btnMenu__hamburger"><span></span><span></span><span></span></span>
                 </button>

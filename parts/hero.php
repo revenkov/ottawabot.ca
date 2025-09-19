@@ -1,16 +1,16 @@
 <?php
 global $post;
-$desktop = get_field('desktop', selectrum_get_hero_image_post_id());
-$tablet = get_field('tablet', selectrum_get_hero_image_post_id());
-$mobile = get_field('mobile', selectrum_get_hero_image_post_id());
+$desktop = get_field('desktop', selectrum_get_hero_image_post_id()) ?? 3058;
+$tablet = get_field('tablet', selectrum_get_hero_image_post_id()) ?? 3056;
+$mobile = get_field('mobile', selectrum_get_hero_image_post_id()) ?? 3057;
 ?>
 <div class="hero">
 	<?php if ( !empty( $desktop ) ) : ?>
     <div class="hero__imageContainer">
         <picture>
-            <?php if ( !empty( $mobile ) ) : ?><source media="(max-width: 639px)" srcset="<?php echo wp_get_attachment_image_srcset( $mobile['ID'], 'full' ); ?>" sizes="<?php echo wp_get_attachment_image_sizes( $mobile['ID'], 'full' ); ?>"><?php endif; ?>
-            <?php if ( !empty( $tablet ) ) : ?><source media="(max-width: 1119px)" srcset="<?php echo wp_get_attachment_image_srcset( $tablet['ID'], 'full' ); ?>" sizes="<?php echo wp_get_attachment_image_sizes( $tablet['ID'], 'full' ); ?>"><?php endif; ?>
-            <?php echo wp_get_attachment_image( $desktop['ID'], 'full', false, ['class'=>'hero__image']); ?>
+            <?php if ( !empty( $mobile ) ) : ?><source media="(max-width: 639px)" srcset="<?php echo wp_get_attachment_image_srcset( $mobile, 'full' ); ?>" sizes="<?php echo wp_get_attachment_image_sizes( $mobile, 'full' ); ?>"><?php endif; ?>
+            <?php if ( !empty( $tablet ) ) : ?><source media="(max-width: 1119px)" srcset="<?php echo wp_get_attachment_image_srcset( $tablet, 'full' ); ?>" sizes="<?php echo wp_get_attachment_image_sizes( $tablet, 'full' ); ?>"><?php endif; ?>
+            <?php echo wp_get_attachment_image( $desktop, 'full', false, ['class'=>'hero__image']); ?>
         </picture>
     </div>
     <?php endif; ?>

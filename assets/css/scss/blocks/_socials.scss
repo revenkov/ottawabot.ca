@@ -1,0 +1,27 @@
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+  color: #ffffff;
+  border-radius: 100%;
+  width: 22px;
+  height: 22px;
+
+  &:before {
+    content: '';
+    background: currentColor;
+    mask: no-repeat center;
+    mask-size: contain;
+    width: 12px;
+    height: 12px;
+  }
+
+  &--instagram:before { mask-image: var(--icon-instagram); }
+  &--youtube:before { mask-image: var(--icon-youtube); }
+  &--facebook-f:before { mask-image: var(--icon-facebook-f); }
+  &--x:before { mask-image: var(--icon-x); }
+  &--pinterest:before { mask-image: var(--icon-pinterest); }
+  &--linkedin:before { mask-image: var(--icon-linkedin); height: 11px; }
+  &--tiktok:before { mask-image: var(--icon-tiktok); }
+}

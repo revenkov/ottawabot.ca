@@ -37,6 +37,10 @@
     }
   }
 
+  &--formatted {
+    --padding-bottom: 122%;
+  }
+
   &--landscape {
     --padding-bottom: 56%;
   }
@@ -47,67 +51,5 @@
 
   &--square {
     --padding-bottom: 100%;
-  }
-}
-
-
-.textImageBlock {
-
-  &__cols {
-    @include breakpoint( $tablet ) {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row-reverse;
-      justify-content: space-between;
-    }
-    @include breakpoint( $laptop ) {
-
-    }
-    @include breakpoint( $desktop ) {
-
-    }
-  }
-
-  &__textCol {
-    @include breakpoint( $tablet ) {
-      width: 52%;
-    }
-    @include breakpoint( $laptop ) {
-
-    }
-    @include breakpoint( $xl ) {
-      padding-top: 85px;
-    }
-  }
-
-  &__textWrapper {
-    @include breakpoint( $laptop ) {
-      width: 100%;
-      max-width: 1135px;
-    }
-  }
-
-  &__textInner {
-    @include breakpoint( $laptop ) {
-
-    }
-  }
-
-  &__textInner2 {
-    @include breakpoint( $laptop ) {
-      max-width: 730px;
-    }
-  }
-
-  &__imageCol {
-    margin-left: var(--container-padding-x);
-    margin-bottom: 44px;
-    @include breakpoint( $tablet ) {
-      width: 48%;
-      margin: 0;
-    }
-    @include breakpoint( $sm ) {
-
-    }
   }
 }

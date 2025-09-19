@@ -86,8 +86,8 @@ class Theme
         // Register wp_nav_menu() menus
         register_nav_menus(array(
             'primary_menu' => __('Primary Navigation', 'selectrum'),
-            //'secondary_menu' => __('Secondary Navigation', 'selectrum'),
-            //'footer_menu' => __('Footer Navigation', 'selectrum')
+            'secondary_menu' => __('Secondary Navigation', 'selectrum'),
+            'footer_menu' => __('Footer Navigation', 'selectrum')
         ));
 
         // Add post thumbnails

@@ -11,19 +11,28 @@
 }
 
 :root {
-  --container-max-width: 1800px;
-  --container-padding-x: 20px;
-  --header-height: 168px;
-  --section-margin: 50px;
+  --container-max-width: 1900px;
+  --container-padding-x: 32px;
+  --header-height: 93px;
+  --section-margin: 49px;
+  --grid-columns: 22;
+  --grid-gap: 0;
+  --grid-width: min(1800px, calc( 100vw - var(--container-padding-x) * 2));
+  --grid-column-width: calc( var(--grid-width) / var(--grid-columns) );
 }
 @media (min-width: 640px) {
   :root {
-    --container-padding-x: 30px;
+    --container-padding-x: 34px;
+    --header-height: 117px;
+    --grid-columns: 20;
   }
 }
-@media (min-width: 1120px) {
+@media (min-width: 1200px) {
   :root {
-    --container-padding-x: 36px;
+    --container-padding-x: 50px;
+    --header-height: 168px;
+    --grid-columns: 12;
+    --grid-gap: 36px;
   }
 }
 
@@ -119,84 +128,87 @@ h1:last-child, .h1:last-child, h2:last-child, .h2:last-child, h3:last-child, .h3
   margin-bottom: 0;
 }
 
+/*
 h1, .h1 {
   font-size: 2.1875rem;
   line-height: 3.875rem;
-}
-@media (min-width: 640px) {
-  h1, .h1 {
+  @include breakpoint($tablet) {
     font-size: 3.4375rem;
   }
-}
-@media (min-width: 1360px) {
-  h1, .h1 {
+  @include breakpoint( $desktop ) {
     font-size: 3.75rem;
   }
 }
-
-h2, .h2 {
+*/
+h1, .h1 {
   font-size: 1.875rem;
   line-height: 2.4375rem;
+  font-weight: 500;
 }
 @media (min-width: 640px) {
-  h2, .h2 {
+  h1, .h1 {
     font-size: 2.5rem;
     line-height: 3rem;
   }
 }
-@media (min-width: 1360px) {
-  h2, .h2 {
+@media (min-width: 1400px) {
+  h1, .h1 {
     font-size: 3.75rem;
     line-height: 3.875rem;
   }
 }
 
-h3, .h3 {
+h2, .h2 {
   font-size: 1.5625rem;
   line-height: 2.3125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 22px;
 }
 @media (min-width: 640px) {
-  h3, .h3 {
+  h2, .h2 {
     font-size: 1.8125rem;
     line-height: 2.75rem;
   }
 }
-@media (min-width: 1360px) {
-  h3, .h3 {
+@media (min-width: 1400px) {
+  h2, .h2 {
     font-size: 2.25rem;
     line-height: 3.125rem;
   }
 }
 
-h4, .h4 {
+h3, .h3 {
   font-size: 1.375rem;
   line-height: 1.875rem;
+  font-weight: 600;
 }
 @media (min-width: 640px) {
-  h4, .h4 {
+  h3, .h3 {
     font-size: 1.75rem;
     line-height: 2.1875rem;
   }
 }
-@media (min-width: 1360px) {
-  h4, .h4 {
+@media (min-width: 1400px) {
+  h3, .h3 {
     font-size: 1.875rem;
     line-height: 2.625rem;
   }
 }
 
-h5, .h5 {
+h4, .h4 {
   font-size: 1.25rem;
   line-height: 1.625rem;
+  font-weight: 500;
 }
 @media (min-width: 640px) {
-  h5, .h5 {
+  h4, .h4 {
     font-size: 1.5rem;
     line-height: 1.875rem;
   }
 }
-@media (min-width: 1360px) {
-  h5, .h5 {
+@media (min-width: 1400px) {
+  h4, .h4 {
     font-size: 1.875rem;
     line-height: 2.4375rem;
   }
@@ -236,7 +248,7 @@ address {
 }
 
 p, ul, ol, blockquote, hr {
-  margin: 1.5rem 0;
+  margin: 22px 0;
 }
 p + h1, p + .h1, p + h2, p + .h2, p + h3, p + .h3, p + h4, p + .h4, p + h5, p + .h5, p + h6, p + .h6, ul + h1, ul + .h1, ul + h2, ul + .h2, ul + h3, ul + .h3, ul + h4, ul + .h4, ul + h5, ul + .h5, ul + h6, ul + .h6, ol + h1, ol + .h1, ol + h2, ol + .h2, ol + h3, ol + .h3, ol + h4, ol + .h4, ol + h5, ol + .h5, ol + h6, ol + .h6, blockquote + h1, blockquote + .h1, blockquote + h2, blockquote + .h2, blockquote + h3, blockquote + .h3, blockquote + h4, blockquote + .h4, blockquote + h5, blockquote + .h5, blockquote + h6, blockquote + .h6, hr + h1, hr + .h1, hr + h2, hr + .h2, hr + h3, hr + .h3, hr + h4, hr + .h4, hr + h5, hr + .h5, hr + h6, hr + .h6 {
   margin-top: 3rem;
@@ -258,7 +270,7 @@ p:last-child, ul:last-child, ol:last-child, blockquote:last-child, hr:last-child
     line-height: 36px;
   }
 }
-@media (min-width: 1360px) {
+@media (min-width: 1400px) {
   .text-lg {
     font-size: 30px;
     line-height: 45px;
@@ -269,7 +281,7 @@ p:last-child, ul:last-child, ol:last-child, blockquote:last-child, hr:last-child
   font-size: 18px;
   line-height: 25px;
 }
-@media (min-width: 1360px) {
+@media (min-width: 1400px) {
   .text-md {
     font-size: 20px;
     line-height: 20px;
@@ -281,7 +293,7 @@ p:last-child, ul:last-child, ol:last-child, blockquote:last-child, hr:last-child
   line-height: 22px;
   letter-spacing: 3.2px;
 }
-@media (min-width: 1360px) {
+@media (min-width: 1400px) {
   .text-sm {
     line-height: 16px;
   }
@@ -294,12 +306,17 @@ p:last-child, ul:last-child, ol:last-child, blockquote:last-child, hr:last-child
   margin: 0;
   text-decoration: none;
   min-height: 46px;
-  padding: 10px 20px;
+  padding: 5px 22px;
   text-transform: uppercase;
   background: var(--color-primary);
   color: #ffffff;
   font-weight: 600;
   transition: background-color 0.3s, border-color 0.3s, color 0.3s, outline-color 0.3s;
+}
+@media (min-width: 640px) {
+  .button {
+    min-height: 48px;
+  }
 }
 @media (hover: hover) {
   .button:hover {

@@ -1,0 +1,52 @@
+.textImageBlock {
+
+  &__cols {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 45px 0;
+  }
+
+  &__textCol {
+    width: 100%;
+  }
+
+  &__imageCol {
+    width: 100%;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 134px;
+      height: 134px;
+      opacity: .85;
+      background: var(--color-green);
+      position: absolute;
+      border-radius: 100%;
+      top: 56px;
+    }
+  }
+
+  &--1 & {
+
+    &__imageCol {
+      position: relative;
+      padding-right: calc( var(--grid-column-width) * 2 );
+
+      &:after {
+        right: calc( var(--grid-column-width) * -1 );
+      }
+    }
+  }
+
+  &--2 & {
+
+    &__imageCol {
+      position: relative;
+      padding-right: calc( var(--grid-column-width) * 2 );
+
+      &:after {
+        right: calc( var(--grid-column-width) * -1 );
+      }
+    }
+  }
+}
