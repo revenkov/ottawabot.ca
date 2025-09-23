@@ -1,0 +1,6 @@
+.textBlock {
+  @include breakpoint( $tablet ) {
+    width: 70%;
+    margin: 0 auto;
+  }
+}

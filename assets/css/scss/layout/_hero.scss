@@ -2,12 +2,15 @@
   position: relative;
   margin: 0 calc( var(--container-padding-x)/2 );
   color: #ffffff;
+  @include breakpoint( $tablet ) {
+    margin: 0 var(--container-padding-x);
+  }
 
   &__imageContainer {
     position: relative;
     padding-bottom: 260px;
     @include breakpoint( $tablet ) {
-      padding-bottom: 400px;
+      padding-bottom: 295px;
     }
   }
 

@@ -103,13 +103,11 @@ jQuery(document).ready( function($) {
             });
             $menu.btn.on('click', $menu.toggle);
             $menu.btnClose.on('click', $menu.close);
-            $menu.list.on('click', '.menu-item-button', function (e) {
+            $menu.list.on('click', '.menu-item-link-wrapper', function (e) {
                 if ( windowWidth < 1600 ) {
-                    var $button = $(this);
-                    var $item = $button.parents('.menu-item');
+                    var $item = $(this).closest('.menu-item');
                     $item.toggleClass('open');
-                    $button.toggleClass('open');
-                    $item.find('.sub-menu').slideToggle();
+                    $(this).next('.sub-menu').slideToggle();
                 }
             });
         },
@@ -137,11 +135,11 @@ jQuery(document).ready( function($) {
     };
     $menu.init();
 
-
+/*
     const lenis = new Lenis({
         autoRaf: true,
     });
-
+*/
 
     /**
      * AOS

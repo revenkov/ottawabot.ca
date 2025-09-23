@@ -1,5 +1,5 @@
 .siteHeader {
-  position: relative;
+  position: absolute;
   left: 0;
   top: 0;
   width: 100%;
@@ -11,6 +11,9 @@
     position: relative;
     height: var(--header-height);
     margin: 0 calc( var(--container-padding-x)/-2 );
+    @include breakpoint( $tablet ) {
+      margin: 0;
+    }
   }
 
   &__logoContainer {
@@ -23,8 +26,8 @@
 
   &__logoImage {
     width: 150px;
-    @include breakpoint( $laptop ) {
-      width: 236px;
+    @include breakpoint( $tablet ) {
+      width: 190px;
     }
   }
 
@@ -35,10 +38,38 @@
     top: 50%;
     right: 46px;
     transform: translateY(-50%);
+    @include breakpoint( $tablet ) {
+      right: 70px;
+      gap: 10px;
+    }
+
+    .social {
+      @include breakpoint($tablet) {
+        width: 26px;
+        height: 26px;
+      }
+
+      &:before {
+        @include breakpoint($tablet) {
+          width: 16px;
+          height: 16px;
+        }
+      }
+
+      &--linkedin:before {
+        @include breakpoint($tablet) {
+          height: 14px;
+        }
+      }
+    }
   }
 
   &--sticky {
 
+  }
+
+  &--navVisible {
+    position: fixed;
   }
 }
 
@@ -90,7 +121,6 @@
     .btnMenu__hamburger {
 
       span {
-        background: #ffffff;
 
         &:nth-child(1) {
           margin-top: 0;

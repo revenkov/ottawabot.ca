@@ -39,6 +39,9 @@
 
   &--formatted {
     --padding-bottom: 122%;
+    @include breakpoint( $tablet ) {
+      min-height: 590px;
+    }
   }
 
   &--landscape {

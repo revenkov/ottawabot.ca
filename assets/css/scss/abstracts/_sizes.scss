@@ -24,6 +24,7 @@ $desktop: $lg;
   @include breakpoint( $tablet ) {
     --container-padding-x: 34px;
     --header-height: 117px;
+    --section-margin: 96px;
     --grid-columns: 20;
   }
   @include breakpoint( $laptop ) {

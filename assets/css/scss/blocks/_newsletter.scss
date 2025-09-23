@@ -1,0 +1,118 @@
+.newsletterBlock {
+  position: relative;
+  border-radius: 100%;
+  text-align: center;
+  overflow: hidden;
+  margin: calc( -50% - var(--container-padding-x) ) calc( var(--container-padding-x) / -2 ) 0;
+  max-width: 488px;
+  @include breakpoint( $tablet ) {
+    margin: -262px auto 0;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    background: var(--color-orange);
+    opacity: .85;
+    padding-bottom: 100%;
+  }
+
+  &__inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: #ffffff;
+    padding: 22px;
+    border-radius: 100%;
+    @include breakpoint( $tablet ) {
+      padding: 82px 60px 60px;
+    }
+  }
+
+  &__title {
+    padding: 0 30px;
+  }
+
+  &__form {
+    display: flex;
+    gap: 20px;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+    background: transparent;
+    width: 100%;
+    margin: 30px 0 15px;
+    @include breakpoint( $tablet ) {
+      margin: 45px 0 70px;
+    }
+
+    &Field {
+      flex: 1;
+
+      @include placeholder {
+        color: #ffffff;
+      }
+
+      &Input[type="email"] {
+        background: transparent;
+        border: none;
+        color: #ffffff;
+        height: 70px;
+        @include breakpoint( $tablet ) {
+          height: 62px;
+        }
+      }
+    }
+
+    &Button {
+      position: relative;
+      width: 50px;
+      color: #ffffff;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 2px;
+        translate: 0 -50%;
+        height: 2px;
+        background: currentColor;
+        transition: left .3s;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        translate: 0 -50%;
+        width: 15px;
+        height: 30px;
+        mask: var(--icon-angle) no-repeat center;
+        mask-size: contain;
+        background: currentColor;
+      }
+
+      &:hover:before {
+        @media (hover: hover) {
+          left: calc( 100% - 2px );
+        }
+      }
+    }
+  }
+
+  &__text {
+    padding: 0 10px 25px;
+    margin: 0 auto;
+    @include breakpoint( $tablet ) {
+      padding: 0;
+      max-width: 300px;
+    }
+  }
+}

@@ -45,29 +45,23 @@ use Selectrum\WalkerNavMenu;
         <div class="container siteNav__container">
             <div class="siteNav__inner">
                 <div class="siteNav__inner2">
+                    <?php
+                    wp_nav_menu( array(
+                            'theme_location' => 'secondary_menu',
+                            'menu_class'     => 'secondaryMenu',
+                            'container'      => false,
+                            'walker'         => new WalkerNavMenu()
+                    ) );
+                    ?>
+
 	                <?php
 	                wp_nav_menu( array(
 		                'theme_location' => 'primary_menu',
 		                'menu_class'     => 'primaryMenu',
-		                'menu_id'        => 'primaryMenu',
 		                'container'      => false,
 		                'walker'         => new WalkerNavMenu()
 	                ) );
 	                ?>
-
-	                <?php
-	                $wpml_languages = apply_filters( 'wpml_active_languages', 0 );
-	                if ( !empty( $wpml_languages ) ) :
-		                ?>
-                        <ul class="languages">
-			                <?php
-			                foreach ( $wpml_languages as $lang ) :
-				                if ( $lang['active'] == '1' ) continue;
-				                echo '<li class="languages__item '.( $lang['active'] == '1' ? 'languages__item--current' : false ).'"><a href="'.$lang['url'].'">'.$lang['language_code'].'</a></li>';
-			                endforeach;
-			                ?>
-                        </ul>
-	                <?php endif; ?>
                 </div>
             </div>
         </div>
