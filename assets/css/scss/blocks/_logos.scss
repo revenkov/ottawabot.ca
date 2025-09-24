@@ -1,7 +1,11 @@
 .logos {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px 0;
+  @include breakpoint($laptop) {
+    gap: 10px 30px;
+  }
 
   &__item {
     width: 100%;
@@ -11,6 +15,7 @@
     transition: filter .3s;
     @include breakpoint($tablet) {
       width: 50%;
+      max-width: 350px;
     }
 
     &:hover {

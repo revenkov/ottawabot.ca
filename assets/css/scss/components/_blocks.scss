@@ -38,9 +38,12 @@
   }
 
   &--formatted {
-    --padding-bottom: 122%;
+    min-height: 360px;
     @include breakpoint( $tablet ) {
       min-height: 590px;
+    }
+    @include breakpoint( $laptop ) {
+      min-height: 750px;
     }
   }
 

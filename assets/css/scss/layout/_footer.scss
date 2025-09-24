@@ -1,4 +1,5 @@
 .siteFooter {
+  position: relative;
   color: #ffffff;
   background: #000000 url("../images/footer-mobile.jpg") no-repeat center;
   background-size: cover;
@@ -8,11 +9,18 @@
     background-image: url("../images/footer-tablet.jpg");
     padding: 0 var(--container-padding-x);
   }
+  @include breakpoint($laptop) {
+    background-image: url("../images/footer-desktop.jpg");
+    padding: 0;
+  }
 
   &__inner {
     padding: 32px 0;
     @include breakpoint($tablet) {
       padding: 55px 0;
+    }
+    @include breakpoint($laptop) {
+      padding: 105px 0 100px;
     }
   }
 
@@ -20,6 +28,10 @@
     text-transform: none;
     @include breakpoint($tablet) {
       max-width: 470px;
+    }
+    @include breakpoint($laptop) {
+      max-width: 660px;
+      line-height: 1.25;
     }
   }
 
@@ -32,18 +44,42 @@
       margin-top: 52px;
       gap: 60px 50px
     }
+    @include breakpoint($laptop) {
+      margin-top: 103px;
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__col {
     width: 100%;
+    @include breakpoint($laptop) {
+      width: auto;
+      max-width: 540px;
+    }
 
     &Title {
       margin-bottom: 20px;
+    }
+
+    &--2 {
+      @include breakpoint($laptop) {
+        order: -1;
+      }
+    }
+
+    &--3 {
+      @include breakpoint($laptop) {
+        max-width: 425px;
+      }
     }
   }
 
   &__address {
     line-height: 1.22;
+    @include breakpoint($laptop) {
+      margin-top: 28px;
+    }
 
     a {
       text-decoration: none;
@@ -87,6 +123,10 @@
     @include breakpoint($tablet) {
       margin-top: 32px;
     }
+    @include breakpoint($laptop) {
+      margin-top: 24px;
+      gap: 9px;
+    }
 
     .social {
       background: #ffffff;
@@ -115,6 +155,9 @@
       gap: 33px;
       margin-top: 25px;
     }
+    @include breakpoint($laptop) {
+      margin-top: 28px;
+    }
 
     img {
       height: 46px;
@@ -131,11 +174,40 @@
   }
 
   &__copyright {
+    position: relative;
     margin-top: 83px;
     @include breakpoint($tablet) {
       margin-top: 103px;
       display: flex;
       flex-wrap: wrap;
+    }
+    @include breakpoint($laptop) {
+      margin-top: 145px;
+      justify-content: center;
+    }
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        @media (hover: hover) {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &:before {
+      content: '';
+      width: 50px;
+      height: 4px;
+      background: var(--color-green);
+      position: absolute;
+      left: 0;
+      top: -35px;
+      @include breakpoint($laptop) {
+        left: 50%;
+        translate: -50% 0;
+      }
     }
   }
 }
@@ -153,10 +225,16 @@
     flex-direction: row;
     gap: 20px 0;
   }
+  @include breakpoint($laptop) {
+    justify-content: space-between;
+  }
 
   li {
     @include breakpoint($tablet) {
       width: 50%;
+    }
+    @include breakpoint($laptop) {
+      width: 43%;
     }
   }
 }

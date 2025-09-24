@@ -1,11 +1,14 @@
 .siteHeader {
-  position: absolute;
+  position: sticky;
   left: 0;
   top: 0;
   width: 100%;
   background: #ffffff;
   z-index: 3000;
-  transition: background-color .3s;
+  transition: background-color .3s, box-shadow .3s;
+  @include breakpoint( $laptop ) {
+    position: relative;
+  }
 
   &__inner {
     position: relative;
@@ -29,6 +32,9 @@
     @include breakpoint( $tablet ) {
       width: 190px;
     }
+    @include breakpoint( $laptop ) {
+      width: 235px;
+    }
   }
 
   &__socials {
@@ -41,6 +47,10 @@
     @include breakpoint( $tablet ) {
       right: 70px;
       gap: 10px;
+    }
+    @include breakpoint( $laptop ) {
+      right: 0;
+      top: 50px;
     }
 
     .social {
@@ -65,11 +75,11 @@
   }
 
   &--sticky {
-
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
   &--navVisible {
-    position: fixed;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
   }
 }
 

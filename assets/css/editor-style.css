@@ -11,7 +11,7 @@
 }
 
 :root {
-  --container-max-width: 1900px;
+  --container-max-width: 1932px;
   --container-padding-x: 32px;
   --header-height: 93px;
   --section-margin: 49px;
@@ -28,12 +28,17 @@
     --grid-columns: 20;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1260px) {
   :root {
-    --container-padding-x: 50px;
     --header-height: 168px;
+    --section-margin: 137px;
     --grid-columns: 12;
     --grid-gap: 36px;
+  }
+}
+@media (min-width: 1600px) {
+  :root {
+    --container-padding-x: 64px;
   }
 }
 
@@ -144,7 +149,7 @@ h1, .h1 {
 h1, .h1 {
   font-size: 1.875rem;
   line-height: 2.4375rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 @media (min-width: 640px) {
   h1, .h1 {
@@ -152,7 +157,7 @@ h1, .h1 {
     line-height: 3rem;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1260px) {
   h1, .h1 {
     font-size: 3.75rem;
     line-height: 3.875rem;
@@ -173,10 +178,11 @@ h2, .h2 {
     margin-bottom: 36px;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1260px) {
   h2, .h2 {
     font-size: 2.25rem;
     line-height: 3.125rem;
+    margin-bottom: 24px;
   }
 }
 
@@ -191,7 +197,7 @@ h3, .h3 {
     line-height: 2.1875rem;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1260px) {
   h3, .h3 {
     font-size: 1.875rem;
     line-height: 2.625rem;
@@ -209,7 +215,7 @@ h4, .h4 {
     line-height: 1.875rem;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1260px) {
   h4, .h4 {
     font-size: 1.875rem;
     line-height: 2.4375rem;
@@ -277,7 +283,7 @@ p:last-child, ul:last-child, ol:last-child, blockquote:last-child, hr:last-child
     line-height: 36px;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
   .text-lg {
     font-size: 30px;
     line-height: 45px;
@@ -289,7 +295,7 @@ p:last-child, ul:last-child, ol:last-child, blockquote:last-child, hr:last-child
   line-height: 25px;
   font-weight: 600;
 }
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
   .text-md {
     font-size: 20px;
     line-height: 20px;
@@ -301,7 +307,7 @@ p:last-child, ul:last-child, ol:last-child, blockquote:last-child, hr:last-child
   line-height: 22px;
   letter-spacing: 3.2px;
 }
-@media (min-width: 1400px) {
+@media (min-width: 1600px) {
   .text-sm {
     line-height: 16px;
   }

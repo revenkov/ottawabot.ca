@@ -8,6 +8,18 @@
   @include breakpoint( $tablet ) {
     margin: -262px auto 0;
   }
+  @include breakpoint( $laptop ) {
+    position: absolute;
+    margin: 0;
+    width: 488px;
+    max-width: none;
+    right: var(--container-padding-x);
+    top: -266px;
+  }
+  @include breakpoint( $desktop ) {
+    width: 576px;
+    top: -307px;
+  }
 
   &:before {
     content: '';
@@ -31,10 +43,16 @@
     @include breakpoint( $tablet ) {
       padding: 82px 60px 60px;
     }
+    @include breakpoint( $desktop ) {
+      padding: 82px 68px 68px;
+    }
   }
 
   &__title {
     padding: 0 30px;
+    @include breakpoint( $laptop ) {
+      padding: 0;
+    }
   }
 
   &__form {
@@ -47,6 +65,9 @@
     margin: 30px 0 15px;
     @include breakpoint( $tablet ) {
       margin: 45px 0 70px;
+    }
+    @include breakpoint( $desktop ) {
+      margin: 50px 0 75px;
     }
 
     &Field {

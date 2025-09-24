@@ -3,17 +3,17 @@
 $xxs: 480px;
 $xs: 640px;
 $sm: 960px;
-$md: 1200px;
+$md: 1260px;
 $lg: 1400px;
 $xl: 1600px;
 $xxl: 1900px;
 
 $tablet: $xs;
 $laptop: $md;
-$desktop: $lg;
+$desktop: $xl;
 
 :root {
-  --container-max-width: 1900px;
+  --container-max-width: 1932px;
   --container-padding-x: 32px;
   --header-height: 93px;
   --section-margin: 49px;
@@ -28,9 +28,13 @@ $desktop: $lg;
     --grid-columns: 20;
   }
   @include breakpoint( $laptop ) {
-    --container-padding-x: 50px;
+
     --header-height: 168px;
+    --section-margin: 137px;
     --grid-columns: 12;
     --grid-gap: 36px;
+  }
+  @include breakpoint( $desktop ) {
+    --container-padding-x: 64px;
   }
 }

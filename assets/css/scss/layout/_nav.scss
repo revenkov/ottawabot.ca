@@ -4,7 +4,7 @@
   padding: 0;
   background: #ffffff;
   position: fixed;
-  left: 0;
+  right: 0;
   top: 0;
   width: 100%;
   height: 100vh;
@@ -13,18 +13,26 @@
   transition: visibility .3s, opacity .3s;
   //background: url("../images/layouts/768/nav.jpg") no-repeat center top;
   //background-size: auto;
+  @include breakpoint( $tablet ) {
+    width: 626px;
+  }
   @include breakpoint( $laptop ) {
+    position: absolute;
     overflow: visible;
     visibility: visible;
     opacity: 1;
     height: 0;
     padding: 0;
     top: calc( var(--header-height) / 2 );
+    width: 100%;
     z-index: 4000;
   }
 
   &__container {
     padding: 0;
+    @include breakpoint( $laptop ) {
+      padding: 0 var(--container-padding-x);
+    }
   }
 
   &__inner {
@@ -33,6 +41,9 @@
 
   &__inner2 {
     padding: 110px 0 0;
+    @include breakpoint( $tablet ) {
+      padding: 160px 0 0;
+    }
     @include breakpoint( $laptop ) {
       position: absolute;
       top: 50%;
@@ -41,6 +52,7 @@
       right: 0;
       display: flex;
       justify-content: flex-end;
+      padding: 0;
     }
   }
 
@@ -63,6 +75,12 @@
     align-items: center;
     gap: 1rem;
   }
+  @include breakpoint( $laptop ) {
+    position: absolute;
+    top: -26px;
+    right: 0;
+    gap: min(63px, 3.15vw);
+  }
 
   >li {
     position: relative;
@@ -70,6 +88,9 @@
     margin: 0;
     border-top: 1px solid var(--color-grey-light);
     width: 100%;
+    @include breakpoint( $laptop ) {
+      border: none;
+    }
 
     >.menu-item-link-wrapper {
       display: flex;
@@ -78,6 +99,10 @@
       gap: 12px;
       cursor: pointer;
       padding: 0 var(--container-padding-x);
+      @include breakpoint( $laptop ) {
+        padding: 0;
+        width: 100%;
+      }
 
       >a {
         position: relative;
@@ -90,6 +115,9 @@
         font-weight: 600;
         text-transform: uppercase;
         line-height: 1.2;
+        @include breakpoint( $laptop ) {
+          min-height: 110px;
+        }
 
         &:hover {
           @media (hover: hover) {
@@ -111,6 +139,7 @@
     >.sub-menu {
       display: none;
       width: 100%;
+      background: #ffffff;
       @include breakpoint( $md ) {
         display: block;
         visibility: hidden;
@@ -119,6 +148,11 @@
         left: 0;
         top: 100%;
         transition: visibility .3s, opacity .3s;
+      }
+      @include breakpoint( $laptop ) {
+        width: 275px;
+        left: 50%;
+        translate: -50% 0;
       }
 
       >ul {
@@ -144,6 +178,9 @@
             gap: 12px;
             cursor: pointer;
             padding: 0 var(--container-padding-x);
+            @include breakpoint( $laptop ) {
+              padding: 0 15px;
+            }
 
             >a {
               min-height: 62px;
@@ -155,6 +192,7 @@
               font-weight: 600;
               text-align: center;
               line-height: 1.2;
+              padding: 20px 0;
             }
 
             >.menu-item-button {
@@ -164,12 +202,16 @@
               mask-size: contain;
               background: currentColor;
               transition: rotate .3s;
+              @include breakpoint( $laptop ) {
+                rotate: -90deg;
+              }
             }
           }
 
           >.sub-menu {
             display: none;
             width: 100%;
+            background: #EEEEEE;
             @include breakpoint( $md ) {
               display: block;
               visibility: hidden;
@@ -218,6 +260,25 @@
               }
             }
           }
+
+          &.menu-item-has-children:hover {
+            @media (hover: hover) {
+
+              >.menu-item-link-wrapper {
+
+                >.menu-item-button {
+                  rotate: -270deg;
+                }
+              }
+
+              >.sub-menu {
+                @include breakpoint( $laptop ) {
+                  visibility: visible;
+                  opacity: 1;
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -238,6 +299,40 @@
         }
       }
     }
+
+    &.menu-item-has-children:hover {
+      @media (hover: hover) {
+
+        >.menu-item-link-wrapper {
+          >.menu-item-button {
+            rotate: -180deg;
+          }
+        }
+
+        >.sub-menu {
+          @include breakpoint( $laptop ) {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &:last-child {
+
+      >.sub-menu {
+        @include breakpoint( $laptop ) {
+          left: auto;
+          right: calc(var(--container-padding-x) * -1);
+          translate: none;
+        }
+      }
+    }
+
+    &:nth-child(4n+1) >.sub-menu >ul { border-bottom-color: var(--color-green); }
+    &:nth-child(4n+2) >.sub-menu >ul { border-bottom-color: var(--color-purple); }
+    &:nth-child(4n+3) >.sub-menu >ul { border-bottom-color: var(--color-orange); }
+    &:nth-child(4n+4) >.sub-menu >ul { border-bottom-color: var(--color-primary); }
   }
 
   li.open {
@@ -259,20 +354,39 @@
   display: flex;
   justify-content: center;
   gap: 1px;
+  @include breakpoint( $tablet ) {
+    margin-bottom: 46px;
+  }
+  @include breakpoint( $laptop ) {
+    margin: 0;
+    position: absolute;
+    top: -50px;
+    right: 167px;
+  }
 
   >.menu-item {
     position: relative;
     padding: 0 8px;
+    @include breakpoint( $tablet ) {
+      padding: 0 30px;
+    }
 
-    &:not(:first-child):before {
+    &:after {
       content: '';
       width: 1px;
       height: 20px;
       background: var(--color-grey);
       position: absolute;
-      left: -1px;
+      right: -1px;
       top: 50%;
       translate: 0 -50%;
+    }
+
+    &:first-child:after {
+      display: none;
+      @include breakpoint( $laptop ) {
+        display: block;
+      }
     }
 
     >.menu-item-link-wrapper {
@@ -282,6 +396,7 @@
         min-height: 28px;
         display: flex;
         align-items: center;
+        white-space: nowrap;
       }
     }
   }
@@ -299,6 +414,9 @@
   background: #ffffff;
   z-index: 1000;
   transition: visibility .3s, opacity .3s;
+  @include breakpoint( $tablet ) {
+    background: rgba(0,0,0,.7);
+  }
 
   &--visible {
     opacity: 1;

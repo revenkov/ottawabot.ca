@@ -1,4 +1,10 @@
 .textImageBlock {
+  @include breakpoint( $laptop ) {
+    margin: 0 calc( var(--container-padding-x)*-1 );
+  }
+  @include breakpoint( $desktop ) {
+    margin: 0 calc( var(--container-padding-x)*-.5 );
+  }
 
   &__cols {
     display: flex;
@@ -10,6 +16,8 @@
     width: 100%;
     @include breakpoint( $tablet ) {
       width: 50%;
+      display: flex;
+      align-items: center;
     }
   }
 
@@ -34,7 +42,17 @@
         height: 141px;
         top: 50px;
       }
+      @include breakpoint( $laptop ) {
+        width: 250px;
+        height: 250px;
+        top: 60px;
+      }
     }
+  }
+
+  &__textWrapper {
+    max-width: 580px;
+    margin: 0 auto;
   }
 
   &--1 & {
@@ -51,6 +69,10 @@
       @include breakpoint( $tablet ) {
         translate: calc( var(--container-padding-x) * -1 ) 0;
       }
+      @include breakpoint( $laptop ) {
+        padding-right: 125px;
+        translate: none;
+      }
 
       &:after {
         right: calc( var(--grid-column-width) * -1 );
@@ -63,6 +85,9 @@
     &__textCol {
       @include breakpoint( $tablet ) {
         padding-right: var(--container-padding-x);
+      }
+      @include breakpoint( $laptop ) {
+        padding-right: 0;
       }
     }
   }
@@ -77,6 +102,11 @@
         padding-right: 0;
         padding-left: calc( var(--grid-column-width) * 2 );
       }
+      @include breakpoint( $laptop ) {
+        padding-left: 125px;
+        margin-right: calc( var(--grid-gap) * -1 );
+        translate: none;
+      }
 
       &:after {
         right: calc( var(--grid-column-width) * -1 );
@@ -84,12 +114,19 @@
           right: auto;
           left: 0;
         }
+        @include breakpoint( $laptop ) {
+          top: auto;
+          bottom: 60px;
+        }
       }
     }
 
     &__textCol {
       @include breakpoint( $tablet ) {
         padding-left: var(--container-padding-x);
+      }
+      @include breakpoint( $laptop ) {
+        padding-left: 0;
       }
     }
   }

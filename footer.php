@@ -37,7 +37,7 @@
             <div class="siteFooter__inner">
                 <div class="h1 siteFooter__slogan"><?php echo __('The Voice of Business for Ottawa', 'selectrum'); ?></div>
                 <div class="siteFooter__cols">
-                    <div class="siteFooter__col">
+                    <div class="siteFooter__col siteFooter__col--1">
                         <div class="siteFooter__colTitle text-md"><?php echo __('Quicklinks', 'selectrum'); ?></div>
                         <div class="siteFooter__colContent">
                             <?php
@@ -50,7 +50,7 @@
                             ?>
                         </div>
                     </div>
-                    <div class="siteFooter__col">
+                    <div class="siteFooter__col siteFooter__col--2">
                         <div class="siteFooter__colTitle text-md"><?php echo __('Ottawa Board of Trade', 'selectrum'); ?></div>
                         <div class="siteFooter__colContent">
                             <?php if ( !empty( $address ) ) : ?><div class="siteFooter__address"><a href="//google.com/maps?q=<?php echo strip_tags(urlencode($address)); ?>" target="_blank"><?php echo $address; ?></a></div><?php endif; ?>
@@ -69,7 +69,7 @@
                     <?php
                     if ( !empty( $logos ) ) :
                     ?>
-                    <div class="siteFooter__col">
+                    <div class="siteFooter__col siteFooter__col--3">
                         <div class="siteFooter__colTitle text-md"><?php echo __('Proud Member', 'selectrum'); ?></div>
                         <div class="siteFooter__colContent">
                             <div class="siteFooter__logos">
