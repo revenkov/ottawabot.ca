@@ -2,9 +2,9 @@
 function selectrum_get_hero_image_post_id() {
 	global $post;
 
-	if ( !empty( $post->post_parent ) ) :
-		return $post->post_parent;
-	endif;
+    if ( is_singular('team-member') ) {
+        return selectrum_filter_id( 2596 );
+    }
 
 	return $post->ID;
 }
@@ -25,15 +25,18 @@ function selectrum_get_image_url( $filename ) {
 function selectrum_get_hero_title() {
 	global $post;
 
-	if ( !empty( $post->post_parent ) ) :
-		return get_the_title( $post->post_parent );
-	endif;
-
 	return get_the_title();
 }
 
 function selectrum_get_hero_text() {
 	$text = '<h1 class="sectionHero__title">'.selectrum_get_hero_title().'</h1>';
+
+    if ( is_singular('team-member') ) {
+        $title = get_field('title');
+        if ( !empty( $title ) ) {
+            $text .= '<p class="sectionHero__text">'.$title.'</p>';
+        }
+    }
 
 	return $text;
 }

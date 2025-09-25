@@ -1,3 +1,10 @@
 .section {
   margin: var(--section-margin) 0;
+
+  &--extraPadding {
+    padding: 0 var(--container-padding-x);
+    @include breakpoint( $desktop ) {
+      padding: 0;
+    }
+  }
 }

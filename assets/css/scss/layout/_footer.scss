@@ -3,9 +3,10 @@
   color: #ffffff;
   background: #000000 url("../images/footer-mobile.jpg") no-repeat center;
   background-size: cover;
-  margin-top: 213px;
+  //margin-top: 213px;
+  //margin-top: 260px;
   @include breakpoint($tablet) {
-    margin-top: 290px;
+    //margin-top: 290px;
     background-image: url("../images/footer-tablet.jpg");
     padding: 0 var(--container-padding-x);
   }
@@ -235,6 +236,16 @@
     }
     @include breakpoint($laptop) {
       width: 43%;
+    }
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        @media (hover: hover) {
+          text-decoration: none;
+        }
+      }
     }
   }
 }

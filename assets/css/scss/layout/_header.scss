@@ -10,6 +10,10 @@
     position: relative;
   }
 
+  &__container {
+    max-width: none;
+  }
+
   &__inner {
     position: relative;
     height: var(--header-height);
@@ -32,7 +36,7 @@
     @include breakpoint( $tablet ) {
       width: 190px;
     }
-    @include breakpoint( $laptop ) {
+    @include breakpoint( $lg ) {
       width: 235px;
     }
   }
@@ -76,6 +80,9 @@
 
   &--sticky {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    @include breakpoint( $laptop ) {
+      box-shadow: none;
+    }
   }
 
   &--navVisible {

@@ -82,6 +82,7 @@
         border: none;
         color: #ffffff;
         height: 70px;
+        padding: 0;
         @include breakpoint( $tablet ) {
           height: 62px;
         }

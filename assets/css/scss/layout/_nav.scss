@@ -30,6 +30,7 @@
 
   &__container {
     padding: 0;
+    max-width: none;
     @include breakpoint( $laptop ) {
       padding: 0 var(--container-padding-x);
     }
@@ -169,7 +170,7 @@
           display: flex;
           justify-content: center;
           flex-wrap: wrap;
-          background: var(--color-grey-light);
+          background: var(--color-grey-3);
 
           >.menu-item-link-wrapper {
             display: flex;
@@ -375,7 +376,7 @@
       content: '';
       width: 1px;
       height: 20px;
-      background: var(--color-grey);
+      background: var(--color-grey-2);
       position: absolute;
       right: -1px;
       top: 50%;

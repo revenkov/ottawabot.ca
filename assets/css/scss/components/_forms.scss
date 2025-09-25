@@ -11,7 +11,14 @@ select {
   width: 100%;
   border-radius: 0;
   margin: 0;
-  border: 1px solid currentColor;
+  height: 50px;
+  background: #ffffff;
+  border: none;
+  padding: 10px 34px;
+  @include breakpoint( $tablet ) {
+    height: 71px;
+    padding: 10px 40px;
+  }
 }
 
 select {
@@ -21,11 +28,18 @@ select {
 }
 
 textarea {
-
+  height: 254px;
+  @include breakpoint( $tablet ) {
+    padding: 24px 40px;
+    height: 263px;
+  }
+  @include breakpoint( $laptop ) {
+    height: 312px;
+  }
 }
 
 @include placeholder {
-
+  color: var(--text-color);
 }
 
 
@@ -37,14 +51,31 @@ textarea {
 
 }
 
-.formFields {
-
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 18px 0;
+  @include breakpoint( $tablet ) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 26px 0;
+  }
+  @include breakpoint( $laptop ) {
+    gap: 36px 0;
+  }
 }
 
-.formField {
+.field {
   position: relative;
   display: block;
   width: 100%;
+  @include breakpoint( $tablet ) {
+    width: calc( ( 100% - var(--container-padding-x) ) / 2 );
+  }
+  @include breakpoint( $laptop ) {
+    width: calc( ( 100% - var(--grid-gap) ) / 2 );
+  }
 
   &__header {
 
@@ -54,7 +85,15 @@ textarea {
     display: block;
   }
 
-  &__body {
+  &__description {
+    padding-top: 8px;
+    margin-bottom: 28px;
+    @include breakpoint( $tablet ) {
+      padding-top: 0;
+    }
+  }
+
+  &__controls {
 
   }
 
@@ -67,7 +106,26 @@ textarea {
     right: 0;
   }
 
-  &--fullWidth {
-    width: 100%;
+  &--preferredContactMethod,
+  &--comments,
+  &--privacy {
+    @include breakpoint( $tablet ) {
+      width: 100%;
+    }
+    @include breakpoint( $laptop ) {
+      width: calc( ( 100% - var(--grid-gap) ) / 2 );
+      margin-right: calc( ( 100% - var(--grid-gap) ) / 2 );
+    }
+  }
+}
+
+
+.formButtons {
+  margin-top: 30px;
+  @include breakpoint($tablet) {
+    margin-top: 36px;
+  }
+  @include breakpoint($laptop) {
+    margin-top: 40px;
   }
 }

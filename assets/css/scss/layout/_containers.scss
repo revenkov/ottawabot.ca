@@ -11,13 +11,21 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .siteContent {
   flex: 1;
   margin: 0 auto;
   width: 100%;
-  max-width: 1932px;
+  //max-width: 1932px;
+  padding-bottom: 260px;
+  @include breakpoint( $tablet ) {
+    padding-bottom: 286px;
+  }
+  @include breakpoint( $desktop ) {
+    padding-bottom: 305px;
+  }
 }
 
 .container {
@@ -27,8 +35,12 @@ body {
   padding: 0 var(--container-padding-x);
   width: 100%;
 
+  &--fullWidth {
+    max-width: none;
+  }
+
   &--wide {
-    max-width: 1500px;
+    max-width: 1620px;
   }
 
   &--middle {

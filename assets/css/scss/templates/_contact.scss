@@ -1,0 +1,156 @@
+.page-template-contact {
+
+  .siteContent {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 200px;
+      right: -105px;
+      width: 220px;
+      height: 220px;
+      background: url("../images/circles.svg") no-repeat center center;
+      background-size: contain;
+      @include breakpoint( $tablet ) {
+        top: 750px;
+        bottom: auto;
+        right: auto;
+        left: -213px;
+        width: 422px;
+        height: 422px;
+      }
+      @include breakpoint( $laptop ) {
+        width: 822px;
+        height: 822px;
+        left: auto;
+        right: -450px;
+        top: 823px;
+      }
+    }
+  }
+}
+
+
+.contacts {
+  line-height: 2;
+  display: flex;
+  flex-direction: column;
+  @include breakpoint( $tablet ) {
+    flex-direction: row;
+    align-items: stretch;
+    margin: -40px 0 0;
+    padding: 0 var(--container-padding-x);
+  }
+  @include breakpoint( $desktop ) {
+    margin: 192px 0 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      @media (hover: hover) {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__col1 {
+    @include breakpoint( $tablet ) {
+      //padding-left: var(--container-padding-x);
+      flex: 1;
+      max-width: 256px;
+    }
+    @include breakpoint( $laptop ) {
+      padding-bottom: 20px;
+      max-width: 353px;
+    }
+  }
+
+  &__divider {
+    height: 1px;
+    background: var(--color-grey-2);
+    margin: 36px 0;
+    @include breakpoint( $tablet ) {
+      width: 1px;
+      height: auto;
+      margin: 0 47px 0 36px;
+    }
+    @include breakpoint( $laptop ) {
+      margin: 0 88px 0 36px;
+    }
+  }
+
+  &__col2 {
+    display: flex;
+    flex-direction: column;
+    gap: 28px 30px;
+    @include breakpoint( $tablet ) {
+      flex: 1;
+      padding-bottom: 20px;
+    }
+    @include breakpoint( $sm ) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 28px 80px;
+      padding: 20px 0 0;
+    }
+    @include breakpoint( $desktop ) {
+      padding: 75px 0 0;
+    }
+  }
+
+  &__address {
+    margin-top: 36px;
+    margin-bottom: 38px;
+    @include breakpoint( $tablet ) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__category {
+    @include breakpoint( $laptop ) {
+      flex: 1;
+    }
+
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+  }
+
+  &__categoryTitle {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    @include breakpoint( $tablet ) {
+      margin-bottom: 5px;
+    }
+    @include breakpoint( $laptop ) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+
+.contactFormBlock {
+  margin: 20px calc( var(--container-padding-x) / -2 ) 0;
+  background: var(--color-grey-3);
+  padding: 32px calc( var(--container-padding-x) / 2 ) 37px;
+  @include breakpoint( $tablet ) {
+    margin: 50px 0 0;
+    padding: 52px var(--container-padding-x);
+  }
+  @include breakpoint( $laptop ) {
+    margin: 145px 0 0;
+    padding: 53px;
+  }
+
+  &__intro {
+    margin-bottom: 40px;
+    @include breakpoint( $laptop ) {
+      margin-bottom: 53px;
+    }
+  }
+}

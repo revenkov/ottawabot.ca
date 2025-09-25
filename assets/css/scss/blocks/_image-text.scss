@@ -1,8 +1,5 @@
 .textImageBlock {
   @include breakpoint( $laptop ) {
-    margin: 0 calc( var(--container-padding-x)*-1 );
-  }
-  @include breakpoint( $desktop ) {
     margin: 0 calc( var(--container-padding-x)*-.5 );
   }
 
@@ -15,15 +12,22 @@
   &__textCol {
     width: 100%;
     @include breakpoint( $tablet ) {
-      width: 50%;
+      width: calc( 50% + var(--container-padding-x) );
       display: flex;
       align-items: center;
+      padding: 0 var(--container-padding-x);
+    }
+    @include breakpoint( $laptop ) {
+      width: 50%;
     }
   }
 
   &__imageCol {
     width: 100%;
     @include breakpoint( $tablet ) {
+      width: calc( 50% - var(--container-padding-x) );
+    }
+    @include breakpoint( $laptop ) {
       width: 50%;
     }
 
@@ -66,12 +70,17 @@
     &__imageCol {
       position: relative;
       padding-right: calc( var(--grid-column-width) * 2 );
-      @include breakpoint( $tablet ) {
-        translate: calc( var(--container-padding-x) * -1 ) 0;
-      }
       @include breakpoint( $laptop ) {
         padding-right: 125px;
-        translate: none;
+      }
+
+      .imageBlock {
+        @include breakpoint( $tablet ) {
+          margin-left: calc( var(--container-padding-x) * -1 );
+        }
+        @include breakpoint($laptop) {
+          margin-left: 0;
+        }
       }
 
       &:after {
@@ -81,52 +90,41 @@
         }
       }
     }
-
-    &__textCol {
-      @include breakpoint( $tablet ) {
-        padding-right: var(--container-padding-x);
-      }
-      @include breakpoint( $laptop ) {
-        padding-right: 0;
-      }
-    }
   }
 
   &--2 & {
 
     &__imageCol {
       position: relative;
-      padding-right: calc( var(--grid-column-width) * 2 );
-      @include breakpoint( $tablet ) {
-        translate: calc( var(--container-padding-x) * 1 ) 0;
+      padding-right: calc(var(--grid-column-width) * 2);
+      @include breakpoint($tablet) {
         padding-right: 0;
-        padding-left: calc( var(--grid-column-width) * 2 );
+        padding-left: calc(var(--grid-column-width) * 2);
       }
-      @include breakpoint( $laptop ) {
+      @include breakpoint($laptop) {
         padding-left: 125px;
-        margin-right: calc( var(--grid-gap) * -1 );
-        translate: none;
+        //margin-right: calc(var(--grid-gap) * -1);
+      }
+
+      .imageBlock {
+        @include breakpoint( $tablet ) {
+          margin-right: calc( var(--container-padding-x) * -1 );
+        }
+        @include breakpoint($laptop) {
+          margin-right: 0;
+        }
       }
 
       &:after {
-        right: calc( var(--grid-column-width) * -1 );
-        @include breakpoint( $tablet ) {
+        right: calc(var(--grid-column-width) * -1);
+        @include breakpoint($tablet) {
           right: auto;
           left: 0;
         }
-        @include breakpoint( $laptop ) {
+        @include breakpoint($laptop) {
           top: auto;
           bottom: 60px;
         }
-      }
-    }
-
-    &__textCol {
-      @include breakpoint( $tablet ) {
-        padding-left: var(--container-padding-x);
-      }
-      @include breakpoint( $laptop ) {
-        padding-left: 0;
       }
     }
   }

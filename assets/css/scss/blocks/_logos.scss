@@ -17,6 +17,9 @@
       width: 50%;
       max-width: 350px;
     }
+    @include breakpoint($laptop) {
+      width: 23%;
+    }
 
     &:hover {
       @media (hover:hover) {

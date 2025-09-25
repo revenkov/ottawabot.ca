@@ -1,10 +1,11 @@
 <?php
 global $post;
-$desktop = get_field('desktop', selectrum_get_hero_image_post_id()) ?? 3058;
-$tablet = get_field('tablet', selectrum_get_hero_image_post_id()) ?? 3056;
-$mobile = get_field('mobile', selectrum_get_hero_image_post_id()) ?? 3057;
+$hero_images = get_field('hero_images', selectrum_get_hero_image_post_id());
+$desktop = $hero_images['desktop']['ID'] ?? 3058;
+$tablet = $hero_images['tablet']['ID'] ?? 3056;
+$mobile = $hero_images['mobile']['ID'] ?? 3057;
 ?>
-<div class="container">
+<div class="container container--fullWidth">
     <div class="hero">
         <?php if ( !empty( $desktop ) ) : ?>
             <div class="hero__imageContainer">
