@@ -59,3 +59,33 @@
     --padding-bottom: 100%;
   }
 }
+
+
+.number {
+  margin-bottom: 22px;
+  @include breakpoint($tablet) {
+    margin-bottom: 42px;
+  }
+  @include breakpoint( $desktop ) {
+    margin-bottom: 50px;
+  }
+
+  &__counter {
+    font-size: 2.1875rem;
+    line-height: 2.75rem;
+    font-weight: 700;
+    margin-bottom: 13px;
+    @include breakpoint($tablet) {
+      font-size: 3.4375rem;
+      margin-bottom: 24px;
+    }
+    @include breakpoint( $desktop ) {
+      font-size: 3.75rem;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__description {
+    text-transform: uppercase;
+  }
+}

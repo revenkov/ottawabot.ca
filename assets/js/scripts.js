@@ -147,6 +147,23 @@ jQuery(document).ready( function($) {
     //AOS.init();
 
 
+    function textImageBlockHandler() {
+        $('.textImageBlock__text2').each(function (index, element) {
+            const $element = $(element);
+            const $textImageBlock = $element.parents('.textImageBlock');
+            const $textCol = $textImageBlock.find('.textImageBlock__textInner');
+            if ( windowWidth > 1260 ) {
+                $element.appendTo($textCol);
+            } else {
+                $element.appendTo($textImageBlock);
+            }
+        });
+    }
+    textImageBlockHandler();
+    $window.resize(textImageBlockHandler);
+
+
+
     $('.mosaic').each(function (index, listingElement) {
         var $listing = $(listingElement);
         var $pagination = $listing.find('.mosaic__pagination');
@@ -327,35 +344,20 @@ jQuery(document).ready( function($) {
     */
 
 
-    $('.galleryCarousel').each(function(index, element) {
+    $('.logoTextSlider').each(function(index, element) {
         const $element = $(element);
         const $container = $element.find('[class*="__slides"]');
         tns({
             container: $container[0],
             loop: true,
-            gutter: 20,
+            gutter: 0,
             autoplay: false,
             autoplayButtonOutput: false,
             autoplayHoverPause: true,
-            nav: false,
+            nav: true,
             navPosition: 'bottom',
-            controls: true,
-            controlsPosition: 'top',
-            controlsText: ['', ''],
-            responsive: {
-                0: {
-                    items: 1
-                },
-                640: {
-                    items: 2
-                },
-                960: {
-                    items: 3
-                },
-                1260: {
-                    items: 4
-                }
-            }
+            controls: false,
+            autoHeight: true
         });
     });
 

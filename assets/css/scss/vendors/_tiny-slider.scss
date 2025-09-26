@@ -10,8 +10,8 @@
 
 
 .tns-carousel {
-  display: flex;
-  align-items: stretch;
+  //display: flex;
+  //align-items: stretch;
 }
 
 .tns-controls {
@@ -46,18 +46,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 10px;
+  margin-top: 31px;
+  @include breakpoint($tablet) {
+    margin-top: 50px;
+  }
 
   button {
-    width: .5rem;
-    height: .5rem;
+    width: 10px;
+    height: 10px;
     border-radius: 100%;
-    background: currentColor;
-    opacity: .5;
+    background: var(--color-grey-2);
     transition: all .3s;
 
     &.tns-nav-active {
-      opacity: 1;
+      background: var(--color-purple);
     }
   }
 }

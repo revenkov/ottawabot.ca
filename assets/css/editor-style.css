@@ -82,6 +82,7 @@ a {
 }
 
 img {
+  width: 100%;
   max-width: 100%;
   height: auto;
   display: block;
@@ -264,7 +265,7 @@ address {
 }
 
 p, ul, ol, blockquote, hr {
-  margin: 22px 0;
+  margin: 0 0 36px;
 }
 p + h1, p + .h1, p + h2, p + .h2, p + h3, p + .h3, p + h4, p + .h4, p + h5, p + .h5, p + h6, p + .h6, ul + h1, ul + .h1, ul + h2, ul + .h2, ul + h3, ul + .h3, ul + h4, ul + .h4, ul + h5, ul + .h5, ul + h6, ul + .h6, ol + h1, ol + .h1, ol + h2, ol + .h2, ol + h3, ol + .h3, ol + h4, ol + .h4, ol + h5, ol + .h5, ol + h6, ol + .h6, blockquote + h1, blockquote + .h1, blockquote + h2, blockquote + .h2, blockquote + h3, blockquote + .h3, blockquote + h4, blockquote + .h4, blockquote + h5, blockquote + .h5, blockquote + h6, blockquote + .h6, hr + h1, hr + .h1, hr + h2, hr + .h2, hr + h3, hr + .h3, hr + h4, hr + .h4, hr + h5, hr + .h5, hr + h6, hr + .h6 {
   margin-top: 3rem;
@@ -294,26 +295,41 @@ p:last-child, ul:last-child, ol:last-child, blockquote:last-child, hr:last-child
 }
 
 .text-md {
-  font-size: 18px;
-  line-height: 25px;
   font-weight: 600;
 }
-@media (min-width: 1600px) {
-  .text-md {
-    font-size: 20px;
-    line-height: 20px;
-  }
-}
-
 .text-sm {
   font-size: 16px;
   line-height: 22px;
   letter-spacing: 3.2px;
+  font-weight: 500;
 }
 @media (min-width: 1600px) {
   .text-sm {
     line-height: 16px;
   }
+}
+
+.siteContent ul, .siteContent ol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+}
+.siteContent ul li, .siteContent ol li {
+  position: relative;
+}
+.siteContent ul li {
+  padding-left: 32px;
+}
+.siteContent ul li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  background: var(--color-primary);
+  width: 9px;
+  height: 9px;
+  border-radius: 100%;
 }
 
 .button {

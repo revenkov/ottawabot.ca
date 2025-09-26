@@ -167,7 +167,7 @@ del {
 }
 
 p, ul, ol, blockquote, hr {
-  margin: 22px 0;
+  margin: 0 0 36px;
 
   + {
 
@@ -194,12 +194,12 @@ p, ul, ol, blockquote, hr {
 }
 
 .text-md {
-  font-size: 18px;
-  line-height: 25px;
+  //font-size: 18px;
+  //line-height: 25px;
   font-weight: 600;
   @include breakpoint( $desktop ) {
-    font-size: 20px;
-    line-height: 20px;
+    //font-size: 20px;
+    //line-height: 20px;
   }
 }
 
@@ -207,7 +207,41 @@ p, ul, ol, blockquote, hr {
   font-size: 16px;
   line-height: 22px;
   letter-spacing: 3.2px;
+  font-weight: 500;
   @include breakpoint( $desktop ) {
     line-height: 16px;
+  }
+}
+
+
+.siteContent {
+
+  ul, ol {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+
+    li {
+      position: relative;
+    }
+  }
+
+  ul {
+
+    li {
+      padding-left: 32px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 9px;
+        background: var(--color-primary);
+        width: 9px;
+        height: 9px;
+        border-radius: 100%;
+      }
+    }
   }
 }

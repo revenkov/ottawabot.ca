@@ -114,5 +114,31 @@
 .teamMemberBlock {
   display: flex;
   flex-direction: column;
-  gap: 30px
+  gap: 30px var(--grid-column-width);
+  @include breakpoint( $tablet ) {
+    flex-direction: row;
+  }
+
+  &__col1 {
+    @include breakpoint( $tablet ) {
+      flex: 1;
+    }
+  }
+
+  &__col2 {
+    @include breakpoint( $tablet ) {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__linkedinLink {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: var(--color-primary);
+    mask: var(--icon-linkedin) no-repeat center;
+    mask-size: contain;
+  }
 }

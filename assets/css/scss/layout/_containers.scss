@@ -19,7 +19,7 @@ body {
   margin: 0 auto;
   width: 100%;
   //max-width: 1932px;
-  padding-bottom: 260px;
+  padding-bottom: 213px;
   @include breakpoint( $tablet ) {
     padding-bottom: 286px;
   }
@@ -48,6 +48,11 @@ body {
   }
 
   &--narrow {
-    max-width: 970px;
+    @include breakpoint( $tablet ) {
+      max-width: 560px;
+    }
+    @include breakpoint( $laptop ) {
+      max-width: 970px;
+    }
   }
 }
