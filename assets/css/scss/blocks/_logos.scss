@@ -40,7 +40,8 @@
     gap: 66px 70px;
   }
   @include breakpoint($laptop) {
-    gap: 10px 30px;
+    gap: 10px 0;
+    margin: 80px -20px;
   }
 
   &__item {
@@ -55,7 +56,9 @@
       max-width: 250px;
     }
     @include breakpoint($laptop) {
-      width: 23%;
+      width: 25%;
+      padding: 0 40px;
+      max-width: none;
     }
 
     &:hover {

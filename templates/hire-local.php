@@ -55,7 +55,7 @@ $content_group_2 = get_field('content_group_2');
 $icon_cards = get_field('icon_cards');
 ?>
 <div class="section">
-    <div class="container container--middle">
+    <div class="container container--wide">
         <?php echo $content_group_2['content']; ?>
 
         <?php if ( !empty( $icon_cards ) ) : ?>
@@ -86,18 +86,24 @@ if ( !empty( $content_group_3 ) ) :
 
 <?php
 $content_group_4 = get_field('content_group_4');
-$image_2 = get_field('image_2');
+$map = get_field('map');
 if ( !empty( $content_group_3 ) ) :
 ?>
 <div class="section">
-    <div class="mapBlock">
-        <div class="mapBlock__mapCol">
-            <?php if ( !empty($image_2) ) : ?>
-                <div class="imageBlock imageBlock--formatted mapBlock__imageBlock"><?php echo wp_get_attachment_image( $image_2['ID'], 'full' ); ?></div>
-            <?php endif; ?>
-        </div>
-        <div class="mapBlock__textCol">
-            <div class="container container--narrow">
+    <div class="container">
+        <div class="mapBlock">
+            <div class="mapBlock__mapCol">
+                <?php if ( !empty($map['desktop']) ) : ?>
+                    <div class="imageBlock">
+                        <picture>
+                            <?php if ( !empty( $map['mobile'] ) ) : ?><source media="(max-width: 639px)" srcset="<?php echo wp_get_attachment_image_srcset( $map['mobile']['ID'], 'full' ); ?>" sizes="<?php echo wp_get_attachment_image_sizes( $map['mobile']['ID'], 'full' ); ?>"><?php endif; ?>
+                            <?php if ( !empty( $map['tablet'] ) ) : ?><source media="(max-width: 1119px)" srcset="<?php echo wp_get_attachment_image_srcset( $map['tablet']['ID'], 'full' ); ?>" sizes="<?php echo wp_get_attachment_image_sizes( $map['tablet']['ID'], 'full' ); ?>"><?php endif; ?>
+                            <?php echo wp_get_attachment_image( $map['desktop']['ID'], 'full'); ?>
+                        </picture>
+                    </div>
+                <?php endif; ?>
+            </div>
+            <div class="mapBlock__textCol">
                 <div class="mapBlock__textContainer">
                     <?php echo $content_group_4['content']; ?>
                 </div>
@@ -136,7 +142,7 @@ $logos = get_field('logos');
 if ( !empty( $logos ) ) :
 ?>
 <div class="section">
-    <div class="container container--narrow">
+    <div class="container container--middle">
         <h2 style="text-align: center">Our Key Leading Partners</h2>
 
         <div class="logos2">
