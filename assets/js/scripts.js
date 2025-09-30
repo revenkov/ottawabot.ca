@@ -163,6 +163,44 @@ jQuery(document).ready( function($) {
     $window.resize(textImageBlockHandler);
 
 
+    const $timeline = $('.timeline');
+    const $timelineNav = $('.timeline__nav');
+    const $timelineItems = $('.timeline__items');
+    function timelineHandler() {
+        const styles = window.getComputedStyle(document.body);
+        const sectionMargin = parseInt(styles.getPropertyValue('--section-margin'));
+        $timeline.css('height', '');
+        $timelineNav.css('height', '' );
+        $timelineItems.css('height', '' );
+
+        $timeline.css('height', $timelineItems.outerHeight());
+        $timelineNav.css('height', windowHeight - sectionMargin * 2 );
+        $timelineItems.css('height', windowHeight - sectionMargin * 2 );
+    }
+    $document.on('scroll', function () {
+        let scrollTop = $document.scrollTop();
+        const styles = window.getComputedStyle(document.body);
+        const sectionMargin = parseInt(styles.getPropertyValue('--section-margin'));
+        $timelineItems.scrollTop( scrollTop - $timeline.offset().top + sectionMargin );
+    });
+    $timelineItems.on('scroll', function () {
+        let scrollTop = $(this).scrollTop();
+        console.log(scrollTop);
+    });
+    $( ".timeline .accordion" )
+        .on( "accordionactivate", function( event, ui ) {
+            let scrollTop = $timelineItems.scrollTop();
+            let documentTop = $document.scrollTop();
+            timelineHandler();
+            $timelineItems.scrollTop( scrollTop );
+            $document.scrollTop( documentTop );
+        } )
+        .on( "accordioncreate", function( event, ui ) {
+            timelineHandler();
+        } );
+    //timelineHandler();
+    $window.resize(timelineHandler);
+
 
     $('.mosaic').each(function (index, listingElement) {
         var $listing = $(listingElement);
@@ -261,7 +299,7 @@ jQuery(document).ready( function($) {
      * jQuery UI Accordion
      */
     $('.accordion').accordion({
-        active: false,
+        active: 1,
         collapsible: true,
         heightStyle: "content",
         header: '.accordion__header',

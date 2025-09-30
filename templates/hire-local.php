@@ -24,7 +24,7 @@ $content_group_1 = get_field('content_group_1');
                         <div class="textImageBlock__textInner">
                             <div class="textImageBlock__textInner2">
                                 <div class="number">
-                                    <div class="number__counter"><?php echo $content_group_1['number']; ?></div>
+                                    <div class="number__counter"><?php //echo $content_group_1['number']; ?></div>
                                     <div class="number__description text-sm"><?php echo $content_group_1['description_1']; ?></div>
                                 </div>
 

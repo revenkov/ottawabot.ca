@@ -1,0 +1,50 @@
+.timeline {
+  position: relative;
+  display: flex;
+
+  &__nav {
+    width: 460px;
+    position: sticky;
+    top: var(--section-margin);
+
+    ul {
+
+      li {
+        padding: 0;
+
+        &:before {
+          display: none;
+        }
+
+        a {
+          padding: 0 calc( var(--grid-column-width) - var(--grid-gap) );
+          height: 136px;
+          display: flex;
+          align-items: center;
+
+          &.active {
+            background: var(--color);
+            color: #ffffff;
+          }
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--color-grey-2);
+        }
+      }
+    }
+  }
+
+  &__items {
+    position: sticky;
+    top: var(--section-margin);
+    background: var(--color-grey-3);
+    overflow: hidden;
+    padding: 0 150px 50px;
+    flex: 1;
+  }
+
+  &__item {
+    padding: 50px 0 0;
+  }
+}

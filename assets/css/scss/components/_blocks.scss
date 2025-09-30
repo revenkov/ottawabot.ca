@@ -72,7 +72,7 @@
 
   &__counter {
     font-size: 2.1875rem;
-    line-height: 2.75rem;
+    line-height: 3.75rem;
     font-weight: 700;
     margin-bottom: 13px;
     @include breakpoint($tablet) {
@@ -82,6 +82,10 @@
     @include breakpoint( $desktop ) {
       font-size: 3.75rem;
       margin-bottom: 50px;
+    }
+
+    .digit {
+      text-align: right;
     }
   }
 

@@ -1,5 +1,12 @@
 .page-template-hire-local {
 
+  .number {
+
+    &__counter {
+      margin-left: -10px;
+    }
+  }
+
   /*.textImageBlock {
 
     &__textCol {

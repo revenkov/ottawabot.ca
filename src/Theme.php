@@ -209,7 +209,9 @@ class Theme
         //wp_enqueue_script('datatables-select', '//cdn.datatables.net/select/3.0.1/js/dataTables.select.js', ['datatables'], null, true);
         //wp_enqueue_script('select-datatables', '//cdn.datatables.net/select/3.0.1/js/select.dataTables.js', ['datatables'], null, true);
         wp_enqueue_script('lenis', '//unpkg.com/lenis@1.3.8/dist/lenis.min.js', [], null, true);
+        //wp_enqueue_script('number-flip', $vendor_url . 'number-flip-1.2.3/index.js', [], null, true);
 
+        wp_enqueue_script('main', get_stylesheet_directory_uri() . '/build/main.js', [], filemtime( get_stylesheet_directory() . '/build/main.js' ), true);
 	    wp_enqueue_script('scripts', $js_url . 'scripts.js', [], filemtime( $js_path . 'scripts.js' ), true);
         wp_localize_script('scripts', 'selectrum', [
             'ajax_url' => admin_url( 'admin-ajax.php' ),

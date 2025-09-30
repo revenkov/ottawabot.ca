@@ -509,7 +509,7 @@ p:last-child, ul:last-child, ol:last-child, blockquote:last-child, hr:last-child
 }
 .number__counter {
   font-size: 2.1875rem;
-  line-height: 2.75rem;
+  line-height: 3.75rem;
   font-weight: 700;
   margin-bottom: 13px;
 }
@@ -524,6 +524,9 @@ p:last-child, ul:last-child, ol:last-child, blockquote:last-child, hr:last-child
     font-size: 3.75rem;
     margin-bottom: 50px;
   }
+}
+.number__counter .digit {
+  text-align: right;
 }
 .number__description {
   text-transform: uppercase;
@@ -740,7 +743,6 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  overflow-x: hidden;
 }
 
 .siteContent {
@@ -2114,6 +2116,50 @@ body {
   }
 }
 
+.accordion__header {
+  cursor: pointer;
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+}
+.timeline__nav {
+  width: 460px;
+  position: sticky;
+  top: var(--section-margin);
+}
+.timeline__nav ul li {
+  padding: 0;
+}
+.timeline__nav ul li:before {
+  display: none;
+}
+.timeline__nav ul li a {
+  padding: 0 calc(var(--grid-column-width) - var(--grid-gap));
+  height: 136px;
+  display: flex;
+  align-items: center;
+}
+.timeline__nav ul li a.active {
+  background: var(--color);
+  color: #ffffff;
+}
+.timeline__nav ul li:not(:last-child) {
+  border-bottom: 1px solid var(--color-grey-2);
+}
+.timeline__items {
+  position: sticky;
+  top: var(--section-margin);
+  background: var(--color-grey-3);
+  overflow: hidden;
+  padding: 0 150px 50px;
+  flex: 1;
+}
+.timeline__item {
+  padding: 50px 0 0;
+}
+
 .page-template-hire-local {
   /*.textImageBlock {
 
@@ -2135,6 +2181,9 @@ body {
       }
     }
   }*/
+}
+.page-template-hire-local .number__counter {
+  margin-left: -10px;
 }
 
 .iconCards {
