@@ -13,9 +13,7 @@
       background: url("../images/circles.svg") no-repeat center center;
       background-size: contain;
       @include breakpoint( $tablet ) {
-        top: 750px;
-        bottom: auto;
-        right: auto;
+        bottom: 230px;
         left: -213px;
         width: 422px;
         height: 422px;
@@ -24,7 +22,6 @@
         width: 822px;
         height: 822px;
         left: -450px;
-        top: auto;
         bottom: 70px;
       }
     }
@@ -36,12 +33,18 @@
   position: relative;
   display: flex;
   margin-right: -16px;
+  @include breakpoint( $tablet ) {
+    margin: 0;
+  }
 
   &__nav {
     width: 85px;
     position: sticky;
     top: calc( var(--section-margin) + var(--header-offset) );
     @include breakpoint( $tablet ) {
+      width: 246px;
+    }
+    @include breakpoint( $desktop ) {
       width: 460px;
     }
 
@@ -56,13 +59,16 @@
         }
 
         a {
-          padding: 0 16px;
+          padding: 0;
           height: 136px;
           display: flex;
           align-items: center;
           border-top: 1px solid var(--color-grey-2);
+          text-align: center;
+          justify-content: center;
           transition: background-color .3s, color .3s;
           @include breakpoint( $tablet ) {
+            height: 185px;
             padding: 0 calc( var(--grid-column-width) - var(--grid-gap) );
           }
 
@@ -75,13 +81,13 @@
           &.active {
             background: var(--color);
             color: #ffffff;
-            border-color: #ffffff;
+            border-color: transparent;
           }
         }
 
         &:first-child a,
         &:has(.active) + li a {
-          border-top: #ffffff;
+          border-top: transparent;
         }
       }
     }
@@ -95,6 +101,9 @@
     padding: 0 20px;
     flex: 1;
     @include breakpoint( $tablet ) {
+      padding: 0 35px;
+    }
+    @include breakpoint( $laptop ) {
       padding: 0 150px;
     }
   }
@@ -102,6 +111,9 @@
   &__item {
     padding: 20px 0 0;
     @include breakpoint( $tablet ) {
+      padding: 45px 0 0;
+    }
+    @include breakpoint( $laptop ) {
       padding: 50px 0 0;
     }
 
@@ -116,6 +128,9 @@
 
       ul li {
         padding-left: 45px;
+        @include breakpoint( $tablet ) {
+          padding-left: 35px;
+        }
       }
     }
   }

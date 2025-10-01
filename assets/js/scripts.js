@@ -87,53 +87,7 @@ jQuery(document).ready( function($) {
     });
 
 
-    /**
-     * Menu
-     */
-    var $menu = {
-        list: $siteNav,
-        btn: $('#btnMenu'),
-        btnClose: $('#btnMenuClose'),
-        init: function () {
-            $body.append('<div id="navOverlay" class="navOverlay"/>');
 
-            //$menu.list.css('max-height', windowHeight);
-            $document.on('scroll', function () {
-                //$menu.list.css('max-height', windowHeight);
-            });
-            $menu.btn.on('click', $menu.toggle);
-            $menu.btnClose.on('click', $menu.close);
-            $menu.list.on('click', '.menu-item-link-wrapper', function (e) {
-                if ( windowWidth < 1600 ) {
-                    var $item = $(this).closest('.menu-item');
-                    $item.toggleClass('open');
-                    $(this).next('.sub-menu').slideToggle();
-                }
-            });
-        },
-        toggle: function (e) {
-            $menu.isOpen() ? $menu.close(e) : $menu.open(e);
-        },
-        open: function (e) {
-            e.stopPropagation();
-            $siteHeader.addClass('siteHeader--navVisible');
-            $menu.btn.addClass('close');
-            $menu.list.addClass('siteNav--visible');
-            $('#navOverlay').addClass('navOverlay--visible');
-            //$body.css('overflow', 'hidden');
-        },
-        close: function (e) {
-            $siteHeader.removeClass('siteHeader--navVisible');
-            $menu.btn.removeClass('close');
-            $menu.list.removeClass('siteNav--visible');
-            $('#navOverlay').removeClass('navOverlay--visible');
-            //$body.css('overflow', '');
-        },
-        isOpen: function () {
-            return $menu.list.hasClass('siteNav--visible');
-        }
-    };
-    $menu.init();
 
 /*
     const lenis = new Lenis({
@@ -163,83 +117,7 @@ jQuery(document).ready( function($) {
     $window.resize(textImageBlockHandler);
 
 
-    const $timeline = $('.timeline');
-    const $timelineNav = $('.timeline__nav');
-    const $timelineItems = $('.timeline__items');
-    const styles = window.getComputedStyle(document.body);
-    const sectionMargin = parseInt(styles.getPropertyValue('--section-margin'));
-    const headerOffset = parseInt(styles.getPropertyValue('--header-offset'));
-    function timelineHandler() {
-        $timeline.css('height', '');
-        $timelineNav.css('height', '' );
-        $timelineItems.css('height', '' );
 
-        $timeline.css('height', $timelineItems.outerHeight());
-        $timelineNav.css('height', windowHeight - sectionMargin * 2 - headerOffset );
-        $timelineItems.css('height', windowHeight - sectionMargin * 2 - headerOffset );
-    }
-    $document.on('scroll', function () {
-        let scrollTop = $document.scrollTop();
-        $timelineItems.scrollTop( scrollTop - $timeline.offset().top + sectionMargin + headerOffset );
-    });
-    $timelineItems.on('scroll', function () {
-        let scrollTop = $(this).scrollTop();
-        const $items = $(this).find('.timeline__item');
-        $items.each(function (index, element) {
-            if ( $(element).position().top + $items.outerHeight()/2 <= scrollTop  || $(element).position().top + $(element).outerHeight === scrollTop + $items.outerHeight() ) {
-                $items.not(this).removeClass('active');
-                $(element).addClass('active');
-                const id = $(element).attr('id');
-                $timelineNav.find('a').removeClass('active');
-                $timelineNav.find('a[data-id="'+id+'"]').addClass('active');
-            }
-        })
-    });
-    $timelineNav.on('click', 'a', function (e) {
-        e.preventDefault();
-        const id = $(this).data('id');
-        const $item = $timelineItems.find('#'+id);
-        if ( $item.length ) {
-            /*$document.animate({
-                scrollTop: $timelineItems.offset().top + $item.position().top
-            }, 500);*/
-            window.scrollTo({
-                left: 0,
-                top: $timelineItems.offset().top + $item.position().top - sectionMargin - headerOffset + 1,
-                behavior: 'smooth'
-            });
-        }
-    });
-    $( ".timeline .accordion" )
-        .on( "accordionactivate", function( event, ui ) {
-            let scrollTop = $timelineItems.scrollTop();
-            let documentTop = $document.scrollTop();
-            timelineHandler();
-            $timelineItems.scrollTop( scrollTop );
-            $document.scrollTop( documentTop );
-        } )
-        .on( "accordioncreate", function( event, ui ) {
-            timelineHandler();
-        } )
-        .each(function(index, element) {
-            $(element).accordion({
-                active: index === 0 ? 0 : false,
-                collapsible: true,
-                heightStyle: "content",
-                header: '.accordion__header',
-                beforeActivate: function( event, ui ) {
-                    //$(ui.oldHeader).parents('.accordion__item').removeClass('active');
-                    //$(ui.newHeader).parents('.accordion__item').addClass('active');
-                },
-                activate: function( event, ui ) {
-                    if(!$.isEmptyObject(ui.newHeader.offset())) {
-                        //$('html:not(:animated), body:not(:animated)').animate({ scrollTop: ui.newHeader.offset().top - headerHeight - 30 }, 'normal');
-                    }
-                }
-            });
-        })
-    //timelineHandler();
-    $window.resize(timelineHandler);
 
 
     $('.mosaic').each(function (index, listingElement) {

@@ -31,7 +31,7 @@ $desktop: $xl;
   @include breakpoint( $laptop ) {
     --container-padding-x: 64px;
     --header-height: 168px;
-    --header-offset: 0;
+    --header-offset: 0px;
     --section-margin: 137px;
     --grid-columns: 12;
     --grid-gap: 36px;

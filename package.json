@@ -17,6 +17,7 @@
   "dependencies": {
     "gsap": "^3.13.0",
     "jquery": "^3.7.1",
+    "jquery-ui": "^1.14.1",
     "number-flip": "^1.2.3"
   }
 }
