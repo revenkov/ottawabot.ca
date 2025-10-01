@@ -1,13 +1,52 @@
+.page-template-achievements {
+
+  .siteContent {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 180px;
+      left: -105px;
+      width: 220px;
+      height: 220px;
+      background: url("../images/circles.svg") no-repeat center center;
+      background-size: contain;
+      @include breakpoint( $tablet ) {
+        top: 750px;
+        bottom: auto;
+        right: auto;
+        left: -213px;
+        width: 422px;
+        height: 422px;
+      }
+      @include breakpoint( $laptop ) {
+        width: 822px;
+        height: 822px;
+        left: -450px;
+        top: auto;
+        bottom: 70px;
+      }
+    }
+  }
+}
+
+
 .timeline {
   position: relative;
   display: flex;
+  margin-right: -16px;
 
   &__nav {
-    width: 460px;
+    width: 85px;
     position: sticky;
-    top: var(--section-margin);
+    top: calc( var(--section-margin) + var(--header-offset) );
+    @include breakpoint( $tablet ) {
+      width: 460px;
+    }
 
     ul {
+      gap: 0;
 
       li {
         padding: 0;
@@ -17,19 +56,32 @@
         }
 
         a {
-          padding: 0 calc( var(--grid-column-width) - var(--grid-gap) );
+          padding: 0 16px;
           height: 136px;
           display: flex;
           align-items: center;
+          border-top: 1px solid var(--color-grey-2);
+          transition: background-color .3s, color .3s;
+          @include breakpoint( $tablet ) {
+            padding: 0 calc( var(--grid-column-width) - var(--grid-gap) );
+          }
+
+          &:hover {
+            @media (hover: hover) {
+              text-decoration: none;
+            }
+          }
 
           &.active {
             background: var(--color);
             color: #ffffff;
+            border-color: #ffffff;
           }
         }
 
-        &:not(:last-child) {
-          border-bottom: 1px solid var(--color-grey-2);
+        &:first-child a,
+        &:has(.active) + li a {
+          border-top: #ffffff;
         }
       }
     }
@@ -37,14 +89,34 @@
 
   &__items {
     position: sticky;
-    top: var(--section-margin);
+    top: calc( var(--section-margin) + var(--header-offset) );
     background: var(--color-grey-3);
     overflow: hidden;
-    padding: 0 150px 50px;
+    padding: 0 20px;
     flex: 1;
+    @include breakpoint( $tablet ) {
+      padding: 0 150px;
+    }
   }
 
   &__item {
-    padding: 50px 0 0;
+    padding: 20px 0 0;
+    @include breakpoint( $tablet ) {
+      padding: 50px 0 0;
+    }
+
+    &:last-child {
+      padding-bottom: 20px;
+      @include breakpoint( $tablet ) {
+        padding-bottom: 50px;
+      }
+    }
+
+    .accordion {
+
+      ul li {
+        padding-left: 45px;
+      }
+    }
   }
 }

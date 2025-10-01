@@ -166,26 +166,49 @@ jQuery(document).ready( function($) {
     const $timeline = $('.timeline');
     const $timelineNav = $('.timeline__nav');
     const $timelineItems = $('.timeline__items');
+    const styles = window.getComputedStyle(document.body);
+    const sectionMargin = parseInt(styles.getPropertyValue('--section-margin'));
+    const headerOffset = parseInt(styles.getPropertyValue('--header-offset'));
     function timelineHandler() {
-        const styles = window.getComputedStyle(document.body);
-        const sectionMargin = parseInt(styles.getPropertyValue('--section-margin'));
         $timeline.css('height', '');
         $timelineNav.css('height', '' );
         $timelineItems.css('height', '' );
 
         $timeline.css('height', $timelineItems.outerHeight());
-        $timelineNav.css('height', windowHeight - sectionMargin * 2 );
-        $timelineItems.css('height', windowHeight - sectionMargin * 2 );
+        $timelineNav.css('height', windowHeight - sectionMargin * 2 - headerOffset );
+        $timelineItems.css('height', windowHeight - sectionMargin * 2 - headerOffset );
     }
     $document.on('scroll', function () {
         let scrollTop = $document.scrollTop();
-        const styles = window.getComputedStyle(document.body);
-        const sectionMargin = parseInt(styles.getPropertyValue('--section-margin'));
-        $timelineItems.scrollTop( scrollTop - $timeline.offset().top + sectionMargin );
+        $timelineItems.scrollTop( scrollTop - $timeline.offset().top + sectionMargin + headerOffset );
     });
     $timelineItems.on('scroll', function () {
         let scrollTop = $(this).scrollTop();
-        console.log(scrollTop);
+        const $items = $(this).find('.timeline__item');
+        $items.each(function (index, element) {
+            if ( $(element).position().top + $items.outerHeight()/2 <= scrollTop  || $(element).position().top + $(element).outerHeight === scrollTop + $items.outerHeight() ) {
+                $items.not(this).removeClass('active');
+                $(element).addClass('active');
+                const id = $(element).attr('id');
+                $timelineNav.find('a').removeClass('active');
+                $timelineNav.find('a[data-id="'+id+'"]').addClass('active');
+            }
+        })
+    });
+    $timelineNav.on('click', 'a', function (e) {
+        e.preventDefault();
+        const id = $(this).data('id');
+        const $item = $timelineItems.find('#'+id);
+        if ( $item.length ) {
+            /*$document.animate({
+                scrollTop: $timelineItems.offset().top + $item.position().top
+            }, 500);*/
+            window.scrollTo({
+                left: 0,
+                top: $timelineItems.offset().top + $item.position().top - sectionMargin - headerOffset + 1,
+                behavior: 'smooth'
+            });
+        }
     });
     $( ".timeline .accordion" )
         .on( "accordionactivate", function( event, ui ) {
@@ -197,7 +220,24 @@ jQuery(document).ready( function($) {
         } )
         .on( "accordioncreate", function( event, ui ) {
             timelineHandler();
-        } );
+        } )
+        .each(function(index, element) {
+            $(element).accordion({
+                active: index === 0 ? 0 : false,
+                collapsible: true,
+                heightStyle: "content",
+                header: '.accordion__header',
+                beforeActivate: function( event, ui ) {
+                    //$(ui.oldHeader).parents('.accordion__item').removeClass('active');
+                    //$(ui.newHeader).parents('.accordion__item').addClass('active');
+                },
+                activate: function( event, ui ) {
+                    if(!$.isEmptyObject(ui.newHeader.offset())) {
+                        //$('html:not(:animated), body:not(:animated)').animate({ scrollTop: ui.newHeader.offset().top - headerHeight - 30 }, 'normal');
+                    }
+                }
+            });
+        })
     //timelineHandler();
     $window.resize(timelineHandler);
 
@@ -294,25 +334,6 @@ jQuery(document).ready( function($) {
     });
     */
 
-
-    /**
-     * jQuery UI Accordion
-     */
-    $('.accordion').accordion({
-        active: 1,
-        collapsible: true,
-        heightStyle: "content",
-        header: '.accordion__header',
-        beforeActivate: function( event, ui ) {
-            //$(ui.oldHeader).parents('.accordion__item').removeClass('active');
-            //$(ui.newHeader).parents('.accordion__item').addClass('active');
-        },
-        activate: function( event, ui ) {
-            if(!$.isEmptyObject(ui.newHeader.offset())) {
-                //$('html:not(:animated), body:not(:animated)').animate({ scrollTop: ui.newHeader.offset().top - headerHeight - 30 }, 'normal');
-            }
-        }
-    });
 
 
 

@@ -3,6 +3,7 @@
   --container-max-width: 1932px;
   --container-padding-x: 32px;
   --header-height: 93px;
+  --header-offset: var(--header-height);
   --section-margin: 49px;
   --grid-columns: 22;
   --grid-gap: 0;
@@ -21,6 +22,7 @@
   :root {
     --container-padding-x: 64px;
     --header-height: 168px;
+    --header-offset: 0;
     --section-margin: 137px;
     --grid-columns: 12;
     --grid-gap: 36px;
@@ -319,7 +321,7 @@ h3, .h3 {
 h4, .h4 {
   font-size: 1.25rem;
   line-height: 1.625rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 @media (min-width: 640px) {
   h4, .h4 {
@@ -2117,17 +2119,91 @@ body {
 }
 
 .accordion__header {
+  position: relative;
   cursor: pointer;
+  margin-top: 58px;
+  padding: 0 0 0 45px;
+}
+.accordion__header .ui-accordion-header-icon {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 26px;
+  height: 26px;
+  color: var(--color-purple);
+}
+.accordion__header .ui-accordion-header-icon:before, .accordion__header .ui-accordion-header-icon:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  background: currentColor;
+  transition: rotate 0.3s;
+}
+.accordion__header .ui-accordion-header-icon:after {
+  rotate: 90deg;
+}
+.accordion__header.ui-state-active .ui-accordion-header-icon:after {
+  rotate: 0deg;
+}
+.accordion__bodyInner {
+  padding-top: 30px;
+}
+
+.page-template-achievements .siteContent {
+  position: relative;
+}
+.page-template-achievements .siteContent:before {
+  content: "";
+  position: absolute;
+  bottom: 180px;
+  left: -105px;
+  width: 220px;
+  height: 220px;
+  background: url("../images/circles.svg") no-repeat center center;
+  background-size: contain;
+}
+@media (min-width: 640px) {
+  .page-template-achievements .siteContent:before {
+    top: 750px;
+    bottom: auto;
+    right: auto;
+    left: -213px;
+    width: 422px;
+    height: 422px;
+  }
+}
+@media (min-width: 1260px) {
+  .page-template-achievements .siteContent:before {
+    width: 822px;
+    height: 822px;
+    left: -450px;
+    top: auto;
+    bottom: 70px;
+  }
 }
 
 .timeline {
   position: relative;
   display: flex;
+  margin-right: -16px;
 }
 .timeline__nav {
-  width: 460px;
+  width: 85px;
   position: sticky;
-  top: var(--section-margin);
+  top: calc(var(--section-margin) + var(--header-offset));
+}
+@media (min-width: 640px) {
+  .timeline__nav {
+    width: 460px;
+  }
+}
+.timeline__nav ul {
+  gap: 0;
 }
 .timeline__nav ul li {
   padding: 0;
@@ -2136,28 +2212,62 @@ body {
   display: none;
 }
 .timeline__nav ul li a {
-  padding: 0 calc(var(--grid-column-width) - var(--grid-gap));
+  padding: 0 16px;
   height: 136px;
   display: flex;
   align-items: center;
+  border-top: 1px solid var(--color-grey-2);
+  transition: background-color 0.3s, color 0.3s;
+}
+@media (min-width: 640px) {
+  .timeline__nav ul li a {
+    padding: 0 calc(var(--grid-column-width) - var(--grid-gap));
+  }
+}
+@media (hover: hover) {
+  .timeline__nav ul li a:hover {
+    text-decoration: none;
+  }
 }
 .timeline__nav ul li a.active {
   background: var(--color);
   color: #ffffff;
+  border-color: #ffffff;
 }
-.timeline__nav ul li:not(:last-child) {
-  border-bottom: 1px solid var(--color-grey-2);
+.timeline__nav ul li:first-child a, .timeline__nav ul li:has(.active) + li a {
+  border-top: #ffffff;
 }
 .timeline__items {
   position: sticky;
-  top: var(--section-margin);
+  top: calc(var(--section-margin) + var(--header-offset));
   background: var(--color-grey-3);
   overflow: hidden;
-  padding: 0 150px 50px;
+  padding: 0 20px;
   flex: 1;
 }
+@media (min-width: 640px) {
+  .timeline__items {
+    padding: 0 150px;
+  }
+}
 .timeline__item {
-  padding: 50px 0 0;
+  padding: 20px 0 0;
+}
+@media (min-width: 640px) {
+  .timeline__item {
+    padding: 50px 0 0;
+  }
+}
+.timeline__item:last-child {
+  padding-bottom: 20px;
+}
+@media (min-width: 640px) {
+  .timeline__item:last-child {
+    padding-bottom: 50px;
+  }
+}
+.timeline__item .accordion ul li {
+  padding-left: 45px;
 }
 
 .page-template-hire-local {
