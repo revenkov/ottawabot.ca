@@ -19,6 +19,7 @@
   &:hover {
     @media (hover: hover) {
       background: var(--color-grey-2);
+      text-decoration: none;
     }
   }
 

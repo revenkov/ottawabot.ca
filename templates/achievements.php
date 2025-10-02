@@ -31,9 +31,13 @@ if ( !empty( $timeline ) ) :
     <div class="container container--wide">
         <div class="timeline">
             <div class="timeline__nav">
-                <ul>
+                <ul class="timeline__navList">
                     <?php foreach ( $timeline as $key=>$item ) : ?>
-                        <li class="h3"><a class="<?php echo $key === 0 ? 'active' : false; ?>" href="javascript:" data-id="<?php echo $item['year']; ?>" style="--color: #<?php echo $item['color']; ?>"><?php echo $item['year']; ?></a></li>
+                        <li class="timeline__navItem" style="--color: #<?php echo $item['color']; ?>">
+                            <button class="timeline__navButton <?php echo $key === 0 ? 'active' : false; ?>" type="button" data-id="<?php echo $item['year']; ?>">
+                                <span class="timeline__navTitle"><?php echo $item['year']; ?></span>
+                            </button>
+                        </li>
                     <?php endforeach; ?>
                 </ul>
             </div>

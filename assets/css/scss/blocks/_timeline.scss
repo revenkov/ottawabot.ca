@@ -1,0 +1,176 @@
+.timeline {
+  position: relative;
+  display: flex;
+  margin-right: -16px;
+  @include breakpoint( $tablet ) {
+    margin: 0;
+  }
+
+  &__nav {
+    min-width: 85px;
+    position: sticky;
+    top: calc( var(--section-margin) + var(--header-offset) );
+    @include breakpoint( $tablet ) {
+      min-width: 246px;
+    }
+    @include breakpoint( $desktop ) {
+      min-width: 460px;
+    }
+
+    &List {
+      gap: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    &Item {
+      padding: 0;
+      max-height: 140px;
+      flex: 1;
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 600;
+      @include breakpoint( $tablet ) {
+        max-height: 185px;
+        font-size: 28px;
+      }
+      @include breakpoint( $laptop ) {
+        font-size: 30px;
+      }
+
+      &:before {
+        display: none;
+      }
+
+      &:first-child button,
+      &:has(.active) + li button {
+        border-top: transparent;
+      }
+    }
+
+    &Button {
+      width: 100%;
+      padding: 0 10px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-top: 1px solid var(--color-grey-2);
+      text-align: center;
+      justify-content: center;
+      transition: background-color .3s, color .3s;
+      @include breakpoint( $tablet ) {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 0 12px;
+        padding-left: 20px;
+      }
+      @include breakpoint( $laptop ) {
+        padding: 0 50px;
+        gap: 0 45px;
+      }
+
+      &:hover {
+        @media (hover: hover) {
+          text-decoration: none;
+        }
+      }
+
+      &.active {
+        background: var(--color);
+        color: #ffffff;
+        border-color: transparent;
+      }
+    }
+
+    &Icon {
+      width: 54px;
+      height: 54px;
+      mask: var(--icon) no-repeat center;
+      mask-size: 40px auto;
+      background: currentColor;
+      @include breakpoint( $tablet ) {
+        width: 57px;
+        height: 57px;
+        mask-size: 45px auto;
+      }
+    }
+
+    &Title {
+
+    }
+  }
+
+  &__items {
+    position: sticky;
+    top: calc( var(--section-margin) + var(--header-offset) );
+    background: var(--color-grey-3);
+    overflow: hidden;
+    padding: 0 20px;
+    flex: 1;
+    @include breakpoint( $tablet ) {
+      padding: 0 35px;
+    }
+    @include breakpoint( $laptop ) {
+      padding: 0 150px;
+    }
+  }
+
+  &__item {
+    padding: 25px 0 0;
+    @include breakpoint( $tablet ) {
+      padding: 45px 0 0;
+    }
+    @include breakpoint( $laptop ) {
+      padding: 50px 0 0;
+    }
+    @include breakpoint( $desktop ) {
+      padding: 55px 0 0;
+    }
+
+    &:last-child {
+      padding-bottom: 25px;
+      @include breakpoint( $tablet ) {
+        padding-bottom: 45px;
+      }
+      @include breakpoint( $laptop ) {
+        padding-bottom: 50px;
+      }
+    }
+
+    &Header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      font-weight: 600;
+      gap: 10px 33px;
+      margin-bottom: 40px;
+      @include breakpoint( $laptop ) {
+        font-size: 30px;
+      }
+
+      h2 {
+        font-size: inherit;
+        margin: 0;
+      }
+
+      &Divider {
+        position: relative;
+        width: 3px;
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 3px;
+          height: 20px;
+          background: currentColor;
+          translate: 0 -50%;
+        }
+      }
+    }
+  }
+}

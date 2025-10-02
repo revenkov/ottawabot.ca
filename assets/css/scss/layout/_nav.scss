@@ -79,7 +79,7 @@
   @include breakpoint( $laptop ) {
     position: absolute;
     top: -26px;
-    right: 0;
+    right: calc(var(--container-padding-x)/2);
     gap: min(63px, 3.15vw);
   }
 
@@ -91,6 +91,10 @@
     width: 100%;
     @include breakpoint( $laptop ) {
       border: none;
+    }
+
+    &:before {
+      display: none;
     }
 
     >.menu-item-link-wrapper {
@@ -116,6 +120,7 @@
         font-weight: 600;
         text-transform: uppercase;
         line-height: 1.2;
+        color: currentColor;
         @include breakpoint( $laptop ) {
           min-height: 110px;
         }
@@ -171,6 +176,11 @@
           justify-content: center;
           flex-wrap: wrap;
           background: var(--color-grey-3);
+          padding: 0;
+
+          &:before {
+            display: none;
+          }
 
           >.menu-item-link-wrapper {
             display: flex;
@@ -194,6 +204,7 @@
               text-align: center;
               line-height: 1.2;
               padding: 20px 0;
+              color: currentColor;
             }
 
             >.menu-item-button {
@@ -237,6 +248,11 @@
                 justify-content: center;
                 flex-wrap: wrap;
                 background: #F9F9F9;
+                padding: 0;
+
+                &:before {
+                  display: none;
+                }
 
                 >.menu-item-link-wrapper {
                   display: flex;
@@ -256,6 +272,7 @@
                     font-weight: 600;
                     text-align: center;
                     line-height: 1.2;
+                    color: currentColor;
                   }
                 }
               }
@@ -353,6 +370,7 @@
   padding: 0;
   margin: 0 0 30px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   gap: 1px;
   @include breakpoint( $tablet ) {
@@ -361,8 +379,8 @@
   @include breakpoint( $laptop ) {
     margin: 0;
     position: absolute;
-    top: -50px;
-    right: 167px;
+    top: -48px;
+    right: 200px;
   }
 
   >.menu-item {
@@ -370,6 +388,10 @@
     padding: 0 8px;
     @include breakpoint( $tablet ) {
       padding: 0 30px;
+    }
+
+    &:before {
+      display: none;
     }
 
     &:after {
@@ -398,6 +420,7 @@
         display: flex;
         align-items: center;
         white-space: nowrap;
+        color: currentColor;
       }
     }
   }

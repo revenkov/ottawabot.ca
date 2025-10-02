@@ -1,0 +1,60 @@
+.ctaBlock {
+  position: relative;
+  text-align: center;
+  background: var(--color-grey-3);
+  margin-top: 95px;
+  padding-top: 77px;
+  @include breakpoint( $tablet ) {
+    margin-top: 110px;
+    padding-top: 40px;
+  }
+  @include breakpoint( $laptop ) {
+    margin: 146px calc( var(--container-padding-x) / -2 ) 0;
+    padding-bottom: 40px;
+  }
+
+  &:before {
+    content: "";
+    display: block;
+    background: var(--color-orange);
+    opacity: 0.85;
+    width: 154px;
+    height: 154px;
+    margin-bottom: 50px;
+    border-radius: 100%;
+    position: absolute;
+    left: 16px;
+    top: 0;
+    translate: 0 -50%;
+    @include breakpoint( $tablet ) {
+      width: 210px;
+      height: 210px;
+      left: 34px;
+    }
+    @include breakpoint( $laptop ) {
+      width: 250px;
+      height: 250px;
+    }
+  }
+
+  &__inner {
+    padding: 50px 16px;
+    max-width: 375px;
+    margin: 0 auto;
+    @include breakpoint( $tablet ) {
+      padding: 84px 34px;
+    }
+    @include breakpoint( $laptop ) {
+      max-width: 680px;
+    }
+
+    p {
+      @include breakpoint( $laptop ) {
+        margin: 50px 0;
+      }
+
+      &:first-child { margin-top: 0 }
+      &:last-child { margin-bottom: 0 }
+    }
+  }
+}

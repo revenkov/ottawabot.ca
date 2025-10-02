@@ -28,8 +28,12 @@
 @import 'blocks/logos';
 @import 'blocks/newsletter';
 @import 'blocks/accordion';
+@import 'blocks/timeline';
+@import 'blocks/carousel';
+@import 'blocks/cta';
 
 @import 'templates/404';
+@import 'templates/home';
 @import 'templates/achievements';
 @import 'templates/hire-local';
 @import 'templates/team';
@@ -41,3 +45,5 @@
 @import 'vendors/tiny-slider';
 
 @import 'wp-plugins/contact-form-7';
+
+@import "../../../node_modules/tiny-slider/src/tiny-slider";

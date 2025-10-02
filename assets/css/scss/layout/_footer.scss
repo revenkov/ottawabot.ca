@@ -231,6 +231,7 @@
   }
 
   li {
+    padding: 0;
     @include breakpoint($tablet) {
       width: 50%;
     }
@@ -238,8 +239,13 @@
       width: 43%;
     }
 
+    &:before {
+      display: none;
+    }
+
     a {
       text-decoration: underline;
+      color: currentColor;
 
       &:hover {
         @media (hover: hover) {

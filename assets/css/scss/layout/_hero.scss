@@ -9,7 +9,7 @@
     margin: 0 calc( var(--container-padding-x)*-.5 );
   }
   @include breakpoint( $desktop ) {
-    margin: 0 calc( var(--container-padding-x)*-.5 );
+    margin: 0;
   }
 
   &__imageContainer {

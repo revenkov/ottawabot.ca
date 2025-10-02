@@ -1,0 +1,113 @@
+.carousel {
+  margin: 0 calc( var(--container-padding-x) / -2 );
+  @include breakpoint( $tablet ) {
+    margin: 0 175px 0 0;
+  }
+  @include breakpoint( $laptop ) {
+    margin: 0 310px 0 0;
+  }
+
+  &__slides {
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__slide {
+    background: var(--color-grey-3);
+    padding: 40px 34px;
+    height: 100%;
+    @include breakpoint( $tablet ) {
+      padding: 56px 72px;
+    }
+    @include breakpoint( $laptop ) {
+      padding: 60px 60px;
+    }
+
+    &Icon {
+      width: 50px;
+      height: 50px;
+      mask: var(--icon-url) no-repeat left center;
+      mask-size: contain;
+      background: var(--color-purple);
+      margin-bottom: 28px;
+    }
+  }
+
+  .tns-ovh {
+    overflow: visible;
+  }
+
+  .tns-controls {
+    margin-top: 38px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 34px;
+    @include breakpoint( $tablet ) {
+      margin-right: calc( -34px - 46px );
+      margin-top: 43px;
+    }
+    @include breakpoint( $laptop ) {
+      margin-top: 52px;
+      margin-right: calc( -34px * 2 - 46px * 2 );
+    }
+
+    button {
+      position: relative;
+      width: 43px;
+      height: 43px;
+      background: var(--color-primary);
+      color: #ffffff;
+      cursor: pointer;
+      transition: background-color .3s, color .3s, opacity .3s;
+      @include breakpoint( $tablet ) {
+        width: 46px;
+        height: 46px;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        background: currentColor;
+        width: 30px;
+        height: 30px;
+        mask: var(--icon-angle) no-repeat center;
+        mask-size: auto 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        @include breakpoint( $tablet ) {
+          mask-size: auto 32px;
+        }
+      }
+
+      &[data-controls="prev"] {
+        &:after {
+          transform: rotate(180deg);
+        }
+      }
+
+      &:not([disabled]):hover {
+        @media (hover: hover) {
+          background: var(--color-grey-2);
+          text-decoration: none;
+        }
+      }
+
+      &[disabled] {
+        visibility: visible;
+        opacity: .3;
+        cursor: not-allowed;
+        background: var(--color-grey-2);
+      }
+    }
+  }
+}
+
+
+.section:has(.carousel) {
+  overflow: hidden;
+  @include breakpoint( $tablet ) {
+    margin-top: -30px;
+  }
+}
