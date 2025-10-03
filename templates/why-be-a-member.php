@@ -34,8 +34,10 @@ if ( !empty( $icon_cards ) ) :
                 <?php foreach ( $icon_cards as $item ) : ?>
                     <div>
                         <div class="carousel__slide">
-                            <div class="carousel__slideIcon" style="--icon-url: url(<?php echo $item['icon']['url'] ?>);"></div>
-                            <?php echo $item['content']; ?>
+                            <div class="iconCard">
+                                <div class="iconCard__icon" style="--icon-url: url(<?php echo $item['icon']['url'] ?>);"></div>
+                                <?php echo $item['content']; ?>
+                            </div>
                         </div>
                     </div>
                 <?php endforeach; ?>

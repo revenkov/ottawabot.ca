@@ -30,7 +30,7 @@
 }
 
 
-.iconCards {
+.iconsList {
   display: flex;
   flex-direction: column;
   gap: 59px 70px;
@@ -50,7 +50,7 @@
     gap: 110px 100px;
   }
 
-  &__card {
+  &__item {
     display: flex;
     flex-direction: column;
     align-items: center;

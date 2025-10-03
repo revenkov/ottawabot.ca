@@ -29,7 +29,6 @@ $desktop: $xl;
     --grid-columns: 20;
   }
   @include breakpoint( $laptop ) {
-    --container-padding-x: 64px;
     --header-height: 168px;
     --header-offset: 0px;
     --section-margin: 137px;
@@ -37,6 +36,6 @@ $desktop: $xl;
     --grid-gap: 36px;
   }
   @include breakpoint( $desktop ) {
-
+    --container-padding-x: 64px;
   }
 }

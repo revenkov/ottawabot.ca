@@ -2,8 +2,8 @@
 global $post;
 $hero_images = get_field('hero_images', selectrum_get_hero_image_post_id());
 $desktop = $hero_images['desktop']['ID'] ?? 3058;
-$tablet = $hero_images['tablet']['ID'] ?? 3056;
-$mobile = $hero_images['mobile']['ID'] ?? 3057;
+$tablet = $hero_images['tablet']['ID'] ?? ($desktop ? false : 3056);
+$mobile = $hero_images['mobile']['ID'] ?? ($desktop ? false : 3057);
 ?>
 <div class="container container--fullWidth">
     <div class="hero">

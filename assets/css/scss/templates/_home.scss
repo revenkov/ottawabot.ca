@@ -7,7 +7,7 @@
     margin: 0;
   }
   @include breakpoint( $desktop ) {
-    margin: 0 calc( var(--container-padding-x)/-2 ) 160px;
+    margin: 0 0 160px;
   }
 
   &__image,
@@ -161,6 +161,9 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 35px 0;
+  @include breakpoint( $laptop ) {
+    //margin: 0 calc( var(--container-padding-x) / -2 );
+  }
 
   &__col1 {
     width: 100%;
@@ -182,14 +185,14 @@
       translate: calc( var(--container-padding-x)  ) 0;
     }
     @include breakpoint( $laptop ) {
-      translate: calc( var(--container-padding-x) / 2 ) 0;
+      translate: none;
       width: 44%;
     }
   }
 
   &__textContainer {
     @include breakpoint( $laptop ) {
-      max-width: 620px;
+      max-width: 610px;
       margin: 0 auto;
     }
   }
@@ -199,6 +202,9 @@
     margin-right: 16px;
     @include breakpoint( $tablet ) {
       margin: 0;
+    }
+    @include breakpoint( $laptop ) {
+      translate: calc( var(--container-padding-x) * .5 ) 0;
     }
 
     &Divider {
@@ -412,7 +418,7 @@
       --padding-bottom: 63.5%;
     }
     @include breakpoint($laptop) {
-      --padding-bottom: 91%;
+      --padding-bottom: 82%;
     }
   }
 
@@ -491,6 +497,11 @@
   }
 
   &:hover & {
+
+    &__image {
+      scale: 1.05;
+    }
+
     &__button {
       &:before {
         @media (hover: hover) {

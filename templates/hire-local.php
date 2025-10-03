@@ -59,11 +59,11 @@ $icon_cards = get_field('icon_cards');
         <?php echo $content_group_2['content']; ?>
 
         <?php if ( !empty( $icon_cards ) ) : ?>
-        <div class="iconCards">
+        <div class="iconsList">
             <?php foreach ( $icon_cards as $item ) : ?>
-                <div class="iconCards__card">
-                    <div class="iconCards__cardIcon"><?php echo wp_get_attachment_image( $item['icon']['ID'] ); ?></div>
-                    <div class="h4 iconCards__cardTitle"><?php echo $item['title']; ?></div>
+                <div class="iconsList__item">
+                    <div class="iconsList__itemIcon"><?php echo wp_get_attachment_image( $item['icon']['ID'] ); ?></div>
+                    <div class="h4 iconsList__itemTitle"><?php echo $item['title']; ?></div>
                 </div>
             <?php endforeach; ?>
         </div>

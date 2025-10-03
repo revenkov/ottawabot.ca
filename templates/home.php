@@ -21,7 +21,7 @@ $button_1 = get_field('button_1');
 $button_2 = get_field('button_2');
 $button_3 = get_field('button_3');
 ?>
-<div class="container">
+<div class="container container--fullWidth">
     <div class="homeHero">
         <?php if ( !empty( $video_mp4 ) || !empty( $video_webm ) ) : ?>
             <video class="homeHero__video" width="<?php echo $video_mp4['width'] ?? 'auto'; ?>" height="<?php echo $video_mp4['height'] ?? 'auto'; ?>" autoplay muted loop playsinline>
@@ -42,19 +42,19 @@ $button_3 = get_field('button_3');
             </div>
             <div class="homeHero__buttons">
                 <?php if ( !empty( $button_1 ) ) : ?>
-                    <a href="<?php echo $button_1['url']; ?>" class="homeHero__button">
+                    <a href="<?php echo $button_1['url']; ?>" class="homeHero__button" target="<?php echo $button_1['target'] ?? '_self'; ?>">
                         <span class="homeHero__buttonText"><?php echo $button_1['title']; ?></span>
                         <span class="homeHero__buttonArrow"></span>
                     </a>
                 <?php endif; ?>
                 <?php if ( !empty( $button_2 ) ) : ?>
-                    <a href="<?php echo $button_2['url']; ?>" class="homeHero__button">
+                    <a href="<?php echo $button_2['url']; ?>" class="homeHero__button" target="<?php echo $button_2['target'] ?? '_self'; ?>">
                         <span class="homeHero__buttonText"><?php echo $button_2['title']; ?></span>
                         <span class="homeHero__buttonArrow"></span>
                     </a>
                 <?php endif; ?>
                 <?php if ( !empty( $button_3 ) ) : ?>
-                    <a href="<?php echo $button_3['url']; ?>" class="homeHero__button">
+                    <a href="<?php echo $button_3['url']; ?>" class="homeHero__button" target="<?php echo $button_3['target'] ?? '_self'; ?>">
                         <span class="homeHero__buttonText"><?php echo $button_3['title']; ?></span>
                         <span class="homeHero__buttonArrow"></span>
                     </a>
@@ -148,7 +148,7 @@ if ( !empty( $featured_events ) ) :
                 <?php foreach ( $featured_events as $event ) : ?>
                     <div class="featuredEvents__item">
                         <div class="eventTeaser">
-                            <div class="imageBlock imageBlock--formatted eventTeaser__imageBlock"><?php echo wp_get_attachment_image( $event['background_image']['ID'], 'full' ); ?></div>
+                            <div class="imageBlock imageBlock--formatted eventTeaser__imageBlock"><?php echo wp_get_attachment_image( $event['background_image']['ID'], 'full', false, ['class'=>'eventTeaser__image'] ); ?></div>
                             <a class="eventTeaser__content" href="<?php echo $event['url']; ?>">
                                 <span class="eventTeaser__date"><?php echo date_i18n('F d, Y', strtotime($event['date'])); ?></span>
                                 <h3 class="eventTeaser__title"><?php echo $event['title']; ?></h3>

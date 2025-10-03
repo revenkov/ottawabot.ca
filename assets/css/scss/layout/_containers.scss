@@ -26,16 +26,25 @@ body {
   }
   @include breakpoint( $desktop ) {
     padding-bottom: 305px;
-    padding-bottom: 200px;
+    padding-bottom: 250px;
   }
 }
 
 .container {
   position: relative;
-  margin: 0 auto;
+  margin: 40px auto;
   max-width: var(--container-max-width);
   padding: 0 var(--container-padding-x);
   width: 100%;
+  @include breakpoint( $tablet ) {
+    margin: 70px auto;
+  }
+  @include breakpoint( $laptop ) {
+    margin: 90px auto;
+  }
+
+  &:first-child { margin-top: 0 }
+  &:last-child { margin-bottom: 0 }
 
   &--fullWidth {
     max-width: none;
@@ -52,7 +61,7 @@ body {
   &--narrow {
     @include breakpoint( $tablet ) {
       width: 72%;
-      max-width: 970px;
+      max-width: 980px;
     }
   }
 }

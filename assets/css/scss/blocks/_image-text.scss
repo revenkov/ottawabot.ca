@@ -1,7 +1,4 @@
 .textImageBlock {
-  @include breakpoint( $laptop ) {
-    margin: 0 calc( var(--container-padding-x)*-.5 );
-  }
 
   &__cols {
     display: flex;
@@ -91,7 +88,7 @@
           margin-left: calc( var(--container-padding-x) * -1 );
         }
         @include breakpoint($laptop) {
-          margin-left: 0;
+          margin-left: calc( var(--container-padding-x) * -.5 );
         }
       }
 
@@ -123,7 +120,7 @@
           margin-right: calc( var(--container-padding-x) * -1 );
         }
         @include breakpoint($laptop) {
-          margin-right: 0;
+          margin-right: calc( var(--container-padding-x) * -.5 );
         }
       }
 
