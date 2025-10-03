@@ -48,6 +48,7 @@ h1, .h1 {
   @include breakpoint($tablet) {
     font-size: 2.5rem;
     line-height: 3rem;
+    margin-bottom: 32px;
   }
   @include breakpoint( $laptop ) {
     font-size: 3.75rem;
@@ -64,12 +65,12 @@ h2, .h2 {
   @include breakpoint($tablet) {
     font-size: 1.8125rem;
     line-height: 2.75rem;
-    margin-bottom: 36px;
+    margin-bottom: 30px;
   }
   @include breakpoint( $laptop ) {
     font-size: 2.25rem;
     line-height: 3.125rem;
-    margin-bottom: 24px;
+    margin-bottom: 36px;
   }
 }
 
@@ -124,7 +125,7 @@ p {
     //display: flex;
     //flex-wrap: wrap;
     //gap: 1rem 1.5rem;
-    @include breakpoint($tablet) {
+    @include breakpoint($laptop) {
       margin: 36px 0;
     }
   }
@@ -173,7 +174,13 @@ del {
 }
 
 p, ul, ol, blockquote, hr {
-  margin: 0 0 36px;
+  margin: 0 0 28px;
+  @include breakpoint($tablet) {
+    margin-bottom: 32px;
+  }
+  @include breakpoint($laptop) {
+    margin-bottom: 36px;
+  }
 
   + {
 

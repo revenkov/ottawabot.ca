@@ -55,21 +55,47 @@ jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(functio
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var number_flip__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! number-flip */ "./node_modules/number-flip/dist/index.js");
-/* harmony import */ var number_flip__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(number_flip__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery/src/jquery */ "./node_modules/jquery/src/jquery.js");
+/* harmony import */ var jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var number_flip__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! number-flip */ "./node_modules/number-flip/dist/index.js");
+/* harmony import */ var number_flip__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(number_flip__WEBPACK_IMPORTED_MODULE_1__);
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {
-  new number_flip__WEBPACK_IMPORTED_MODULE_0__.Flip({
-    node: document.querySelector('.number__counter'),
-    from: 0,
-    to: 12000,
-    separator: ',',
-    duration: 1,
-    direct: false
+
+function initFlip() {
+  jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()('.number').each(function (index, element) {
+    let scrollTop = jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).scrollTop();
+    if (!jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).hasClass('run') && jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).offset().top < scrollTop + window.outerHeight) {
+      jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).addClass('run');
+      new number_flip__WEBPACK_IMPORTED_MODULE_1__.Flip({
+        node: jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).find('.number__counter')[0],
+        from: 0,
+        to: jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(element).data('to'),
+        separator: ',',
+        duration: 1,
+        direct: false
+      });
+    }
   });
+}
+jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(initFlip);
+jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('scroll', initFlip);
+
+/***/ }),
+
+/***/ "./assets/js/header.js":
+/*!*****************************!*\
+  !*** ./assets/js/header.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery/src/jquery */ "./node_modules/jquery/src/jquery.js");
+/* harmony import */ var jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on("load scroll", function () {
+  let scrollTop = jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).scrollTop();
+  jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()('.siteHeader').toggleClass('siteHeader--sticky', Boolean(scrollTop));
 });
 
 /***/ }),
@@ -134,6 +160,40 @@ jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(functio
     }
   };
   $menu.init();
+});
+
+/***/ }),
+
+/***/ "./assets/js/testimonials.js":
+/*!***********************************!*\
+  !*** ./assets/js/testimonials.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery/src/jquery */ "./node_modules/jquery/src/jquery.js");
+/* harmony import */ var jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var tiny_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tiny-slider */ "./node_modules/tiny-slider/dist/tiny-slider.js");
+
+
+jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function ($) {
+  $('.testimonialsSlider').each(function (index, element) {
+    const $carousel = $(element);
+    const $container = $carousel.find('[class*="__slides"]');
+    (0,tiny_slider__WEBPACK_IMPORTED_MODULE_1__.tns)({
+      container: $container[0],
+      items: 1,
+      loop: false,
+      gutter: 0,
+      autoplay: false,
+      autoplayButtonOutput: false,
+      autoplayHoverPause: true,
+      nav: true,
+      navPosition: 'bottom',
+      controls: false
+    });
+  });
 });
 
 /***/ }),
@@ -18403,10 +18463,14 @@ var __webpack_exports__ = {};
   !*** ./assets/js/main.js ***!
   \***************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _navigation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./navigation */ "./assets/js/navigation.js");
-/* harmony import */ var _flip_numbers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./flip-numbers */ "./assets/js/flip-numbers.js");
-/* harmony import */ var _timeline__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./timeline */ "./assets/js/timeline.js");
-/* harmony import */ var _carousel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./carousel */ "./assets/js/carousel.js");
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header */ "./assets/js/header.js");
+/* harmony import */ var _navigation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navigation */ "./assets/js/navigation.js");
+/* harmony import */ var _flip_numbers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./flip-numbers */ "./assets/js/flip-numbers.js");
+/* harmony import */ var _timeline__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./timeline */ "./assets/js/timeline.js");
+/* harmony import */ var _carousel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./carousel */ "./assets/js/carousel.js");
+/* harmony import */ var _testimonials__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./testimonials */ "./assets/js/testimonials.js");
+
+
 
 
 

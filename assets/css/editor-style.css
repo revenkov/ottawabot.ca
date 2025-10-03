@@ -14,7 +14,7 @@
 
 :root {
   --container-max-width: 1932px;
-  --container-padding-x: 32px;
+  --container-padding-x: 34px;
   --header-height: 93px;
   --header-offset: var(--header-height);
   --section-margin: 49px;
@@ -158,6 +158,7 @@ h1, .h1 {
   h1, .h1 {
     font-size: 2.5rem;
     line-height: 3rem;
+    margin-bottom: 32px;
   }
 }
 @media (min-width: 1260px) {
@@ -178,14 +179,14 @@ h2, .h2 {
   h2, .h2 {
     font-size: 1.8125rem;
     line-height: 2.75rem;
-    margin-bottom: 36px;
+    margin-bottom: 30px;
   }
 }
 @media (min-width: 1260px) {
   h2, .h2 {
     font-size: 2.25rem;
     line-height: 3.125rem;
-    margin-bottom: 24px;
+    margin-bottom: 36px;
   }
 }
 
@@ -237,7 +238,7 @@ a {
   }
 }
 
-@media (min-width: 640px) {
+@media (min-width: 1260px) {
   p:has(.button, .secondaryButton) {
     margin: 36px 0;
   }
@@ -270,7 +271,17 @@ address {
 }
 
 p, ul, ol, blockquote, hr {
-  margin: 0 0 36px;
+  margin: 0 0 28px;
+}
+@media (min-width: 640px) {
+  p, ul, ol, blockquote, hr {
+    margin-bottom: 32px;
+  }
+}
+@media (min-width: 1260px) {
+  p, ul, ol, blockquote, hr {
+    margin-bottom: 36px;
+  }
 }
 p + h1, p + .h1, p + h2, p + .h2, p + h3, p + .h3, p + h4, p + .h4, p + h5, p + .h5, p + h6, p + .h6, ul + h1, ul + .h1, ul + h2, ul + .h2, ul + h3, ul + .h3, ul + h4, ul + .h4, ul + h5, ul + .h5, ul + h6, ul + .h6, ol + h1, ol + .h1, ol + h2, ol + .h2, ol + h3, ol + .h3, ol + h4, ol + .h4, ol + h5, ol + .h5, ol + h6, ol + .h6, blockquote + h1, blockquote + .h1, blockquote + h2, blockquote + .h2, blockquote + h3, blockquote + .h3, blockquote + h4, blockquote + .h4, blockquote + h5, blockquote + .h5, blockquote + h6, blockquote + .h6, hr + h1, hr + .h1, hr + h2, hr + .h2, hr + h3, hr + .h3, hr + h4, hr + .h4, hr + h5, hr + .h5, hr + h6, hr + .h6 {
   margin-top: 3rem;

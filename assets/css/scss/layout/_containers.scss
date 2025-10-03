@@ -19,11 +19,14 @@ body {
   width: 100%;
   //max-width: 1932px;
   padding-bottom: 213px;
+  padding-bottom: 185px;
   @include breakpoint( $tablet ) {
     padding-bottom: 286px;
+    padding-bottom: 274px;
   }
   @include breakpoint( $desktop ) {
     padding-bottom: 305px;
+    padding-bottom: 200px;
   }
 }
 

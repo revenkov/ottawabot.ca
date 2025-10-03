@@ -2,6 +2,13 @@
   position: relative;
   height: calc( 100vh - var(--header-height) );
   margin: 0 calc( var(--container-padding-x)/-2 );
+  min-height: fit-content;
+  @include breakpoint( $tablet ) {
+    margin: 0;
+  }
+  @include breakpoint( $desktop ) {
+    margin: 0 calc( var(--container-padding-x)/-2 ) 160px;
+  }
 
   &__image,
   &__video {
@@ -14,8 +21,7 @@
   }
 
   &__overlay {
-    position: absolute;
-    inset: 0;
+    position: relative;
     background: rgba(0, 0, 0, 0.4);
     color: #ffffff;
     text-align: center;
@@ -24,6 +30,11 @@
     align-items: stretch;
     gap: 5px 0;
     padding: 25px 17px;
+    min-height: 100%;
+    @include breakpoint( $tablet ) {
+      padding: 40px 36px;
+      gap: 36px 0;
+    }
   }
 
   &__text {
@@ -31,6 +42,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @include breakpoint( $laptop ) {
+      max-width: 900px;
+      margin: 0 auto;
+    }
   }
 
   &__subtitle {
@@ -42,6 +57,9 @@
     display: flex;
     flex-wrap: wrap;
     gap: 22px 22px;
+    @include breakpoint( $tablet ) {
+      gap: 35px 35px;
+    }
   }
 
   &__button {
@@ -55,6 +73,18 @@
     padding: 0 18px;
     font-weight: 600;
     text-transform: uppercase;
+    @include breakpoint( $tablet ) {
+      height: 120px;
+      padding: 0 36px 0 58px;
+    }
+    @include breakpoint( $laptop ) {
+      width: auto;
+      flex: 1;
+      padding: 0 36px;
+    }
+    @include breakpoint( $desktop ) {
+      padding-right: 60px;
+    }
 
     &:before {
       content: '';
@@ -85,10 +115,6 @@
         height: 2px;
         background: currentColor;
         transition: left .3s;
-        @include breakpoint( $laptop ) {
-          right: 18px;
-          left: 16px;
-        }
       }
 
       &:after {
@@ -124,6 +150,585 @@
           }
         }
       }
+    }
+  }
+}
+
+
+.homeAboutBlock {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 35px 0;
+
+  &__col1 {
+    width: 100%;
+    @include breakpoint( $tablet ) {
+      padding: 0 var(--container-padding-x);
+      width: 55%;
+      margin-bottom: 80px;
+    }
+    @include breakpoint( $laptop ) {
+      margin-bottom: 176px;
+      width: 51%;
+    }
+  }
+
+  &__col2 {
+    width: 100%;
+    @include breakpoint( $tablet ) {
+      width: 45%;
+      translate: calc( var(--container-padding-x)  ) 0;
+    }
+    @include breakpoint( $laptop ) {
+      translate: calc( var(--container-padding-x) / 2 ) 0;
+      width: 44%;
+    }
+  }
+
+  &__textContainer {
+    @include breakpoint( $laptop ) {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+  }
+
+  &__numbers {
+    background: var(--color-grey-3);
+    margin-right: 16px;
+    @include breakpoint( $tablet ) {
+      margin: 0;
+    }
+
+    &Divider {
+      height: 1px;
+      background: var(--color-grey-2);
+      margin-right: -32px;
+      @include breakpoint( $tablet ) {
+        margin: 0 0 0 -34px;
+      }
+      @include breakpoint( $laptop ) {
+        margin: 0 188px 0 -118px;
+      }
+    }
+  }
+
+  &__number {
+    padding: 35px 55px 40px;
+    @include breakpoint( $tablet ) {
+      padding: 80px 68px;
+    }
+    @include breakpoint( $laptop ) {
+      padding: 80px 110px;
+    }
+
+    .number {
+      margin: 0;
+
+      &__counter {
+        margin: 0 0 0 -10px;
+        @include breakpoint( $tablet ) {
+          margin-bottom: 20px;
+        }
+        @include breakpoint( $laptop ) {
+          margin-left: -15px;
+        }
+      }
+    }
+  }
+}
+
+
+.homeIconCards {
+  display: flex;
+  flex-direction: column;
+  gap: 71px 50px;
+  margin: 40px 0 54px;
+  @include breakpoint($tablet) {
+    margin: 100px 12px;
+    gap: 75px 50px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  @include breakpoint($laptop) {
+    margin: 110px auto;
+    padding: 0;
+    gap: 110px 50px;
+  }
+
+  &__card {
+    display: flex;
+    align-items: flex-start;
+    gap: 0 52px;
+    @include breakpoint($tablet) {
+      flex-direction: row;
+      gap: 50px;
+      width: calc( ( 100% - 50px ) / 2 );
+    }
+    @include breakpoint($laptop) {
+      gap: 50px;
+    }
+
+    &Icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 100px;
+      background: var(--color-grey-3);
+      border-radius: 100%;
+      @include breakpoint($tablet) {
+        width: 100px;
+        height: 100px;
+        margin: 0;
+      }
+
+      img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+      }
+    }
+
+    &Text {
+      flex: 1;
+      @include breakpoint($laptop) {
+        padding-top: 5px;
+      }
+    }
+
+    &Category {
+      position: relative;
+      text-transform: uppercase;
+      margin-bottom: 34px;
+      @include breakpoint($laptop) {
+        margin-bottom: 44px;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 20px;
+        height: 3px;
+        background: currentColor;
+        @include breakpoint($laptop) {
+          bottom: -16px;
+        }
+      }
+    }
+
+    &Title {
+      font-weight: 500;
+      line-height: 1.5;
+      @include breakpoint($tablet) {
+        font-size: 22px;
+        line-height: 1.2;
+      }
+      @include breakpoint($laptop) {
+        font-size: 30px;
+        font-weight: 600;
+      }
+    }
+
+    &:nth-child(2n+1) & {
+
+      &Title {
+        @include breakpoint($laptop) {
+          margin-right: -30px;
+        }
+      }
+    }
+  }
+}
+
+
+.featuredEvents {
+  margin: 0 calc( var(--container-padding-x) / -2 );
+  @include breakpoint($tablet) {
+    margin: 0 calc( var(--container-padding-x) * 1 );
+  }
+  @include breakpoint($laptop) {
+    margin: 0;
+  }
+
+  &__header {
+    margin-bottom: 25px;
+    @include breakpoint($tablet) {
+      margin-bottom: 48px;
+    }
+    @include breakpoint($laptop) {
+      text-align: center;
+    }
+  }
+
+  &__listing {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px 30px;
+    @include breakpoint($tablet) {
+      gap: 34px 30px
+    }
+    @include breakpoint($laptop) {
+      display: flex;
+      justify-content: center;
+      gap: 35px;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    @include breakpoint($laptop) {
+      width: auto;
+      flex: 1;
+      max-width: 600px;
+    }
+  }
+
+  &__pagination {
+    margin-top: 40px;
+    text-align: center;
+    @include breakpoint($tablet) {
+      margin-top: 55px;
+    }
+    @include breakpoint($laptop) {
+      margin-top: 70px;
+    }
+  }
+}
+
+
+.eventTeaser {
+  position: relative;
+  color: #ffffff;
+
+  &__imageBlock {
+    --padding-bottom: 94%;
+    min-height: auto;
+    @include breakpoint($tablet) {
+      --padding-bottom: 63.5%;
+    }
+    @include breakpoint($laptop) {
+      --padding-bottom: 91%;
+    }
+  }
+
+  &__content {
+    background: rgba(0,0,0,.4);
+    position: absolute;
+    inset: 0;
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+    background: var(--color-purple);
+    height: 44px;
+    padding: 0 16px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &__title {
+    position: absolute;
+    left: 16px;
+    bottom: 27px;
+    right: 132px;
+    margin: 0;
+    @include breakpoint($tablet) {
+      left: 36px;
+      bottom: 36px;
+      right: 160px;
+    }
+    @include breakpoint($desktop) {
+      left: 60px;
+      bottom: 40px;
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 53px;
+    height: 32px;
+    position: absolute;
+    right: 40px;
+    bottom: 34px;
+    @include breakpoint($desktop) {
+      right: 60px;
+      bottom: 40px;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 2px;
+      translate: 0 -50%;
+      height: 2px;
+      background: currentColor;
+      transition: left .3s;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      translate: 0 -50%;
+      width: 16px;
+      height: 32px;
+      mask: var(--icon-angle) no-repeat center;
+      mask-size: contain;
+      background: currentColor;
+    }
+  }
+
+  &:hover & {
+    &__button {
+      &:before {
+        @media (hover: hover) {
+          left: calc( 100% - 2px );
+        }
+      }
+    }
+  }
+}
+
+
+.latestNews {
+  position: relative;
+  margin: 0 calc( var(--container-padding-x)/-2 ) 136px;
+  padding: 20px calc( var(--container-padding-x)/2 );
+  @include breakpoint($tablet) {
+    margin: 0 calc( var(--container-padding-x) * 1 ) 156px;
+    padding: 40px var(--container-padding-x);
+  }
+  @include breakpoint($laptop) {
+    margin: 0 calc( var(--container-padding-x) / -2 ) 156px;
+    padding: 131px var(--container-padding-x) 112px;
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: var(--color-grey-3);
+    z-index: 10;
+  }
+
+  &__items {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 22px 30px;
+    z-index: 20;
+    @include breakpoint($tablet) {
+      gap: 36px 36px;
+    }
+    @include breakpoint($laptop) {
+      max-width: 1492px;
+      margin: 0 auto;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    @include breakpoint($laptop) {
+      width: calc( ( 100% - 36px ) / 2 );
+    }
+  }
+
+  &__intro {
+    padding: 10px 0;
+    @include breakpoint($tablet) {
+      padding: 15px 0;
+    }
+    @include breakpoint($laptop) {
+      max-width: 430px;
+      padding: 50px 0 0;
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    width: 235px;
+    height: 235px;
+    position: absolute;
+    bottom: -117px;
+    right: calc( 100% - 100px );
+    background: url('../images/circles.svg') no-repeat center;
+    background-size: contain;
+    @include breakpoint($tablet) {
+      width: 518px;
+      height: 518px;
+      bottom: -177px;
+      right: calc( 100% - 190px );
+    }
+    @include breakpoint($laptop) {
+      width: 822px;
+      height: 822px;
+      bottom: -131px;
+      right: calc( 100% - 340px );
+    }
+  }
+}
+
+
+.newsTeaser {
+  position: relative;
+  background: #ffffff;
+  padding: 26px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 46px;
+  text-decoration: none;
+  height: 100%;
+  @include breakpoint($tablet) {
+    padding: 46px 100px 46px 36px;
+    gap: 70px;
+  }
+  @include breakpoint($laptop) {
+    min-height: 400px;
+    padding: 46px 30% 46px 60px;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__button {
+    display: block;
+    width: 53px;
+    height: 32px;
+    position: absolute;
+    right: 18px;
+    bottom: 26px;
+    color: var(--color-primary);
+    @include breakpoint($tablet) {
+      right: 36px;
+      bottom: 44px;
+    }
+    @include breakpoint($laptop) {
+      right: 60px;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 2px;
+      translate: 0 -50%;
+      height: 2px;
+      background: currentColor;
+      transition: left .3s;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      translate: 0 -50%;
+      width: 16px;
+      height: 32px;
+      mask: var(--icon-angle) no-repeat center;
+      mask-size: contain;
+      background: currentColor;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:hover & {
+      &__button {
+        &:before {
+          left: calc( 100% - 2px );
+        }
+      }
+    }
+  }
+}
+
+
+.testimonials {
+
+  &__title {
+    @include breakpoint($tablet) {
+      text-align: center;
+    }
+  }
+}
+
+
+.testimonialsSlider {
+
+  &__slides {
+    background: var(--color-grey-3);
+  }
+
+  &__slide {
+    padding: 40px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    background: url('../images/quotes.svg') no-repeat -5px -34px;
+    background-size: 284px auto;
+    @include breakpoint($tablet) {
+      background-size: 292px auto;
+    }
+    @include breakpoint($tablet) {
+      padding: 94px 36px 58px;
+      gap: 70px 36px;
+    }
+    @include breakpoint($laptop) {
+      flex-direction: row;
+      padding: 96px 10%;
+    }
+    @include breakpoint($desktop) {
+      padding: 142px 10%;
+    }
+  }
+
+  &__highlightText {
+    font-style: italic;
+    @include breakpoint($laptop) {
+      width: 35%;
+    }
+  }
+
+  &__testimonial {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    @include breakpoint($laptop) {
+      flex: 1;
+    }
+  }
+
+  .tns-nav {
+    margin-top: 22px;
+    @include breakpoint($tablet) {
+      margin-top: 32px;
+    }
+    @include breakpoint($laptop) {
+      margin-top: 44px;
     }
   }
 }

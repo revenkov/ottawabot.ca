@@ -19,6 +19,9 @@
     height: var(--header-height);
     margin: 0 calc( var(--container-padding-x)/-2 );
     @include breakpoint( $tablet ) {
+      margin: 0;
+    }
+    @include breakpoint( $laptop ) {
       margin: 0 calc( var(--container-padding-x)/2 );
     }
   }
