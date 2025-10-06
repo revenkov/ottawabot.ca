@@ -60,8 +60,6 @@
     max-width: 220px;
     display: flex;
     justify-content: center;
-    //filter: grayscale(100%);
-    transition: filter .3s;
     @include breakpoint($tablet) {
       width: calc( calc( 100% - 70px ) / 2);
       max-width: 250px;
@@ -72,14 +70,22 @@
       max-width: none;
     }
 
-    &:hover {
-      @media (hover:hover) {
-        filter: grayscale(0);
+    img {
+      object-fit: contain;
+    }
+
+    a {
+
+      img {
+        filter: grayscale(100%);
+        transition: filter .3s;
       }
     }
 
-    img {
-      object-fit: contain;
+    &:hover img {
+      @media (hover:hover) {
+        filter: grayscale(0);
+      }
     }
   }
 }

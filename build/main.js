@@ -100,6 +100,40 @@ jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on("load scroll
 
 /***/ }),
 
+/***/ "./assets/js/logo-text-slider.js":
+/*!***************************************!*\
+  !*** ./assets/js/logo-text-slider.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery/src/jquery */ "./node_modules/jquery/src/jquery.js");
+/* harmony import */ var jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var tiny_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tiny-slider */ "./node_modules/tiny-slider/dist/tiny-slider.js");
+
+
+jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function ($) {
+  $('.logoTextSlider').each(function (index, element) {
+    const $element = $(element);
+    const $container = $element.find('[class*="__slides"]');
+    (0,tiny_slider__WEBPACK_IMPORTED_MODULE_1__.tns)({
+      container: $container[0],
+      loop: true,
+      gutter: 0,
+      autoplay: false,
+      autoplayButtonOutput: false,
+      autoplayHoverPause: true,
+      nav: true,
+      navPosition: 'bottom',
+      controls: false,
+      autoHeight: true
+    });
+  });
+});
+
+/***/ }),
+
 /***/ "./assets/js/navigation.js":
 /*!*********************************!*\
   !*** ./assets/js/navigation.js ***!
@@ -18469,6 +18503,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _timeline__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./timeline */ "./assets/js/timeline.js");
 /* harmony import */ var _carousel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./carousel */ "./assets/js/carousel.js");
 /* harmony import */ var _testimonials__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./testimonials */ "./assets/js/testimonials.js");
+/* harmony import */ var _logo_text_slider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./logo-text-slider */ "./assets/js/logo-text-slider.js");
+
 
 
 

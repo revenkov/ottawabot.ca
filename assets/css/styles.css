@@ -22,7 +22,7 @@
   :root {
     --header-height: 168px;
     --header-offset: 0px;
-    --section-margin: 137px;
+    --section-margin: 124px;
     --grid-columns: 12;
     --grid-gap: 36px;
   }
@@ -2079,7 +2079,6 @@ body {
   max-width: 220px;
   display: flex;
   justify-content: center;
-  transition: filter 0.3s;
 }
 @media (min-width: 640px) {
   .logos2__item {
@@ -2094,13 +2093,17 @@ body {
     max-width: none;
   }
 }
-@media (hover: hover) {
-  .logos2__item:hover {
-    filter: grayscale(0);
-  }
-}
 .logos2__item img {
   object-fit: contain;
+}
+.logos2__item a img {
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+@media (hover: hover) {
+  .logos2__item:hover img {
+    filter: grayscale(0);
+  }
 }
 
 .newsletterBlock {
