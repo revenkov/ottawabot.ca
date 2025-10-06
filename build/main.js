@@ -47,6 +47,40 @@ jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(functio
 
 /***/ }),
 
+/***/ "./assets/js/events-slider.js":
+/*!************************************!*\
+  !*** ./assets/js/events-slider.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery/src/jquery */ "./node_modules/jquery/src/jquery.js");
+/* harmony import */ var jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var tiny_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tiny-slider */ "./node_modules/tiny-slider/dist/tiny-slider.js");
+
+
+jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function ($) {
+  $('.eventsSlider').each(function (index, element) {
+    const $element = $(element);
+    const $container = $element.find('[class*="__slides"]');
+    (0,tiny_slider__WEBPACK_IMPORTED_MODULE_1__.tns)({
+      container: $container[0],
+      loop: true,
+      gutter: 0,
+      autoplay: false,
+      autoplayButtonOutput: false,
+      autoplayHoverPause: true,
+      nav: true,
+      navPosition: 'bottom',
+      controls: false,
+      autoHeight: true
+    });
+  });
+});
+
+/***/ }),
+
 /***/ "./assets/js/flip-numbers.js":
 /*!***********************************!*\
   !*** ./assets/js/flip-numbers.js ***!
@@ -18504,6 +18538,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _carousel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./carousel */ "./assets/js/carousel.js");
 /* harmony import */ var _testimonials__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./testimonials */ "./assets/js/testimonials.js");
 /* harmony import */ var _logo_text_slider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./logo-text-slider */ "./assets/js/logo-text-slider.js");
+/* harmony import */ var _events_slider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./events-slider */ "./assets/js/events-slider.js");
+
 
 
 

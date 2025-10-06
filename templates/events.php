@@ -24,52 +24,75 @@ if ( !empty( $content_1 ) ) :
 
 
 <?php
-
+$purple_card = get_field('purple_card');
+$green_card = get_field('green_card');
+$blue_card = get_field('blue_card');
 ?>
 <div class="section">
     <div class="container">
         <h2 style="text-align: center;">BENEFITS OF ATTENDING</h2>
+
+        <div class="benefits">
+            <div class="benefits__card">
+                <div class="benefits__cardImageBlock">
+                    <?php echo wp_get_attachment_image( $purple_card['background_image']['ID'], 'full' ); ?>
+                </div>
+                <div class="benefits__cardContentBlock">
+                    <?php echo wp_get_attachment_image( $purple_card['icon']['ID'], 'full', false, ['class'=>'benefits__cardIcon'] ); ?>
+                    <h3 class="benefits__cardTitle"><?php echo $purple_card['title']; ?></h3>
+                    <p class="benefits__cardText"><?php echo $purple_card['content']; ?></p>
+                </div>
+            </div>
+            <div class="benefits__card">
+                <div class="benefits__cardImageBlock">
+                    <?php echo wp_get_attachment_image( $green_card['background_image']['ID'], 'full' ); ?>
+                </div>
+                <div class="benefits__cardContentBlock">
+                    <?php echo wp_get_attachment_image( $green_card['icon']['ID'], 'full', false, ['class'=>'benefits__cardIcon']  ); ?>
+                    <h3 class="benefits__cardTitle"><?php echo $green_card['title']; ?></h3>
+                    <p class="benefits__cardText"><?php echo $green_card['content']; ?></p>
+                </div>
+            </div>
+            <div class="benefits__card">
+                <div class="benefits__cardImageBlock">
+                    <?php echo wp_get_attachment_image( $blue_card['background_image']['ID'], 'full' ); ?>
+                </div>
+                <div class="benefits__cardContentBlock">
+                    <?php echo wp_get_attachment_image( $blue_card['icon']['ID'], 'full', false, ['class'=>'benefits__cardIcon']  ); ?>
+                    <h3 class="benefits__cardTitle"><?php echo $blue_card['title']; ?></h3>
+                    <p class="benefits__cardText"><?php echo $blue_card['content']; ?></p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 
 <?php
-$content_group_3 = get_field('content_group_3');
-if ( !empty( $content_group_3 ) ) :
+$content_2 = get_field('content_2');
+$events_1 = get_field('events_1');
+if ( !empty( $events_1 ) ) :
 ?>
 <div class="section">
-    <div class="container container--narrow">
-        <?php echo $content_group_3['content']; ?>
+    <div class="container container--middle">
+        <?php echo $content_2; ?>
+
+        <?php get_template_part('parts/events_slider', false, ['events' => $events_1]); ?>
     </div>
 </div>
 <?php endif; ?>
 
 
 <?php
-$content_group_4 = get_field('content_group_4');
-$map = get_field('map');
-if ( !empty( $content_group_3 ) ) :
+$content_3 = get_field('content_3');
+$events_2 = get_field('events_2');
+if ( !empty( $events_2 ) ) :
 ?>
 <div class="section">
-    <div class="container">
-        <div class="mapBlock">
-            <div class="mapBlock__mapCol">
-                <?php if ( !empty($map['desktop']) ) : ?>
-                    <div class="imageBlock">
-                        <picture>
-                            <?php if ( !empty( $map['mobile'] ) ) : ?><source media="(max-width: 639px)" srcset="<?php echo wp_get_attachment_image_srcset( $map['mobile']['ID'], 'full' ); ?>" sizes="<?php echo wp_get_attachment_image_sizes( $map['mobile']['ID'], 'full' ); ?>"><?php endif; ?>
-                            <?php if ( !empty( $map['tablet'] ) ) : ?><source media="(max-width: 1119px)" srcset="<?php echo wp_get_attachment_image_srcset( $map['tablet']['ID'], 'full' ); ?>" sizes="<?php echo wp_get_attachment_image_sizes( $map['tablet']['ID'], 'full' ); ?>"><?php endif; ?>
-                            <?php echo wp_get_attachment_image( $map['desktop']['ID'], 'full'); ?>
-                        </picture>
-                    </div>
-                <?php endif; ?>
-            </div>
-            <div class="mapBlock__textCol">
-                <div class="mapBlock__textContainer">
-                    <?php echo $content_group_4['content']; ?>
-                </div>
-            </div>
-        </div>
+    <div class="container container--middle">
+        <?php echo $content_3; ?>
+
+        <?php get_template_part('parts/events_slider', false, ['events' => $events_2]); ?>
     </div>
 </div>
 <?php endif; ?>
@@ -87,7 +110,11 @@ if ( !empty( $carousel ) ) :
                     <div class="logoTextSlider__slide">
                         <div class="logoTextSlide">
                             <div class="logoTextSlide__logoCol"><?php echo wp_get_attachment_image( $item['logo']['ID'], 'full' ); ?></div>
-                            <div class="logoTextSlide__textCol"><?php echo $item['content']; ?></div>
+                            <div class="eventSlide__textCol">
+                                <h3 class="eventSlide__title"><?php echo get_the_title(); ?></h3>
+                                <div class="eventSlide__date"><?php echo $date; ?></div>
+                                <p><?php echo $excerpt; ?></p>
+                            </div>
                         </div>
                     </div>
                 <?php endforeach; ?>

@@ -6,6 +6,10 @@ function selectrum_get_hero_image_post_id() {
         return selectrum_filter_id( 2596 );
     }
 
+    if ( is_singular('event') ) {
+        return selectrum_filter_id( 2585 );
+    }
+
 	return $post->ID;
 }
 
@@ -35,6 +39,13 @@ function selectrum_get_hero_text() {
         $title = get_field('title');
         if ( !empty( $title ) ) {
             $text .= '<p class="sectionHero__text">'.$title.'</p>';
+        }
+    }
+
+    if ( is_singular('event') ) {
+        $date = get_field('date');
+        if ( !empty( $date ) ) {
+            $text .= '<p class="sectionHero__text">'.$date.'</p>';
         }
     }
 
