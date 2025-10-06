@@ -220,17 +220,38 @@ h4, .h4 {
   font-size: 1.25rem;
   line-height: 1.625rem;
   font-weight: 600;
+  margin-bottom: 24px;
 }
 @media (min-width: 640px) {
   h4, .h4 {
     font-size: 1.5rem;
     line-height: 1.875rem;
+    margin-bottom: 30px;
   }
 }
 @media (min-width: 1260px) {
   h4, .h4 {
     font-size: 1.875rem;
     line-height: 2.4375rem;
+    margin-bottom: 36px;
+  }
+}
+
+h5, .h5 {
+  font-size: 1.125rem;
+  line-height: 1.1;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+@media (min-width: 640px) {
+  h5, .h5 {
+    margin-bottom: 24px;
+  }
+}
+@media (min-width: 1260px) {
+  h5, .h5 {
+    font-size: 1.5625rem;
+    margin-bottom: 36px;
   }
 }
 
@@ -243,6 +264,11 @@ a {
   }
 }
 
+p:has(.button, .secondaryButton) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 26px;
+}
 @media (min-width: 1260px) {
   p:has(.button, .secondaryButton) {
     margin: 36px 0;

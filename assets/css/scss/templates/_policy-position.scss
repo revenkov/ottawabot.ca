@@ -1,0 +1,28 @@
+.page-template-policy-position {
+
+  .siteContent {
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      display: none;
+      width: 350px;
+      height: 350px;
+      border-radius: 100%;
+      position: absolute;
+      top: 780px;
+      left: 0;
+      translate: -60% 0;
+      background: var(--color-green);
+      @include breakpoint($laptop) {
+        display: block;
+      }
+      @include breakpoint($desktop) {
+        width: 522px;
+        height: 522px;
+        translate: -50% 0;
+      }
+    }
+  }
+}

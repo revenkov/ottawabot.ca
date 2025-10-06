@@ -1,0 +1,12 @@
+.page-template-buy-local {
+
+  .logos {
+    align-items: flex-start;
+
+    &__item {
+      @include breakpoint($laptop) {
+        width: calc( (100% - 30px*4)/5);
+      }
+    }
+  }
+}

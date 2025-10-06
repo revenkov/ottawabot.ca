@@ -1,0 +1,53 @@
+.link {
+  display: inline-flex;
+  position: relative;
+  min-height: 32px;
+  padding: 2px 0 2px 75px;
+  font-weight: 500;
+
+  span {
+    display: block;
+    width: 53px;
+    height: 32px;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 2px;
+      translate: 0 -50%;
+      height: 2px;
+      background: currentColor;
+      transition: left .3s;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      translate: 0 -50%;
+      width: 16px;
+      height: 32px;
+      mask: var(--icon-angle) no-repeat center;
+      mask-size: contain;
+      background: currentColor;
+    }
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    span:before {
+      @media (hover: hover) {
+        left: calc( 100% - 2px );
+      }
+    }
+  }
+}

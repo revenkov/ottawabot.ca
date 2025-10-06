@@ -9,7 +9,10 @@ if ( empty( $logos ) ) {
         <div class="logos__item">
             <?php if ( !empty( $item['url'] ) ) : ?><a href="<?php echo esc_url( $item['url'] ); ?>" target="_blank"><?php endif; ?>
                 <?php echo wp_get_attachment_image( $item['logo']['ID'], 'full' ); ?>
-                <?php if ( !empty( $item['url'] ) ) : ?></a><?php endif; ?>
+                <?php if ( !empty( $item['title'] ) ) : ?>
+                    <span class="logos__itemTitle"><?php echo $item['title']; ?></span>
+                <?php endif; ?>
+            <?php if ( !empty( $item['url'] ) ) : ?></a><?php endif; ?>
         </div>
     <?php endforeach; ?>
 </div>

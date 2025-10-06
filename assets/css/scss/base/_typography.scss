@@ -95,18 +95,31 @@ h4, .h4 {
   font-size: 1.25rem;
   line-height: 1.625rem;
   font-weight: 600;
+  margin-bottom: 24px;
   @include breakpoint($tablet) {
     font-size: 1.5rem;
     line-height: 1.875rem;
+    margin-bottom: 30px;
   }
   @include breakpoint( $laptop ) {
     font-size: 1.875rem;
     line-height: 2.4375rem;
+    margin-bottom: 36px;
   }
 }
 
-h6, .h6 {
-
+h5, .h5 {
+  font-size: 1.125rem;
+  line-height: 1.1;
+  font-weight: 500;
+  margin-bottom: 20px;
+  @include breakpoint($tablet) {
+    margin-bottom: 24px;
+  }
+  @include breakpoint( $laptop ) {
+    font-size: 1.5625rem;
+    margin-bottom: 36px;
+  }
 }
 
 a {
@@ -122,9 +135,9 @@ a {
 p {
 
   &:has(.button, .secondaryButton) {
-    //display: flex;
-    //flex-wrap: wrap;
-    //gap: 1rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 26px;
     @include breakpoint($laptop) {
       margin: 36px 0;
     }
