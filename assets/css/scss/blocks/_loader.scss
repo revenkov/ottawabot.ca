@@ -1,0 +1,98 @@
+.loader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+
+  span {
+    width: 12px;
+    height: 12px;
+    background: var(--color-green);
+    border-radius: 100%;
+    //transition: translate .3s;
+
+    &:nth-child(1) { background-color: var(--color-primary); animation: loader1 1s infinite; }
+    &:nth-child(2) { background-color: var(--color-green); animation: loader2 1s infinite; }
+    &:nth-child(3) { background-color: var(--color-orange); animation: loader3 1s infinite; }
+    &:nth-child(4) { background-color: var(--color-purple); animation: loader4 1s infinite; }
+  }
+}
+
+
+@keyframes loader1 {
+  0% { translate: 0 0 }
+  17% { translate: 0 -3px }
+  34% { translate: 0 -6px }
+  51% { translate: 0 -9px }
+  68% { translate: 0 -6px }
+  85% { translate: 0 -3px }
+  100% { translate: 0 0 }
+}
+
+@keyframes loader2 {
+  0% { translate: 0 0 }
+  17% { translate: 0 0 }
+  34% { translate: 0 -3px }
+  51% { translate: 0 -6px }
+  68% { translate: 0 -9px }
+  85% { translate: 0 -6px }
+  100% { translate: 0 -3px }
+}
+
+@keyframes loader3 {
+  0% { translate: 0 -3px }
+  17% { translate: 0 0 }
+  34% { translate: 0 0 }
+  51% { translate: 0 -3px }
+  68% { translate: 0 -6px }
+  85% { translate: 0 -9px }
+  100% { translate: 0 -6px }
+}
+
+@keyframes loader4 {
+  0% { translate: 0 -6px }
+  17% { translate: 0 -3px }
+  34% { translate: 0 0 }
+  51% { translate: 0 0 }
+  68% { translate: 0 -3px }
+  85% { translate: 0 -6px }
+  100% { translate: 0 -9px }
+}
+
+/*
+@keyframes loader1 {
+  0% { translate: 0 0 }
+  20% { translate: 0 -1px }
+  40% { translate: 0 0 }
+  60% { translate: 0 0 }
+  80% { translate: 0 -8px }
+  100% { translate: 0 0 }
+}
+
+@keyframes loader2 {
+  0% { translate: 0 0 }
+  20% { translate: 0 -7px }
+  40% { translate: 0 -3px }
+  60% { translate: 0 0 }
+  80% { translate: 0 -5px }
+  100% { translate: 0 0 }
+}
+
+@keyframes loader3 {
+  0% { translate: 0 0 }
+  20% { translate: 0 -1px }
+  40% { translate: 0 -9px }
+  60% { translate: 0 -5px }
+  80% { translate: 0 -3px }
+  100% { translate: 0 0 }
+}
+
+@keyframes loader4 {
+  0% { translate: 0 0 }
+  20% { translate: 0 0 }
+  40% { translate: 0 -5px }
+  60% { translate: 0 -9px }
+  80% { translate: 0 0 }
+  100% { translate: 0 0 }
+}
+*/

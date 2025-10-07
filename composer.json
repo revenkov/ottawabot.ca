@@ -11,6 +11,8 @@
     "src/functions.php"
   ],
   "require": {
-    "php": ">=8.1"
+    "php": ">=8.1",
+    "samwilson/phpflickr": "^6.0",
+    "symfony/cache": "^7.3"
   }
 }

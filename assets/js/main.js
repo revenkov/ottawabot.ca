@@ -6,3 +6,4 @@ import './carousel';
 import './testimonials';
 import './logo-text-slider';
 import './events-slider';
+import './gallery';

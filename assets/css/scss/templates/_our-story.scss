@@ -1,0 +1,71 @@
+.story {
+  margin-top: 100px;
+  @include breakpoint($laptop) {
+    margin-top: 180px;
+  }
+  @include breakpoint($desktop) {
+    margin-top: 260px;
+  }
+
+  &__item {
+    position: relative;
+    border-top: 1px solid var(--color-grey-2);
+    margin: 80px 0 0;
+    padding: 80px 0 0;
+
+    &Icon {
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 100px;
+      color: #ffffff;
+      border-radius: 100%;
+      @include breakpoint($laptop) {
+        width: 164px;
+        height: 164px;
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        width: 54px;
+        height: 54px;
+        mask: var(--icon-url) no-repeat center;
+        mask-size: contain;
+        background: currentColor;
+      }
+    }
+
+    &Inner {
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    &:nth-child(2n+1) &Icon {
+      left: -16px;
+      translate: 0 -50%;
+      @include breakpoint($desktop) {
+        left: 20px;
+        translate: -100% -50%;
+      }
+    }
+
+    &:nth-child(2n+2) &Icon {
+      right: -16px;
+      translate: 0 -50%;
+      @include breakpoint($laptop) {
+        translate: 0 -50%;
+        right: -20px;
+      }
+    }
+
+    &:nth-child(4n+1) &Icon { background: var(--color-orange); }
+    &:nth-child(4n+2) &Icon { background: var(--color-primary); }
+    &:nth-child(4n+3) &Icon { background: var(--color-purple); }
+    &:nth-child(4n+4) &Icon { background: var(--color-green); }
+  }
+}
