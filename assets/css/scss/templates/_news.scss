@@ -1,0 +1,153 @@
+.newsListing {
+
+  &__items {
+    margin: 0 -18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px 0;
+  }
+
+  &__item {
+    padding: 0 18px;
+    width: 100%;
+    @include breakpoint($tablet) {
+      width: 50%;
+    }
+    @include breakpoint($laptop) {
+      width: 33.33%;
+    }
+
+    .imageBlock {
+      min-height: auto;
+      --padding-bottom: 81.6%;
+
+      img {
+        transition: scale .3s;
+      }
+
+      &:hover {
+        @media (hover: hover) {
+          img {
+            scale: 1.05;
+          }
+        }
+      }
+    }
+  }
+
+  &__pagination {
+    margin-top: 60px;
+    @include breakpoint($tablet) {
+      margin-top: 90px;
+    }
+    @include breakpoint($laptop) {
+      margin-top: 117px;
+    }
+  }
+}
+
+
+.newsTeaser2 {
+  position: relative;
+  color: #ffffff;
+
+  &__imageBlock {
+    --padding-bottom: 94%;
+    min-height: auto;
+    @include breakpoint($tablet) {
+      --padding-bottom: 63.5%;
+    }
+    @include breakpoint($laptop) {
+      --padding-bottom: 82%;
+    }
+  }
+
+  &__content {
+    background: rgba(0,0,0,.4);
+    position: absolute;
+    inset: 0;
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+    background: var(--color-purple);
+    height: 44px;
+    padding: 0 16px;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &__title {
+    position: absolute;
+    left: 16px;
+    bottom: 27px;
+    right: 132px;
+    margin: 0;
+    @include breakpoint($tablet) {
+      left: 36px;
+      bottom: 36px;
+      right: 160px;
+    }
+    @include breakpoint($desktop) {
+      left: 60px;
+      bottom: 40px;
+    }
+  }
+
+  &__button {
+    display: block;
+    width: 53px;
+    height: 32px;
+    position: absolute;
+    right: 40px;
+    bottom: 34px;
+    @include breakpoint($desktop) {
+      right: 60px;
+      bottom: 40px;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 2px;
+      translate: 0 -50%;
+      height: 2px;
+      background: currentColor;
+      transition: left .3s;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      translate: 0 -50%;
+      width: 16px;
+      height: 32px;
+      mask: var(--icon-angle) no-repeat center;
+      mask-size: contain;
+      background: currentColor;
+    }
+  }
+
+  &:hover & {
+
+    &__image {
+      scale: 1.05;
+    }
+
+    &__button {
+      &:before {
+        @media (hover: hover) {
+          left: calc( 100% - 2px );
+        }
+      }
+    }
+  }
+}

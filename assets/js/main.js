@@ -8,3 +8,7 @@ import './logo-text-slider';
 import './events-slider';
 import './gallery';
 import './committees';
+import './news';
+import './newsletter-listing';
+import './newsletter-form';
+import './podcast';

@@ -24,11 +24,12 @@
                 <div class="newsletterBlock__inner">
                     <h3 class="newsletterBlock__title"><?php echo __('Sign Up For Updates', 'selectrum'); ?></h3>
                     <form class="newsletterBlock__form">
+                        <input type="hidden" name="action" value="newsletter_form">
                         <div class="newsletterBlock__formField">
                             <label class="newsletterBlock__formFieldLabel screen-reader-text" for="newsletterEmail"><?php echo __('Your Email', 'selectrum'); ?></label>
-                            <input class="newsletterBlock__formFieldInput" id="newsletterEmail" type="email" placeholder="<?php echo __('Your Email', 'selectrum'); ?>">
+                            <input class="newsletterBlock__formFieldInput" id="newsletterEmail" type="email" name="email" placeholder="<?php echo __('Your Email', 'selectrum'); ?>" required>
                         </div>
-                        <button class="newsletterBlock__formButton" title="<?php echo __('Submit', 'selectrum'); ?>"></button>
+                        <button class="newsletterBlock__formButton" type="submit" title="<?php echo __('Submit', 'selectrum'); ?>"></button>
                     </form>
                     <div class="newsletterBlock__text"><?php echo __('Get news, insights, and exclusive perks—right to your inbox!', 'selectrum'); ?></div>
                 </div>

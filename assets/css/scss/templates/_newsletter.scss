@@ -1,0 +1,128 @@
+.newsletterListing {
+
+  &__items {
+    margin: 0 -18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px 0;
+  }
+
+  &__item {
+    padding: 0 18px;
+    width: 100%;
+    @include breakpoint($tablet) {
+      width: 50%;
+    }
+
+    .imageBlock {
+      min-height: auto;
+      --padding-bottom: 81.6%;
+
+      img {
+        transition: scale .3s;
+      }
+
+      &:hover {
+        @media (hover: hover) {
+          img {
+            scale: 1.05;
+          }
+        }
+      }
+    }
+  }
+
+  &__pagination {
+    margin-top: 60px;
+    @include breakpoint($tablet) {
+      margin-top: 90px;
+    }
+    @include breakpoint($laptop) {
+      margin-top: 117px;
+    }
+  }
+}
+
+
+
+.newsletterTeaser {
+  position: relative;
+  background: var(--color-grey-3);
+  padding: 26px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 46px;
+  text-decoration: none;
+  height: 100%;
+  @include breakpoint($tablet) {
+    padding: 46px 36px 46px 36px;
+    gap: 70px;
+  }
+  @include breakpoint($laptop) {
+    min-height: 400px;
+    padding: 46px 60px 46px 60px;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__button {
+    display: block;
+    width: 53px;
+    height: 32px;
+    position: absolute;
+    right: 18px;
+    bottom: 26px;
+    color: var(--color-primary);
+    @include breakpoint($tablet) {
+      right: 36px;
+      bottom: 44px;
+    }
+    @include breakpoint($laptop) {
+      right: 60px;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 2px;
+      translate: 0 -50%;
+      height: 2px;
+      background: currentColor;
+      transition: left .3s;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      translate: 0 -50%;
+      width: 16px;
+      height: 32px;
+      mask: var(--icon-angle) no-repeat center;
+      mask-size: contain;
+      background: currentColor;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:hover & {
+      &__button {
+        &:before {
+          left: calc( 100% - 2px );
+        }
+      }
+    }
+  }
+}

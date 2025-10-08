@@ -15,6 +15,7 @@ class Theme
 
     final private function __construct()
     {
+        ConstantContact::init();
         add_action('init', [$this, 'reset_wordpress']);
         add_action('after_setup_theme', [$this, 'setup_theme']);
         add_action('wp_head', [$this, 'add_fonts']);
@@ -24,8 +25,6 @@ class Theme
         add_action('init', [$this, 'add_svg_support']);
         add_action('wp_loaded', [$this, 'config_session']);
         add_filter( 'auth_cookie_expiration', [$this, 'auth_cookie_expiration'] );
-	    add_action( 'wp_ajax_newsletter_form', [$this, 'ajax_newsletter_form'] );
-	    add_action( 'wp_ajax_nopriv_newsletter_form', [$this, 'ajax_newsletter_form'] );
     }
 
     final public static function getInstance(): self
@@ -169,7 +168,7 @@ class Theme
             wp_enqueue_script('comment-reply');
         }
 
-        //wp_enqueue_script("jquery");
+        wp_enqueue_script("jquery");
         //wp_enqueue_script("jquery-effects-core");
         //wp_enqueue_script("jquery-ui-widget");
         //wp_enqueue_script('jquery-ui-tabs');
@@ -214,13 +213,13 @@ class Theme
         //wp_enqueue_script('number-flip', $vendor_url . 'number-flip-1.2.3/index.js', [], null, true);
 
         wp_enqueue_script('main', get_stylesheet_directory_uri() . '/build/main.js', [], filemtime( get_stylesheet_directory() . '/build/main.js' ), true);
-	    /*wp_enqueue_script('scripts', $js_url . 'scripts.js', [], filemtime( $js_path . 'scripts.js' ), true);
-        wp_localize_script('scripts', 'selectrum', [
+	    //wp_enqueue_script('scripts', $js_url . 'scripts.js', [], filemtime( $js_path . 'scripts.js' ), true);
+        wp_localize_script('main', 'selectrum', [
             'ajax_url' => admin_url( 'admin-ajax.php' ),
             'ajax_nonce' => wp_create_nonce('ajax_nonce'),
             'theme_uri' => get_stylesheet_directory_uri(),
             'default_error_message' => __('An error occurred. Please try again later.', 'selectrum'),
-        ]);*/
+        ]);
     }
 
     public function config_acf(): void
@@ -300,84 +299,5 @@ class Theme
 
 	public function auth_cookie_expiration(): int {
 		return 1209600; // 2 weeks in seconds
-	}
-
-	public function ajax_newsletter_form(): void {
-		try {
-			//$full_name = isset( $_POST['full_name'] ) ? $_POST['full_name'] : false;
-			$email  = isset( $_POST['email'] ) ? $_POST['email'] : false;
-
-			if ( empty( $email ) ) {
-				throw new Exception( __( 'Please enter your email.', 'selectrum' ) );
-			}
-
-			/*
-			$MailChimp = new \DrewM\MailChimp\MailChimp(MAILCHIMP_API_KEY);
-			$subscriber_hash = $MailChimp->subscriberHash($email);
-			$result = $MailChimp->get("lists/".MAILCHIMP_LIST_ID."/members/".$subscriber_hash);
-			//error_log( print_r( $result, true ) );
-			switch ($result['status'] ) :
-				case '404':
-					$MailChimp->post("lists/".MAILCHIMP_LIST_ID."/members", [
-						'email_address' => $email,
-						'status'        => 'subscribed',
-						'tags'          => $_POST['tags'],
-						'merge_fields'  => array(
-							'FNAME' => $_POST['fullName'],
-							'MMERGE4' => $_POST['phone']
-						)
-					]);
-					//$message = __('Please check your email for confirmation.', 'selectrum');
-					break;
-				case 'subscribed':
-					$tags = array();
-					foreach ( $_POST['tags'] as $tag ) :
-						$tags[] = array(
-							'name' => $tag,
-							'status' => 'active'
-						);
-					endforeach;
-					$MailChimp->post("lists/".MAILCHIMP_LIST_ID."/members/".$subscriber_hash."/tags", [
-						'tags' => $tags,
-					]);
-					break;
-			endswitch;
-
-			//error_log( print_r($MailChimp->getLastResponse(), true) );
-
-			if ( !$MailChimp->success() ) :
-				$response = $MailChimp->getLastResponse();
-				$response_body = json_decode( $response['body'] );
-				switch ( $response_body->title ) :
-					case 'Member Exists':
-						$message = __('You are subscribed already, thank you!', 'selectrum');
-						break;
-					case 'Invalid Resource':
-						$message = __('Entered email looks fake or invalid, please enter a real email address.', 'selectrum');
-						break;
-					default:
-						$message = __('Something went wrong. Please contact us and describe your problem.', 'selectrum');
-						break;
-				endswitch;
-				throw new Exception( $message );
-			endif;
-			*/
-
-			$message = __('This is to notify you that a new user has registered for the newsletter.', 'selectrum').'<br>';
-			$message .= '<br>';
-			//$message .= __('Name:', 'selectrum').' '.$full_name.'<br>';
-			$message .= __('Email:', 'selectrum').' '.$email.'<br>';
-
-			$headers  = "MIME-Version: 1.0" . "\r\n";
-			$headers .= "Content-type: text/html; charset=UTF-8" . "\r\n";
-			if ( !wp_mail( get_option('admin_email'), __('Newsletter Registration Notification', 'selectrum'), $message, $headers) ) {
-				throw new Exception( __('Something went wrong. Please contact us and describe your problem.', 'selectrum') );
-			}
-
-			$response['content'] = __('Your subscription to our newsletter has been successfully received; thank you for your interest.', 'selectrum');
-			wp_send_json_success($response);
-		} catch ( Exception $e ) {
-			wp_send_json_error(['content'=>$e->getMessage()]);
-		}
 	}
 }

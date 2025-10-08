@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Podcast
+ * Template Name: Newsletter
  */
 ?>
 
@@ -17,37 +17,37 @@ if ( !empty( $content ) ) :
 ?>
 <div class="section">
     <div class="container container--narrow">
-        <?php echo $content; ?>
+        <div class="textBlock"><?php echo $content; ?></div>
     </div>
 </div>
 <?php endif; ?>
 
 
 <?php
-$episodes = get_posts([
-    'post_type' => 'podcast-episode',
+$news = get_posts([
+    'post_type' => 'newsletter',
     'posts_per_page' => -1,
 ]);
 ?>
 <div class="section">
     <div class="container container--wide">
-        <div class="podcastListing">
-            <?php if ( !empty( $episodes ) ) : ?>
-                <div class="podcastListing__items">
+        <div class="newsletterListing">
+            <?php if ( !empty( $news ) ) : ?>
+                <div class="newsletterListing__items">
                     <?php
-                    foreach ( $episodes as $post ) :
+                    foreach ( $news as $post ) :
                         setup_postdata($post);
                         ?>
-                        <div class="podcastListing__item">
-                            <?php get_template_part('parts/podcast_teaser'); ?>
+                        <div class="newsletterListing__item">
+                            <?php get_template_part('parts/newsletter_teaser'); ?>
                         </div>
                     <?php endforeach; wp_reset_postdata(); ?>
                 </div>
-                <div class="podcastListing__pagination">
+                <div class="newsletterListing__pagination">
                     <div class="loader"><span></span><span></span><span></span><span></span></div>
                 </div>
             <?php else : ?>
-                <div class="podcastListing__nothingFound">Nothing found</div>
+                <div class="newsletterListing__nothingFound">Nothing found</div>
             <?php endif; ?>
         </div>
     </div>

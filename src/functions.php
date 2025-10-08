@@ -10,6 +10,14 @@ function selectrum_get_hero_image_post_id() {
         return selectrum_filter_id( 2585 );
     }
 
+    if ( is_singular('news') ) {
+        return selectrum_filter_id( 2599 );
+    }
+
+    if ( is_singular('newsletter') ) {
+        return selectrum_filter_id( 2600 );
+    }
+
 	return $post->ID;
 }
 
@@ -46,6 +54,20 @@ function selectrum_get_hero_text() {
         $date = get_field('date');
         if ( !empty( $date ) ) {
             $text .= '<p class="sectionHero__text">'.$date.'</p>';
+        }
+    }
+
+    if ( is_singular('news') ) {
+        $category = get_field('category');
+        if ( !empty( $category ) ) {
+            $text .= '<p class="sectionHero__text">'.$category->name.'</p>';
+        }
+    }
+
+    if ( is_singular('newsletter') ) {
+        $date = get_field('date');
+        if ( !empty( $date ) ) {
+            $text .= '<p class="sectionHero__text">'.date_i18n('F d, Y', strtotime( $date )).'</p>';
         }
     }
 

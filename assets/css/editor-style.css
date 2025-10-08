@@ -275,6 +275,9 @@ p:has(.button, .secondaryButton) {
     margin: 36px 0;
   }
 }
+p:has(.text-md) {
+  margin-bottom: 24px;
+}
 p a {
   color: var(--color-primary);
 }

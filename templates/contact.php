@@ -25,7 +25,7 @@ $other_contact_categories = get_field('other_contact_categories');
                 <div class="contacts__address">
                     <a href="//google.com/maps?q=<?php echo strip_tags(urlencode($address)); ?>" target="_blank"><?php echo $address; ?></a>
                 </div>
-                <h3 class="contacts__categoryTitle text-md">General Inquiries</h3>
+                <div class="contacts__categoryTitle text-md">General Inquiries</div>
                 <?php if ( !empty( $phone ) ) : ?>
                     <div class="contacts__phone"><a href="tel:+1<?php echo preg_replace("/[^0-9]/", "", $phone); ?>"><?php echo $phone; ?></a></div>
                 <?php endif; ?>
@@ -37,7 +37,7 @@ $other_contact_categories = get_field('other_contact_categories');
             <div class="contacts__col2">
                 <?php foreach ( $other_contact_categories as $item ) : ?>
                     <div class="contacts__category">
-                        <h3 class="contacts__categoryTitle text-md"><?php echo $item['category']; ?></h3>
+                        <div class="contacts__categoryTitle text-md"><?php echo $item['category']; ?></div>
                         <div class="contacts__categoryContactName"><?php echo $item['full_name']; ?></div>
                         <div class="contacts__categoryContactTitle"><?php echo $item['title']; ?></div>
                         <a href="mailto:<?php echo $item['email']; ?>"><?php echo $item['email']; ?></a>

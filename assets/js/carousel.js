@@ -20,7 +20,7 @@ $(document).ready(function($) {
             autoHeight: false,
             responsive: {
                 0: {
-
+                    gutter: 32,
                 },
                 640: {
                     gutter: 34,

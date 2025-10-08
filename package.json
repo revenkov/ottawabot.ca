@@ -19,6 +19,7 @@
     "gsap": "^3.13.0",
     "jquery": "^3.7.1",
     "jquery-ui": "^1.14.1",
+    "jquery-validation": "^1.21.0",
     "number-flip": "^1.2.3",
     "tiny-slider": "^2.9.4"
   }

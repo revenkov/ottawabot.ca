@@ -72,6 +72,7 @@
     }
 
     &Field {
+      position: relative;
       flex: 1;
 
       @include placeholder {
@@ -87,6 +88,12 @@
         @include breakpoint( $tablet ) {
           height: 62px;
         }
+      }
+
+      span.error {
+        position: absolute;
+        top: 100%;
+        left: 0;
       }
     }
 

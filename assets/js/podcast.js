@@ -2,14 +2,14 @@ import $ from 'jquery/src/jquery';
 
 $(document).ready(function ($) {
 
-    $('.galleryListing').each(function (index, element) {
+    $('.podcastListing').each(function (index, element) {
         let loading = false;
         var $listing = $(element);
-        var $itemsContainer = $listing.find('.galleryListing__items');
-        var itemSelector = '.galleryListing__item';
+        var $itemsContainer = $listing.find('.podcastListing__items');
+        var itemSelector = '.podcastListing__item';
         var $items = $itemsContainer.find(itemSelector);
-        var $pagination = $listing.find('.galleryListing__pagination');
-        var itemsPerPage = 6;
+        var $pagination = $listing.find('.podcastListing__pagination');
+        var itemsPerPage = 2;
         var visibleItemsNum = itemsPerPage;
 
         function filterItems() {
