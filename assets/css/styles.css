@@ -4628,7 +4628,7 @@ body {
 }
 @media (min-width: 1260px) {
   .boardBlock {
-    gap: 68px 30px;
+    gap: 25px 30px;
   }
 }
 
@@ -4651,14 +4651,21 @@ body {
   position: relative;
   margin-bottom: 25px;
   background: var(--color-grey-3);
+  border-radius: 100%;
 }
 @media (min-width: 1260px) {
   .boardMemberTeaser__imageContainer {
-    margin-bottom: 40px;
+    margin-bottom: 42px;
   }
 }
+.boardMemberTeaser__imageContainer img {
+  border-radius: 100%;
+}
 .boardMemberTeaser__name {
-  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-weight: 700;
+  max-width: 305px;
+  margin: 0 auto 8px;
 }
 @media (min-width: 640px) {
   .boardMemberTeaser__name {
@@ -4680,92 +4687,28 @@ body {
 }
 .boardMemberTeaser__button {
   display: block;
-  width: 74px;
-  height: 74px;
+  width: 63px;
+  height: 63px;
   border-radius: 100%;
-  background: var(--color-green);
+  background: var(--color-primary);
   color: #ffffff;
   position: absolute;
-  right: 0;
-  bottom: 0;
-}
-@media (min-width: 1260px) {
-  .boardMemberTeaser__button {
-    width: 86px;
-    height: 86px;
-  }
+  right: 20px;
+  bottom: 12px;
 }
 .boardMemberTeaser__button:before {
   content: "";
   display: block;
   position: absolute;
-  top: 50%;
-  left: 10px;
-  right: 12px;
-  translate: 0 -50%;
-  height: 2px;
+  top: 48%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 24px;
+  height: 24px;
   background: currentColor;
-  transition: left 0.3s;
-}
-@media (min-width: 1260px) {
-  .boardMemberTeaser__button:before {
-    right: 18px;
-    left: 16px;
-  }
-}
-.boardMemberTeaser__button:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  translate: 0 -50%;
-  width: 16px;
-  height: 32px;
-  mask: var(--icon-angle) no-repeat center;
-  mask-size: contain;
-  background: currentColor;
-}
-@media (min-width: 1260px) {
-  .boardMemberTeaser__button:after {
-    right: 16px;
-  }
-}
-@media (hover: hover) {
-  .boardMemberTeaser__button:hover:before {
-    left: calc(100% - 2px);
-  }
-}
-
-.teamMemberBlock {
-  display: flex;
-  flex-direction: column;
-  gap: 30px var(--grid-column-width);
-}
-@media (min-width: 640px) {
-  .teamMemberBlock {
-    flex-direction: row;
-  }
-}
-@media (min-width: 640px) {
-  .teamMemberBlock__col1 {
-    flex: 1;
-  }
-}
-@media (min-width: 640px) {
-  .teamMemberBlock__col2 {
-    flex: 1;
-    display: flex;
-    align-items: center;
-  }
-}
-.teamMemberBlock__linkedinLink {
-  display: block;
-  width: 30px;
-  height: 30px;
-  background: var(--color-primary);
   mask: var(--icon-linkedin) no-repeat center;
   mask-size: contain;
+  transition: left 0.3s;
 }
 
 .page-template-contact .siteContent {
