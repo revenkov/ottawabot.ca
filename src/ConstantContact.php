@@ -3,6 +3,7 @@ namespace Selectrum;
 
 
 use Exception;
+use Selectrum\MyException;
 use PHPFUI\ConstantContact\Client;
 use PHPFUI\ConstantContact\Definition\ContactCreateOrUpdateInput;
 use PHPFUI\ConstantContact\Definition\ContactPostRequest;
@@ -30,8 +31,8 @@ class ConstantContact
         add_action('init', [$this, 'constant_contact_auth_response_handler']);
         add_action('init', [$this, 'constant_contact_schedule_refresh_access_token']);
         add_action('refresh_constant_contact_access_token', [$this, 'refresh_constant_contact_access_token']);
-        add_action( 'wp_ajax_newsletter_form', [$this, 'ajax_newsletter_form'] );
-        add_action( 'wp_ajax_nopriv_newsletter_form', [$this, 'ajax_newsletter_form'] );
+        add_action('wp_ajax_newsletter_form', [$this, 'ajax_newsletter_form']);
+        add_action('wp_ajax_nopriv_newsletter_form', [$this, 'ajax_newsletter_form']);
     }
 
     final public static function getInstance(): self
@@ -105,7 +106,8 @@ class ConstantContact
             ]));
 
             if ( !in_array( $Client->getStatusCode(), [200,201] ) ) :
-                throw new MyException( $Client->getLastError() );
+                error_log($Client->getLastError());
+                throw new MyException;
             endif;
 
             $response['content'] = get_field('newsletter_thank_you_message', 'options') ?? __('You has been subscribed successfully. Thank you!', 'selectrum');
