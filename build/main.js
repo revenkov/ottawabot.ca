@@ -47,6 +47,57 @@ jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(functio
 
 /***/ }),
 
+/***/ "./assets/js/committees.js":
+/*!*********************************!*\
+  !*** ./assets/js/committees.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery/src/jquery */ "./node_modules/jquery/src/jquery.js");
+/* harmony import */ var jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fancyapps/fancybox */ "./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js");
+/* harmony import */ var _fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _fancyapps_fancybox_dist_jquery_fancybox_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fancyapps/fancybox/dist/jquery.fancybox.css */ "./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css");
+
+
+
+jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function ($) {
+  $('[data-fancybox]').fancybox({
+    infobar: false,
+    toolbar: false,
+    smallBtn: true,
+    touch: false,
+    buttons: [
+    //"zoom",
+    //"share",
+    //"slideShow",
+    //"fullScreen",
+    //"download",
+    //"thumbs",
+    "close"],
+    btnTpl: {
+      download: '<a download data-fancybox-download class="fancybox-button fancybox-button--download" title="{{DOWNLOAD}}" href="javascript:;"></a>',
+      zoom: '<button data-fancybox-zoom class="fancybox-button fancybox-button--zoom" title="{{ZOOM}}"></button>',
+      close: '<button data-fancybox-close class="fancybox-button fancybox-button--close" title="{{CLOSE}}"></button>',
+      arrowLeft: '<button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left" title="{{PREV}}"></button>',
+      arrowRight: '<button data-fancybox-next class="fancybox-button fancybox-button--arrow_right" title="{{NEXT}}"></button>',
+      smallBtn: '<button type="button" data-fancybox-close class="fancybox-button fancybox-close-small" title="{{CLOSE}}"></button>'
+    },
+    mobile: {
+      clickContent: function (current, event) {
+        return current.type === "image" ? false : false;
+      },
+      clickSlide: function (current, event) {
+        return current.type === "image" ? "close" : "close";
+      }
+    }
+  });
+});
+
+/***/ }),
+
 /***/ "./assets/js/events-slider.js":
 /*!************************************!*\
   !*** ./assets/js/events-slider.js ***!
@@ -414,6 +465,19 @@ jquery_src_jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(functio
   });
   $window.resize(timelineHandler);
 });
+
+/***/ }),
+
+/***/ "./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
 
 /***/ }),
 
@@ -24232,6 +24296,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _logo_text_slider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./logo-text-slider */ "./assets/js/logo-text-slider.js");
 /* harmony import */ var _events_slider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./events-slider */ "./assets/js/events-slider.js");
 /* harmony import */ var _gallery__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./gallery */ "./assets/js/gallery.js");
+/* harmony import */ var _committees__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./committees */ "./assets/js/committees.js");
+
 
 
 

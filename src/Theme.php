@@ -160,6 +160,7 @@ class Theme
         //wp_enqueue_style('datatables-responsive', '//cdn.datatables.net/responsive/3.0.4/css/responsive.dataTables.min.css', false, null);
         //wp_enqueue_style('lenis', '//unpkg.com/lenis@1.3.8/dist/lenis.css', false, null);
 
+        wp_enqueue_style('main', get_stylesheet_directory_uri() . '/build/main.css', [], filemtime( get_stylesheet_directory() . '/build/main.css' ), null);
         wp_enqueue_style('styles', $css_url . 'styles.css', [], filemtime( $css_path . 'styles.css' ), null);
         wp_enqueue_style('changes', $css_url . 'changes.css', [], filemtime( $css_path . 'changes.css' ), null);
 
@@ -168,7 +169,7 @@ class Theme
             wp_enqueue_script('comment-reply');
         }
 
-        wp_enqueue_script("jquery");
+        //wp_enqueue_script("jquery");
         //wp_enqueue_script("jquery-effects-core");
         //wp_enqueue_script("jquery-ui-widget");
         //wp_enqueue_script('jquery-ui-tabs');

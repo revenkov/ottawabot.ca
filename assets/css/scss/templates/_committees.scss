@@ -1,0 +1,172 @@
+.committees {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 0;
+  margin: 0 -16px;
+
+  &__item {
+    min-width: 100%;
+    padding: 0 16px;
+    @include breakpoint( $tablet ) {
+      min-width: 50%;
+      flex: 1;
+    }
+    @include breakpoint( $laptop ) {
+      min-width: 25%;
+    }
+  }
+}
+
+
+.committeeTeaser {
+  position: relative;
+
+  &__imageBlock {
+    --padding-bottom: 0;
+    height: 283px;
+    min-height: auto;
+
+    &:after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--hover-color);
+      opacity: 0;
+      transition: opacity .3s;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.4);
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10%;
+    transition: background .3s ease;
+  }
+
+  &__button {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    border: none;
+  }
+
+  &:hover & {
+
+    &__imageBlock {
+
+      &:after {
+        opacity: .85;
+      }
+    }
+
+    &__content {
+      background: rgba(0,0,0,0);
+    }
+  }
+}
+
+
+.committeePopup {
+  width: 100%;
+  max-width: 1190px;
+  padding: var(--container-padding-x) calc( var(--container-padding-x) / 2 );
+  //background: url("/_resources/layouts/2000/popup.jpg") no-repeat center top;
+  @include breakpoint( $tablet ) {
+    padding: 50px 75px;
+  }
+  @include breakpoint( $laptop ) {
+    padding: 100px 150px;
+  }
+
+  .fancybox-close-small {
+    width: 66px;
+    height: 66px;
+    padding: 0;
+    right: 0;
+    top: 0;
+    opacity: 1;
+    @include breakpoint( $tablet ) {
+      top: 30px;
+      right: 30px;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      width: 36px;
+      height: 3px;
+      background: currentColor;
+      rotate: 45deg;
+    }
+
+    &:after {
+      rotate: -45deg;
+    }
+  }
+
+  &__categories {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @include breakpoint( $laptop ) {
+      margin-top: -10px;
+    }
+  }
+
+  &__category {
+    width: 100%;
+
+    &Members {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px 0;
+      margin: 30px -16px 0;
+      @include breakpoint( $laptop ) {
+        margin: 65px -16px 0;
+      }
+    }
+  }
+
+  &__member {
+    width: 100%;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    @include breakpoint( $tablet ) {
+      width: 50%;
+    }
+    @include breakpoint( $sm ) {
+      width: 33.33%;
+    }
+    @include breakpoint( $laptop ) {
+      width: 25%;
+    }
+
+    &Image {
+      width: 110px;
+      margin-bottom: 22px;
+      border-radius: 100%;
+      overflow: hidden;
+    }
+
+    &Name {
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+  }
+}

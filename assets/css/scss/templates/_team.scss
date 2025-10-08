@@ -61,7 +61,7 @@
     background: var(--color-green);
     color: #ffffff;
     position: absolute;
-    right: 0;
+    right: 32px;
     bottom: 0;
     @include breakpoint( $laptop ) {
       width: 86px;
