@@ -376,11 +376,6 @@ a {
   }
 }
 
-p:has(.button, .secondaryButton) {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px 26px;
-}
 @media (min-width: 1260px) {
   p:has(.button, .secondaryButton) {
     margin: 36px 0;
@@ -782,6 +777,12 @@ textarea {
   width: 100%;
 }
 
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 26px;
+}
+
 .link {
   display: inline-flex;
   position: relative;
@@ -862,18 +863,15 @@ body {
   flex: 1;
   margin: 0 auto;
   width: 100%;
-  padding-bottom: 213px;
-  padding-bottom: 185px;
+  padding-bottom: 200px;
 }
 @media (min-width: 640px) {
   .siteContent {
-    padding-bottom: 286px;
-    padding-bottom: 274px;
+    padding-bottom: 244px;
   }
 }
 @media (min-width: 1600px) {
   .siteContent {
-    padding-bottom: 305px;
     padding-bottom: 250px;
   }
 }
@@ -1676,6 +1674,12 @@ body {
   flex-direction: row;
   justify-content: center;
   gap: 1px;
+  font-size: 16px;
+}
+@media (min-width: 390px) {
+  .secondaryMenu {
+    font-size: 18px;
+  }
 }
 @media (min-width: 640px) {
   .secondaryMenu {
@@ -2115,19 +2119,23 @@ body {
   border-radius: 100%;
   text-align: center;
   overflow: hidden;
-  margin: calc(-50% - var(--container-padding-x)) calc(var(--container-padding-x) / -2) 0;
-  max-width: 488px;
+  margin: -196px auto 0;
+  left: 50%;
+  translate: -50% 0;
+  width: 360px;
 }
 @media (min-width: 640px) {
   .newsletterBlock {
     margin: -262px auto 0;
+    width: 488px;
+    left: auto;
+    translate: none;
   }
 }
 @media (min-width: 1260px) {
   .newsletterBlock {
     position: absolute;
     margin: 0;
-    width: 488px;
     max-width: none;
     right: var(--container-padding-x);
     top: -266px;
@@ -2228,6 +2236,12 @@ body {
   position: absolute;
   top: 100%;
   left: 0;
+  font-size: 14px;
+}
+@media (min-width: 640px) {
+  .newsletterBlock__formField span.error {
+    font-size: 16px;
+  }
 }
 .newsletterBlock__formButton {
   position: relative;
@@ -4514,18 +4528,6 @@ body {
     width: 33.33%;
   }
 }
-.galleryListing__item .imageBlock {
-  min-height: auto;
-  --padding-bottom: 81.6%;
-}
-.galleryListing__item .imageBlock img {
-  transition: scale 0.3s;
-}
-@media (hover: hover) {
-  .galleryListing__item .imageBlock:hover img {
-    scale: 1.05;
-  }
-}
 .galleryListing__pagination {
   margin-top: 60px;
 }
@@ -4537,6 +4539,92 @@ body {
 @media (min-width: 1260px) {
   .galleryListing__pagination {
     margin-top: 117px;
+  }
+}
+
+.galleryTeaser {
+  position: relative;
+  color: #ffffff;
+}
+.galleryTeaser .imageBlock {
+  min-height: auto;
+  --padding-bottom: 81.6%;
+}
+.galleryTeaser .imageBlock img {
+  transition: scale 0.3s;
+}
+.galleryTeaser__content {
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  inset: 0;
+}
+.galleryTeaser__title {
+  position: absolute;
+  left: 16px;
+  bottom: 27px;
+  right: 132px;
+  margin: 0;
+}
+@media (min-width: 640px) {
+  .galleryTeaser__title {
+    left: 36px;
+    bottom: 36px;
+    right: 160px;
+  }
+}
+@media (min-width: 1600px) {
+  .galleryTeaser__title {
+    left: 60px;
+    bottom: 40px;
+  }
+}
+.galleryTeaser__button {
+  display: block;
+  width: 53px;
+  height: 32px;
+  position: absolute;
+  right: 40px;
+  bottom: 34px;
+}
+@media (min-width: 1600px) {
+  .galleryTeaser__button {
+    right: 60px;
+    bottom: 40px;
+  }
+}
+.galleryTeaser__button:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 2px;
+  translate: 0 -50%;
+  height: 2px;
+  background: currentColor;
+  transition: left 0.3s;
+}
+.galleryTeaser__button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  translate: 0 -50%;
+  width: 16px;
+  height: 32px;
+  mask: var(--icon-angle) no-repeat center;
+  mask-size: contain;
+  background: currentColor;
+}
+@media (hover: hover) {
+  .galleryTeaser:hover .galleryTeaser__imageBlock img {
+    scale: 1.05;
+  }
+}
+@media (hover: hover) and (hover: hover) {
+  .galleryTeaser:hover .galleryTeaser__button:before {
+    left: calc(100% - 2px);
   }
 }
 
@@ -5258,6 +5346,11 @@ body {
   .podcastTeaser__title {
     margin-bottom: 32px;
   }
+}
+.podcastTeaser__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 26px;
 }
 
 .page-template-contact .siteContent {

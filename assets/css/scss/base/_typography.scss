@@ -135,9 +135,9 @@ a {
 p {
 
   &:has(.button, .secondaryButton) {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px 26px;
+    //display: flex;
+    //flex-wrap: wrap;
+    //gap: 18px 26px;
     @include breakpoint($laptop) {
       margin: 36px 0;
     }

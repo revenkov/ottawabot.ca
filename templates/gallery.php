@@ -26,7 +26,7 @@ if ( !empty( $content ) ) :
 
 <?php
 $flickr = new PhpFlickr(FLICKR_API_KEY, FLICKR_API_SECRET);
-$flickr->setCacheDefaultExpiry( 60 * 60 * 24);
+$flickr->setCacheDefaultExpiry( 60 * 60 * 24 * 30 );
 $cache = new Symfony\Component\Cache\Adapter\FilesystemAdapter('PhpFlickr', 0, wp_get_upload_dir()['basedir'] . '/cache/');
 $flickr->setCache($cache);
 $lists = $flickr->photosets()->getList('78514975@N07');
@@ -66,18 +66,21 @@ $lists = $flickr->photosets()->getList('78514975@N07');
                         ?>
                         <div class="galleryListing__item">
                             <div class="galleryTeaser">
-                                <div class="imageBlock imageBlock--formatted imageBlock--landscape">
-                                    <a href="https://www.flickr.com/photos/ottawa_board_of_trade/albums/<?php echo $photoset['id']; ?>" target="_blank">
-                                        <img
-                                                src="<?php echo $photos[0]['src']; ?>"
-                                                width="<?php echo $photos[0]['width']; ?>"
-                                                height="<?php echo $photos[0]['height']; ?>"
-                                                alt="<?php //echo $photos[0]['title']; ?>"
-                                                srcset="<?php echo implode(', ', $photos[0]['srcset']); ?>"
-                                                sizes="<?php echo implode(', ', $photos[0]['sizes']); ?>"
-                                        >
-                                    </a>
+                                <div class="imageBlock imageBlock--formatted imageBlock--landscape galleryTeaser__imageBlock">
+                                    <img
+                                        class="imageBlock__image"
+                                        src="<?php echo $photos[0]['src']; ?>"
+                                        width="<?php echo $photos[0]['width']; ?>"
+                                        height="<?php echo $photos[0]['height']; ?>"
+                                        alt="<?php //echo $photos[0]['title']; ?>"
+                                        srcset="<?php echo implode(', ', $photos[0]['srcset']); ?>"
+                                        sizes="<?php echo implode(', ', $photos[0]['sizes']); ?>"
+                                    >
                                 </div>
+                                <a class="galleryTeaser__content" href="https://www.flickr.com/photos/ottawa_board_of_trade/albums/<?php echo $photoset['id']; ?>" target="_blank">
+                                    <h3 class="galleryTeaser__title"><?php echo $photoset['title']; ?></h3>
+                                    <span class="galleryTeaser__button"></span>
+                                </a>
                             </div>
                         </div>
                     <?php endforeach; ?>

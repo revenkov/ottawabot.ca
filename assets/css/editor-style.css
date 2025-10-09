@@ -265,11 +265,6 @@ a {
   }
 }
 
-p:has(.button, .secondaryButton) {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px 26px;
-}
 @media (min-width: 1260px) {
   p:has(.button, .secondaryButton) {
     margin: 36px 0;
@@ -428,6 +423,12 @@ ul li:before {
 }
 .button--fullWidth {
   width: 100%;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 26px;
 }
 
 .mce-content-body {

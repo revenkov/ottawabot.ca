@@ -69,4 +69,10 @@
       margin-bottom: 32px;
     }
   }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 26px;
+  }
 }

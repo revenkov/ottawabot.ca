@@ -1,6 +1,9 @@
 <?php
 $thumbnail_image = get_field('thumbnail_image');
 $category = get_field('category');
+if ( empty( $thumbnail_image ) ) {
+    $thumbnail_image = get_field('image', 'term_'.$category->term_id);
+}
 ?>
 <div class="newsTeaser2">
     <div class="imageBlock imageBlock--formatted newsTeaser2__imageBlock"><?php echo wp_get_attachment_image( $thumbnail_image['ID'], 'full', false, ['class'=>'newsTeaser2__image'] ); ?></div>

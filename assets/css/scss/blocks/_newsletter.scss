@@ -3,15 +3,19 @@
   border-radius: 100%;
   text-align: center;
   overflow: hidden;
-  margin: calc( -50% - var(--container-padding-x) ) calc( var(--container-padding-x) / -2 ) 0;
-  max-width: 488px;
+  margin: -196px auto 0;
+  left: 50%;
+  translate: -50% 0;
+  width: 360px;
   @include breakpoint( $tablet ) {
     margin: -262px auto 0;
+    width: 488px;
+    left: auto;
+    translate: none;
   }
   @include breakpoint( $laptop ) {
     position: absolute;
     margin: 0;
-    width: 488px;
     max-width: none;
     right: var(--container-padding-x);
     top: -266px;
@@ -94,6 +98,10 @@
         position: absolute;
         top: 100%;
         left: 0;
+        font-size: 14px;
+        @include breakpoint( $tablet ) {
+          font-size: 16px;
+        }
       }
     }
 

@@ -18,14 +18,14 @@ body {
   margin: 0 auto;
   width: 100%;
   //max-width: 1932px;
-  padding-bottom: 213px;
-  padding-bottom: 185px;
+  //padding-bottom: 213px;
+  padding-bottom: 200px;
   @include breakpoint( $tablet ) {
-    padding-bottom: 286px;
-    padding-bottom: 274px;
+    //padding-bottom: 286px;
+    padding-bottom: 244px;
   }
   @include breakpoint( $desktop ) {
-    padding-bottom: 305px;
+    //padding-bottom: 305px;
     padding-bottom: 250px;
   }
 }

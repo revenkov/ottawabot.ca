@@ -54,7 +54,7 @@ $content_3 = get_field('content_3');
         <?php echo $content_2; ?>
 
         <?php if ( !empty( $files ) ) : ?>
-        <p>
+        <p class="buttons">
             <?php foreach ( $files as $item ) : ?>
                 <a class="button" href="<?php echo $item['file']['url']; ?>" target="_blank"><?php echo $item['button_label']; ?></a>
             <?php endforeach; ?>

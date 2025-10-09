@@ -373,6 +373,10 @@
   flex-direction: row;
   justify-content: center;
   gap: 1px;
+  font-size: 16px;
+  @include breakpoint( 390px ) {
+    font-size: 18px;
+  }
   @include breakpoint( $tablet ) {
     margin-bottom: 46px;
   }

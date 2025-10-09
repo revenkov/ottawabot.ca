@@ -15,7 +15,6 @@ class Theme
 
     final private function __construct()
     {
-        ConstantContact::init();
         add_action('init', [$this, 'reset_wordpress']);
         add_action('after_setup_theme', [$this, 'setup_theme']);
         add_action('wp_head', [$this, 'add_fonts']);
@@ -23,8 +22,9 @@ class Theme
         add_action('init', [$this, 'config_acf']);
         add_action('init', [$this, 'config_emails']);
         add_action('init', [$this, 'add_svg_support']);
-        add_action('wp_loaded', [$this, 'config_session']);
+        add_action('init', [$this, 'start_session'], 1);
         add_filter( 'auth_cookie_expiration', [$this, 'auth_cookie_expiration'] );
+        ConstantContact::init();
     }
 
     final public static function getInstance(): self
@@ -255,19 +255,11 @@ class Theme
         });
     }
 
-    public function config_session(): void
+    public function start_session(): void
     {
-        add_action('init', static function () {
-            if(!session_id()) {
-                session_start();
-            }
-        }, 1);
-
-        add_action('wp_logout', static function () {
-            session_destroy();
-            wp_redirect( home_url() );
-            exit();
-        });
+        if (!session_id()) {
+            session_start();
+        }
     }
 
     public function add_svg_support(): void
