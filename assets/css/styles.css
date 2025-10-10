@@ -5056,6 +5056,9 @@ body {
     bottom: 70px;
   }
 }
+.page-template-advertising .iconCard__icon {
+  background-color: var(--color-primary);
+}
 
 .newsListing__items {
   margin: 0 -18px;

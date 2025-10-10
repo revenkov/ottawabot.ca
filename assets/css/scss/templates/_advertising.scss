@@ -26,4 +26,12 @@
       }
     }
   }
+
+
+  .iconCard {
+
+    &__icon {
+      background-color: var(--color-primary);
+    }
+  }
 }
