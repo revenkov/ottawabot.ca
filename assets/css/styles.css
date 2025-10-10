@@ -5137,7 +5137,7 @@ body {
 .newsTeaser2__date {
   display: flex;
   align-items: center;
-  background: var(--color-purple);
+  background: var(--color-primary);
   height: 44px;
   padding: 0 16px;
   position: absolute;
