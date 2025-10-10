@@ -66,6 +66,10 @@
     background: rgba(0,0,0,.4);
     position: absolute;
     inset: 0;
+
+    &.noOverlay {
+      background: transparent;
+    }
   }
 
   &__date {

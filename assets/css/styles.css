@@ -5134,6 +5134,9 @@ body {
   position: absolute;
   inset: 0;
 }
+.newsTeaser2__content.noOverlay {
+  background: transparent;
+}
 .newsTeaser2__date {
   display: flex;
   align-items: center;
