@@ -1,5 +1,14 @@
 .page-template-buy-local {
 
+  .involvedSection {
+
+    ul {
+      @include breakpoint($laptop) {
+        max-width: 620px;
+      }
+    }
+  }
+
   .logos {
     align-items: flex-start;
 

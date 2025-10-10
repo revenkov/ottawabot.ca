@@ -49,7 +49,7 @@ $content_2 = get_field('content_2');
 $files = get_field('files');
 $content_3 = get_field('content_3');
 ?>
-<div class="section">
+<div class="section involvedSection">
     <div class="container container--narrow">
         <?php echo $content_2; ?>
 

@@ -4000,6 +4000,11 @@ body {
   background-color: var(--color-orange);
 }
 
+@media (min-width: 1260px) {
+  .page-template-buy-local .involvedSection ul {
+    max-width: 620px;
+  }
+}
 .page-template-buy-local .logos {
   align-items: flex-start;
 }
