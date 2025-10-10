@@ -27,6 +27,9 @@ if ( !empty( $content ) ) :
 $news = get_posts([
     'post_type' => 'newsletter',
     'posts_per_page' => -1,
+    'orderby' => 'meta_value_num',
+    'order' => 'DESC',
+    'meta_key' => 'date',
 ]);
 ?>
 <div class="section">

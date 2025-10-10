@@ -118,7 +118,7 @@ class ConstantContact
     }
 */
     public function constant_contact_auth_redirect(): void {
-        if ( !empty( $_GET['constant_contact_auth'] ) && is_user_logged_in() ) :
+        if ( !empty( $_GET['constant_contact_auth'] ) ) :
             $redirectURI = home_url();
             $client = new Client(CONSTANT_CONTACT_CLIENT_ID, CONSTANT_CONTACT_CLIENT_SECRET, $redirectURI);
             header('location: ' . $client->getAuthorizationURL());
@@ -127,7 +127,7 @@ class ConstantContact
     }
 
     public function constant_contact_auth_response_handler(): void {
-        if ( !empty( $_GET['code'] ) && !empty( $_GET['state'] ) && is_user_logged_in() ) :
+        if ( !empty( $_GET['code'] ) && !empty( $_GET['state'] )) :
             $redirectURI = home_url();
             $client = new Client(CONSTANT_CONTACT_CLIENT_ID, CONSTANT_CONTACT_CLIENT_SECRET, $redirectURI);
             $client->acquireAccessToken($_GET);
@@ -176,7 +176,7 @@ class ConstantContact
 
             if ( !in_array( $Client->getStatusCode(), [200,201] ) ) :
                 error_log($Client->getLastError());
-                throw new MyException($Client->getLastError());
+                throw new MyException();
             endif;
 
             $response['content'] = get_field('newsletter_thank_you_message', 'options') ?? __('You has been subscribed successfully. Thank you!', 'selectrum');

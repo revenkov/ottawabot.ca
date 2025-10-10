@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
-    "gsap": "^3.13.0",
     "jquery": "^3.7.1",
     "jquery-ui": "^1.14.1",
     "jquery-validation": "^1.21.0",

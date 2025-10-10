@@ -3921,6 +3921,51 @@ body {
     max-width: 390px;
   }
 }
+.programs__itemLink {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.programs__itemLink span {
+  position: relative;
+  display: block;
+  width: 53px;
+  height: 32px;
+  color: var(--color-primary);
+}
+.programs__itemLink span:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 2px;
+  translate: 0 -50%;
+  height: 2px;
+  background: currentColor;
+  transition: left 0.3s;
+}
+.programs__itemLink span:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  translate: 0 -50%;
+  width: 16px;
+  height: 32px;
+  mask: var(--icon-angle) no-repeat center;
+  mask-size: contain;
+  background: currentColor;
+}
+@media (hover: hover) {
+  .programs__itemLink:hover {
+    text-decoration: none;
+  }
+  .programs__itemLink:hover span:before {
+    left: calc(100% - 2px);
+  }
+}
 
 .page-template-policy-position .siteContent {
   position: relative;
@@ -3949,6 +3994,10 @@ body {
     height: 522px;
     translate: -50% 0;
   }
+}
+
+.page-template-pillar-partners .iconCard__icon {
+  background-color: var(--color-orange);
 }
 
 .page-template-buy-local .logos {
