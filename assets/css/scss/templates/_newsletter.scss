@@ -57,10 +57,10 @@
   height: 100%;
   @include breakpoint($tablet) {
     padding: 46px 36px 46px 36px;
-    gap: 70px;
+    gap: 60px;
   }
   @include breakpoint($laptop) {
-    min-height: 400px;
+    min-height: 312px;
     padding: 46px 60px 46px 60px;
   }
 

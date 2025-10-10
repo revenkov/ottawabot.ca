@@ -5267,12 +5267,12 @@ body {
 @media (min-width: 640px) {
   .newsletterTeaser {
     padding: 46px 36px 46px 36px;
-    gap: 70px;
+    gap: 60px;
   }
 }
 @media (min-width: 1260px) {
   .newsletterTeaser {
-    min-height: 400px;
+    min-height: 312px;
     padding: 46px 60px 46px 60px;
   }
 }
