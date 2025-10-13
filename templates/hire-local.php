@@ -119,7 +119,7 @@ $carousel = get_field('carousel');
 if ( !empty( $carousel ) ) :
 ?>
 <div class="section">
-    <div class="container">
+    <div class="container container--wide">
         <div class="logoTextSlider" data-aos="fade-up">
             <div class="logoTextSlider__slides">
                 <?php foreach ( $carousel as $item ) : ?>

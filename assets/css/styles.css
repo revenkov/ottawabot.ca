@@ -3867,6 +3867,16 @@ body {
     bottom: -387px;
   }
 }
+.page-template-achievements .timeline__navButton {
+  justify-content: center;
+  padding: 0 20px;
+}
+@media (min-width: 1600px) {
+  .page-template-achievements .timeline__navButton {
+    justify-content: flex-start;
+    padding-left: 26%;
+  }
+}
 
 .page-template-affinity-programs .siteContent {
   position: relative;
