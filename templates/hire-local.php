@@ -30,7 +30,7 @@ $content_group_1 = get_field('content_group_1');
 
                                 <?php echo $content_group_1['content']; ?>
 
-                                <div class="textImageBlock__text2">
+                                <div class="textImageBlock__text2" data-aos="fade-up">
                                     <?php echo $content_group_1['content_2']; ?>
 
                                     <?php get_template_part('parts/button', false, $content_group_1['button']); ?>
@@ -55,7 +55,7 @@ $content_group_2 = get_field('content_group_2');
 $icon_cards = get_field('icon_cards');
 ?>
 <div class="section">
-    <div class="container container--wide">
+    <div class="container container--wide" data-aos="fade-up">
         <?php echo $content_group_2['content']; ?>
 
         <?php if ( !empty( $icon_cards ) ) : ?>
@@ -77,7 +77,7 @@ $content_group_3 = get_field('content_group_3');
 if ( !empty( $content_group_3 ) ) :
 ?>
 <div class="section">
-    <div class="container container--narrow">
+    <div class="container container--narrow" data-aos="fade-up">
         <?php echo $content_group_3['content']; ?>
     </div>
 </div>
@@ -92,7 +92,7 @@ if ( !empty( $content_group_3 ) ) :
 <div class="section">
     <div class="container">
         <div class="mapBlock">
-            <div class="mapBlock__mapCol">
+            <div class="mapBlock__mapCol" data-aos="fade-up">
                 <?php if ( !empty($map['desktop']) ) : ?>
                     <div class="imageBlock">
                         <picture>
@@ -103,7 +103,7 @@ if ( !empty( $content_group_3 ) ) :
                     </div>
                 <?php endif; ?>
             </div>
-            <div class="mapBlock__textCol">
+            <div class="mapBlock__textCol" data-aos="fade-up">
                 <div class="mapBlock__textContainer">
                     <?php echo $content_group_4['content']; ?>
                 </div>
@@ -120,7 +120,7 @@ if ( !empty( $carousel ) ) :
 ?>
 <div class="section">
     <div class="container">
-        <div class="logoTextSlider">
+        <div class="logoTextSlider" data-aos="fade-up">
             <div class="logoTextSlider__slides">
                 <?php foreach ( $carousel as $item ) : ?>
                     <div class="logoTextSlider__slide">
@@ -143,11 +143,11 @@ if ( !empty( $logos ) ) :
 ?>
 <div class="section">
     <div class="container container--middle">
-        <h2 style="text-align: center">Our Key Leading Partners</h2>
+        <h2 style="text-align: center" data-aos="fade-up">Our Key Leading Partners</h2>
 
         <div class="logos2">
             <?php foreach ( $logos as $item ) : ?>
-                <div class="logos2__item">
+                <div class="logos2__item" data-aos="fade-up">
                     <?php if ( !empty( $item['url'] ) ) : ?><a href="<?php echo esc_url( $item['url'] ); ?>" target="_blank"><?php endif; ?>
                         <?php echo wp_get_attachment_image( $item['logo']['ID'], 'full' ); ?>
                     <?php if ( !empty( $item['url'] ) ) : ?></a><?php endif; ?>

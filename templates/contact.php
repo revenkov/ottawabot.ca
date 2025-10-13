@@ -20,7 +20,7 @@ $other_contact_categories = get_field('other_contact_categories');
 <div class="section">
     <div class="container container--wide">
         <div class="contacts">
-            <div class="contacts__col1">
+            <div class="contacts__col1" data-aos="fade-up">
                 <h2 class="contacts__title">Ottawa Board of Trade</h2>
                 <div class="contacts__address">
                     <a href="https://maps.app.goo.gl/pwmZ5q1pPVSdCLsf7" target="_blank"><?php echo $address; ?></a>
@@ -34,7 +34,7 @@ $other_contact_categories = get_field('other_contact_categories');
                 <?php endif; ?>
             </div>
             <div class="contacts__divider"></div>
-            <div class="contacts__col2">
+            <div class="contacts__col2" data-aos="fade-up">
                 <?php foreach ( $other_contact_categories as $item ) : ?>
                     <div class="contacts__category">
                         <div class="contacts__categoryTitle text-md"><?php echo $item['category']; ?></div>
@@ -47,7 +47,7 @@ $other_contact_categories = get_field('other_contact_categories');
         </div>
 
 
-        <div class="contactFormBlock">
+        <div class="contactFormBlock" data-aos="fade-up">
             <div class="contactFormBlock__intro">
                 <p>Send us your questions or comments using the form below. We will respond promptly to your inquiry.</p>
             </div>

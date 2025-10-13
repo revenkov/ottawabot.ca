@@ -4,7 +4,7 @@ if ( empty( $events ) ) {
     return;
 }
 ?>
-<div class="eventsSlider">
+<div class="eventsSlider" data-aos="fade-up">
     <div class="eventsSlider__slides">
         <?php
         foreach ( $events as $post ) :

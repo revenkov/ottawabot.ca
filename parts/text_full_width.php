@@ -6,6 +6,6 @@ if ( empty( $content ) ) {
 ?>
 <div class="section">
     <div class="container container--narrow" data-aos="fade-up">
-        <div class="textBlock"><?php echo $content; ?></div>
+        <div class="textBlock" data-aos="fade-up"><?php echo $content; ?></div>
     </div>
 </div>

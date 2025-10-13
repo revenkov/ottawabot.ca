@@ -20,7 +20,7 @@
     ?>
     <footer class="siteFooter">
         <div class="container">
-            <div class="newsletterBlock">
+            <div class="newsletterBlock" data-aos="fade-up">
                 <div class="newsletterBlock__inner">
                     <h3 class="newsletterBlock__title"><?php echo __('Sign Up For Updates', 'selectrum'); ?></h3>
                     <form class="newsletterBlock__form">

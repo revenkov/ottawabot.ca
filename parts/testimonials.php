@@ -4,7 +4,7 @@ if ( empty( $testimonials ) ) {
     return;
 }
 ?>
-<div class="testimonialsSlider">
+<div class="testimonialsSlider" data-aos="fade-up">
     <div class="testimonialsSlider__slides">
         <?php
         foreach ( $testimonials as $post ) :

@@ -18,7 +18,7 @@ if ( !empty( $content ) ) :
 ?>
 <div class="section">
     <div class="container container--narrow">
-        <div class="textBlock"><?php echo $content; ?></div>
+        <div class="textBlock" data-aos="fade-up"><?php echo $content; ?></div>
     </div>
 </div>
 <?php endif; ?>
@@ -35,7 +35,7 @@ $lists = $flickr->photosets()->getList('78514975@N07');
 ?>
 <div class="section">
     <div class="container">
-        <div class="galleryListing">
+        <div class="galleryListing" data-aos="fade-up">
             <?php if ( !empty( $lists['photoset'] ) ) : ?>
                 <div class="galleryListing__items">
                     <?php
@@ -85,11 +85,11 @@ $lists = $flickr->photosets()->getList('78514975@N07');
                         </div>
                     <?php endforeach; ?>
                 </div>
-                <div class="galleryListing__pagination">
+                <div class="galleryListing__pagination" data-aos="fade-up">
                     <div class="loader"><span></span><span></span><span></span><span></span></div>
                 </div>
             <?php else : ?>
-                <div class="galleryListing__nothingFound">Nothing found</div>
+                <div class="galleryListing__nothingFound" data-aos="fade-up">Nothing found</div>
             <?php endif; ?>
         </div>
     </div>

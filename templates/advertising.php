@@ -16,7 +16,7 @@ $content = get_field('content_1');
 if ( !empty( $content ) ) :
 ?>
 <div class="section">
-    <div class="container container--narrow">
+    <div class="container container--narrow" data-aos="fade-up">
         <?php echo $content; ?>
     </div>
 </div>
@@ -29,7 +29,7 @@ if ( !empty( $icon_cards ) ) :
 ?>
 <div class="section">
     <div class="container">
-        <div class="carousel">
+        <div class="carousel" data-aos="fade-up">
             <div class="carousel__slides">
                 <?php foreach ( $icon_cards as $item ) : ?>
                     <div>

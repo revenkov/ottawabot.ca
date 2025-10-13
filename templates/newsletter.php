@@ -17,7 +17,7 @@ if ( !empty( $content ) ) :
 ?>
 <div class="section">
     <div class="container container--narrow">
-        <div class="textBlock"><?php echo $content; ?></div>
+        <div class="textBlock" data-aos="fade-up"><?php echo $content; ?></div>
     </div>
 </div>
 <?php endif; ?>
@@ -34,7 +34,7 @@ $news = get_posts([
 ?>
 <div class="section">
     <div class="container container--wide">
-        <div class="newsletterListing">
+        <div class="newsletterListing" data-aos="fade-up">
             <?php if ( !empty( $news ) ) : ?>
                 <div class="newsletterListing__items">
                     <?php

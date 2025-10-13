@@ -16,7 +16,7 @@ $content_1 = get_field('content_1');
 if ( !empty( $content_1 ) ) :
 ?>
 <div class="section">
-    <div class="container container--narrow">
+    <div class="container container--narrow" data-aos="fade-up">
         <?php echo $content_1; ?>
     </div>
 </div>
@@ -30,10 +30,10 @@ $blue_card = get_field('blue_card');
 ?>
 <div class="section">
     <div class="container">
-        <h2 style="text-align: center;">BENEFITS OF ATTENDING</h2>
+        <h2 style="text-align: center;" data-aos="fade-up">BENEFITS OF ATTENDING</h2>
 
         <div class="benefits">
-            <div class="benefits__card">
+            <div class="benefits__card" data-aos="fade-up">
                 <div class="benefits__cardImageBlock">
                     <?php echo wp_get_attachment_image( $purple_card['background_image']['ID'], 'full' ); ?>
                 </div>
@@ -43,7 +43,7 @@ $blue_card = get_field('blue_card');
                     <p class="benefits__cardText"><?php echo $purple_card['content']; ?></p>
                 </div>
             </div>
-            <div class="benefits__card">
+            <div class="benefits__card" data-aos="fade-up">
                 <div class="benefits__cardImageBlock">
                     <?php echo wp_get_attachment_image( $green_card['background_image']['ID'], 'full' ); ?>
                 </div>
@@ -53,7 +53,7 @@ $blue_card = get_field('blue_card');
                     <p class="benefits__cardText"><?php echo $green_card['content']; ?></p>
                 </div>
             </div>
-            <div class="benefits__card">
+            <div class="benefits__card" data-aos="fade-up">
                 <div class="benefits__cardImageBlock">
                     <?php echo wp_get_attachment_image( $blue_card['background_image']['ID'], 'full' ); ?>
                 </div>
@@ -74,7 +74,7 @@ $events_1 = get_field('events_1');
 if ( !empty( $events_1 ) ) :
 ?>
 <div class="section">
-    <div class="container container--middle">
+    <div class="container container--middle" data-aos="fade-up">
         <?php echo $content_2; ?>
 
         <?php get_template_part('parts/events_slider', false, ['events' => $events_1]); ?>
@@ -89,7 +89,7 @@ $events_2 = get_field('events_2');
 if ( !empty( $events_2 ) ) :
 ?>
 <div class="section">
-    <div class="container container--middle">
+    <div class="container container--middle" data-aos="fade-up">
         <?php echo $content_3; ?>
 
         <?php get_template_part('parts/events_slider', false, ['events' => $events_2]); ?>
@@ -104,7 +104,7 @@ if ( !empty( $carousel ) ) :
 ?>
 <div class="section">
     <div class="container">
-        <div class="logoTextSlider">
+        <div class="logoTextSlider" data-aos="fade-up">
             <div class="logoTextSlider__slides">
                 <?php foreach ( $carousel as $item ) : ?>
                     <div class="logoTextSlider__slide">
@@ -131,7 +131,7 @@ if ( !empty( $testimonials ) ) :
 ?>
 <div class="section">
     <div class="container container--wide">
-        <div class="testimonials">
+        <div class="testimonials" data-aos="fade-up">
             <h2 class="testimonials__title">TESTIMONIALS</h2>
 
             <?php get_template_part('parts/testimonials', false, ['testimonials' => $testimonials]); ?>

@@ -17,7 +17,7 @@ $icon_cards = get_field('icon_cards');
 ?>
 <div class="section">
     <?php if ( !empty( $content_1 ) ) : ?>
-    <div class="container container--narrow">
+    <div class="container container--narrow" data-aos="fade-up">
         <?php echo $content_1; ?>
     </div>
     <?php endif; ?>
@@ -27,7 +27,7 @@ $icon_cards = get_field('icon_cards');
         <div class="iconCards2">
             <div class="iconCards2__items">
                 <?php foreach ( $icon_cards as $item ) : ?>
-                    <div class="iconCards2__item">
+                    <div class="iconCards2__item" data-aos="fade-up">
                         <div class="iconCard2">
                             <div class="iconCard2__header">
                                 <div class="iconCard2__icon" style="--icon-url: url(<?php echo $item['icon']['url'] ?>);"></div>
@@ -50,7 +50,7 @@ $files = get_field('files');
 $content_3 = get_field('content_3');
 ?>
 <div class="section involvedSection">
-    <div class="container container--narrow">
+    <div class="container container--narrow" data-aos="fade-up">
         <?php echo $content_2; ?>
 
         <?php if ( !empty( $files ) ) : ?>
@@ -71,7 +71,7 @@ $logos = get_field('logos') ?? [];
 if ( !empty( $logos ) ) :
 ?>
 <div class="section">
-    <div class="container container--wide">
+    <div class="container container--wide" data-aos="fade-up">
         <h2 style="text-align: center">Local Business Directories</h2>
 
         <?php get_template_part('parts/logos', false, ['logos' => $logos]); ?>

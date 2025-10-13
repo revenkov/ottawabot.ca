@@ -36,11 +36,11 @@ $button_3 = get_field('button_3');
             </picture>
         <?php endif; ?>
         <div class="homeHero__overlay">
-            <div class="homeHero__text">
+            <div class="homeHero__text" data-aos="fade-up">
                 <h1><?php echo $title; ?></h1>
                 <div class="h4 homeHero__subtitle"><?php echo $subtitle; ?></div>
             </div>
-            <div class="homeHero__buttons">
+            <div class="homeHero__buttons" data-aos="fade-up">
                 <?php if ( !empty( $button_1 ) ) : ?>
                     <a href="<?php echo $button_1['url']; ?>" class="homeHero__button" target="<?php echo $button_1['target'] ?? '_self'; ?>">
                         <span class="homeHero__buttonText"><?php echo $button_1['title']; ?></span>
@@ -73,13 +73,13 @@ $numbers_group = get_field('numbers_group');
     <div class="container">
         <div class="homeAboutBlock">
             <div class="homeAboutBlock__col1">
-                <div class="homeAboutBlock__textContainer">
+                <div class="homeAboutBlock__textContainer" data-aos="fade-up">
                     <?php echo $content_group_1['content']; ?>
                     <?php get_template_part('parts/button', false, $content_group_1['button']); ?>
                 </div>
             </div>
             <div class="homeAboutBlock__col2">
-                <div class="homeAboutBlock__numbers">
+                <div class="homeAboutBlock__numbers" data-aos="fade-up">
                     <div class="homeAboutBlock__number">
                         <div class="number" data-to="<?php echo date('Y') - 1857; ?>">
                             <div class="number__counter"></div>
@@ -120,7 +120,7 @@ if ( !empty( $icon_cards ) ) :
     <div class="container container--wide">
         <div class="homeIconCards">
             <?php foreach ( $icon_cards as $item ) : ?>
-                <div class="homeIconCards__card">
+                <div class="homeIconCards__card" data-aos="fade-up">
                     <div class="homeIconCards__cardIcon"><?php echo wp_get_attachment_image( $item['icon']['ID'] ); ?></div>
                     <div class="homeIconCards__cardText">
                         <div class="h4 homeIconCards__cardCategory text-sm"><?php echo $item['category']; ?></div>
@@ -141,17 +141,17 @@ if ( !empty( $featured_events ) ) :
 <div class="section">
     <div class="container">
         <div class="featuredEvents">
-            <div class="featuredEvents__header">
+            <div class="featuredEvents__header" data-aos="fade-up">
                 <h2>Featured events</h2>
             </div>
-            <div class="featuredEvents__listing">
+            <div class="featuredEvents__listing" data-aos="fade-up">
                 <?php foreach ( $featured_events as $event ) : ?>
                     <div class="featuredEvents__item">
                         <?php get_template_part('parts/event_teaser', false, ['event' => $event]); ?>
                     </div>
                 <?php endforeach; ?>
             </div>
-            <div class="featuredEvents__pagination">
+            <div class="featuredEvents__pagination" data-aos="fade-up">
                 <a class="button" href="<?php echo selectrum_get_permalink( 2585 ); ?>">Browse all events</a>
             </div>
         </div>
@@ -173,14 +173,14 @@ if ( $query->have_posts() ) :
     <div class="container">
         <div class="latestNews">
             <div class="latestNews__items">
-                <div class="latestNews__item">
+                <div class="latestNews__item" data-aos="fade-up">
                     <div class="latestNews__intro">
                         <?php echo $content_group_3['content']; ?>
                         <?php get_template_part('parts/button', false, $content_group_3['button']); ?>
                     </div>
                 </div>
                 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-                    <div class="latestNews__item">
+                    <div class="latestNews__item" data-aos="fade-up">
                         <?php get_template_part('parts/news_teaser'); ?>
                     </div>
                 <?php endwhile; wp_reset_postdata(); ?>
@@ -209,7 +209,7 @@ if ( !empty( $featured_testimonials ) ) :
 ?>
 <div class="section">
     <div class="container container--wide">
-        <div class="testimonials">
+        <div class="testimonials" data-aos="fade-up">
             <h2 class="testimonials__title">TESTIMONIALS</h2>
 
             <?php get_template_part('parts/testimonials', false, ['testimonials' => $featured_testimonials]); ?>

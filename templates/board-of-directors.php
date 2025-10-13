@@ -17,7 +17,7 @@ if ( !empty( $content ) ) :
 ?>
 <div class="section">
     <div class="container container--narrow">
-        <div class="textBlock"><?php echo $content; ?></div>
+        <div class="textBlock" data-aos="fade-up"><?php echo $content; ?></div>
     </div>
 </div>
 <?php endif; ?>
@@ -31,7 +31,7 @@ if ( !empty( $board_of_directors ) ) :
     <div class="container container--wide">
         <div class="boardBlock">
             <?php foreach ( $board_of_directors as $item ) : ?>
-                <div class="boardMemberTeaser">
+                <div class="boardMemberTeaser" data-aos="fade-up">
                     <div class="boardMemberTeaser__imageContainer">
                         <?php echo wp_get_attachment_image( $item['photo']['ID'], 'full' ); ?>
                         <?php if ( !empty( $item['linkedin'] ) ) : ?>

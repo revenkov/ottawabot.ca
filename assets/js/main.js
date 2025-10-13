@@ -1,3 +1,4 @@
+import './aos';
 import './header';
 import './navigation';
 import './flip-numbers';

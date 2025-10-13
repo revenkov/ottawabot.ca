@@ -22,7 +22,7 @@ $programs = get_field('programs');
         <?php if ( !empty( $programs ) ) : ?>
         <div class="programs">
             <?php foreach ( $programs as $item ) : ?>
-                <div class="programs__item">
+                <div class="programs__item" data-aos="fade-up">
                     <div class="programs__itemHeader"><?php echo $item['header']; ?></div>
                     <?php if ( !empty( $item['logos'] ) ) : ?>
                     <div class="programs__itemLogos">

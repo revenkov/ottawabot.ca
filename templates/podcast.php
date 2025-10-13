@@ -16,7 +16,7 @@ $content = get_field('content_1');
 if ( !empty( $content ) ) :
 ?>
 <div class="section">
-    <div class="container container--narrow">
+    <div class="container container--narrow" data-aos="fade-up">
         <?php echo $content; ?>
     </div>
 </div>
@@ -31,7 +31,7 @@ $episodes = get_posts([
 ?>
 <div class="section">
     <div class="container container--wide">
-        <div class="podcastListing">
+        <div class="podcastListing" data-aos="fade-up">
             <?php if ( !empty( $episodes ) ) : ?>
                 <div class="podcastListing__items">
                     <?php

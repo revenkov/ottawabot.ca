@@ -18,7 +18,7 @@ $mobile = $hero_images['mobile']['ID'] ?? ($desktop ? false : 3057);
         <?php endif; ?>
         <div class="hero__overlay">
             <div class="container hero__container">
-                <div class="hero__textContainer"><?php echo selectrum_get_hero_text(); ?></div>
+                <div class="hero__textContainer" data-aos="fade-up"><?php echo selectrum_get_hero_text(); ?></div>
             </div>
         </div>
     </div>

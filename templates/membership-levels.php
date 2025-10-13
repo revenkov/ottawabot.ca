@@ -17,7 +17,7 @@ if ( !empty( $content ) ) :
 ?>
 <div class="section">
     <div class="container container--narrow">
-        <div class="textBlock"><?php echo $content; ?></div>
+        <div class="textBlock" data-aos="fade-up"><?php echo $content; ?></div>
     </div>
 </div>
 <?php endif; ?>
@@ -29,7 +29,7 @@ if ( !empty( $membership_levels ) ) :
 ?>
 <div class="section">
     <div class="container container--wide">
-        <div class="timeline">
+        <div class="timeline" data-aos="fade-up">
             <div class="timeline__nav">
                 <ul class="timeline__navList">
                     <?php foreach ( $membership_levels as $key=>$item ) : ?>

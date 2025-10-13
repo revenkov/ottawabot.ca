@@ -1,4 +1,5 @@
 import $ from 'jquery/src/jquery';
+import AOS from "aos";
 
 $(document).ready(function ($) {
 
@@ -19,6 +20,7 @@ $(document).ready(function ($) {
             });
 
             $pagination.toggle( visibleItemsNum < $items.length );
+            AOS.refresh();
         }
 
         $(window).on('scroll', function(e) {

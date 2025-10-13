@@ -18,7 +18,7 @@ $content_2 = get_field('content_2');
 ?>
 <div class="section">
     <?php if ( !empty( $content_1 ) ) : ?>
-    <div class="container container--narrow">
+    <div class="container container--narrow" data-aos="fade-up">
         <?php echo $content_1; ?>
     </div>
     <?php endif; ?>
@@ -28,7 +28,7 @@ $content_2 = get_field('content_2');
         <div class="iconCards">
             <div class="iconCards__items">
                 <?php foreach ( $icon_cards as $item ) : ?>
-                    <div class="iconCards__item">
+                    <div class="iconCards__item" data-aos="fade-up">
                         <div class="iconCard">
                             <div class="iconCard__icon" style="--icon-url: url(<?php echo $item['icon']['url'] ?>);"></div>
                             <?php echo $item['content']; ?>
@@ -41,7 +41,7 @@ $content_2 = get_field('content_2');
     <?php endif; ?>
 
     <?php if ( !empty( $content_2 ) ) : ?>
-        <div class="container container--narrow">
+        <div class="container container--narrow" data-aos="fade-up">
             <?php echo $content_2; ?>
         </div>
     <?php endif; ?>

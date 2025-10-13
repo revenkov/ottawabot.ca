@@ -13,12 +13,12 @@ if ( !empty( $sections ) ) :
         switch ($item['acf_fc_layout']) {
             case 'text_full_width':
                 ?>
-                <div class="textBlock"><?php echo $item['content'] ?></div>
+                <div class="textBlock" data-aos="fade-up"><?php echo $item['content'] ?></div>
                 <?php
                 break;
             case 'image_full_width':
                 ?>
-                <div class="imageBlock"><?php echo wp_get_attachment_image( $item['image']['ID'], 'full' ); ?></div>
+                <div class="imageBlock" data-aos="fade-up"><?php echo wp_get_attachment_image( $item['image']['ID'], 'full' ); ?></div>
                 <?php
                 break;
         }

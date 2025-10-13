@@ -17,7 +17,7 @@ if ( !empty( $content ) ) :
 ?>
 <div class="section">
     <div class="container container--narrow">
-        <div class="textBlock"><?php echo $content; ?></div>
+        <div class="textBlock" data-aos="fade-up"><?php echo $content; ?></div>
     </div>
 </div>
 <?php endif; ?>
@@ -29,7 +29,7 @@ if ( !empty( $icon_cards ) ) :
 ?>
 <div class="section">
     <div class="container">
-        <div class="carousel">
+        <div class="carousel" data-aos="fade-up">
             <div class="carousel__slides">
                 <?php foreach ( $icon_cards as $item ) : ?>
                     <div>
@@ -54,7 +54,7 @@ if ( !empty( $cta_group ) ) :
 ?>
 <div class="section">
     <div class="container">
-        <div class="ctaBlock">
+        <div class="ctaBlock" data-aos="fade-up">
             <div class="ctaBlock__inner">
                 <?php echo $cta_group['content']; ?>
 

@@ -16,7 +16,7 @@ $content_1 = get_field('content_1');
 if ( !empty( $content_1 ) ) :
 ?>
 <div class="section">
-    <div class="container container--narrow">
+    <div class="container container--narrow" data-aos="fade-up">
         <?php echo $content_1; ?>
     </div>
 </div>
@@ -28,7 +28,7 @@ $content_2 = get_field('content_2');
 $links = get_field('links');
 ?>
 <div class="section">
-    <div class="container container--narrow">
+    <div class="container container--narrow" data-aos="fade-up">
         <?php echo $content_2; ?>
 
         <?php

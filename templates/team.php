@@ -17,7 +17,7 @@ if ( !empty( $content ) ) :
 ?>
 <div class="section">
     <div class="container container--narrow">
-        <div class="textBlock"><?php echo $content; ?></div>
+        <div class="textBlock" data-aos="fade-up"><?php echo $content; ?></div>
     </div>
 </div>
 <?php endif; ?>
@@ -42,7 +42,7 @@ if ( !empty( $posts ) ) :
                 $phone = get_field('phone');
                 $ext = get_field('ext');
                 ?>
-                <div class="teamMemberTeaser">
+                <div class="teamMemberTeaser" data-aos="fade-up">
                     <div class="teamMemberTeaser__imageContainer">
                         <a href="<?php echo get_the_permalink(); ?>" title="Learn more">
                             <?php echo wp_get_attachment_image( $photo['ID'], 'full' ); ?>

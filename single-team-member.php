@@ -12,10 +12,10 @@ $linkedin = get_field('linkedin');
 <div class="section">
     <div class="container container--wide">
         <div class="teamMemberBlock">
-            <div class="teamMemberBlock__col1">
+            <div class="teamMemberBlock__col1" data-aos="fade-up">
                 <div class="imageBlock imageBlock--square"><?php echo wp_get_attachment_image( $photo['ID'], 'full' ); ?></div>
             </div>
-            <div class="teamMemberBlock__col2">
+            <div class="teamMemberBlock__col2" data-aos="fade-up">
                 <div class="teamMemberBlock__textContainer">
                     <?php echo $bio; ?>
 

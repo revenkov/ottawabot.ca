@@ -19,7 +19,7 @@ $committees = get_posts([
 ]);
 ?>
 <div class="section">
-    <div class="container container--narrow">
+    <div class="container container--narrow" data-aos="fade-up">
         <?php echo $content; ?>
     </div>
 
@@ -33,7 +33,7 @@ $committees = get_posts([
                 $color = get_field('color');
                 $categories = get_field('categories');
                 ?>
-                <div class="committees__item">
+                <div class="committees__item" data-aos="fade-up">
                     <div class="committeeTeaser" style="--hover-color: #<?php echo $color; ?>;">
                         <div class="imageBlock imageBlock--formatted committeeTeaser__imageBlock"><?php echo wp_get_attachment_image( $background_image['ID'], 'full' ); ?></div>
                         <div class="committeeTeaser__content">
