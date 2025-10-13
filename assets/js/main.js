@@ -12,3 +12,4 @@ import './news';
 import './newsletter-listing';
 import './newsletter-form';
 import './podcast';
+import './text-image';

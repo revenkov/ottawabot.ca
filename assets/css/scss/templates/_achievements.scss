@@ -1,28 +1,31 @@
 .page-template-achievements {
 
-  .siteContent {
+  .timeline {
     position: relative;
 
-    &:before {
-      content: '';
-      position: absolute;
-      bottom: 180px;
-      left: -105px;
-      width: 220px;
-      height: 220px;
-      background: url("../images/circles.svg") no-repeat center center;
-      background-size: contain;
-      @include breakpoint( $tablet ) {
-        bottom: 230px;
-        left: -213px;
-        width: 422px;
-        height: 422px;
-      }
-      @include breakpoint( $laptop ) {
-        width: 822px;
-        height: 822px;
-        left: -450px;
-        bottom: 70px;
+    &__nav {
+
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: -80px;
+        right: 16px;
+        width: 220px;
+        height: 220px;
+        background: url("../images/circles.svg") no-repeat center center;
+        background-size: contain;
+        @include breakpoint( $tablet ) {
+          bottom: -237px;
+          right: 70px;
+          width: 422px;
+          height: 422px;
+        }
+        @include breakpoint( $laptop ) {
+          width: 822px;
+          height: 822px;
+          right: 400px;
+          bottom: -387px;
+        }
       }
     }
   }

@@ -10,7 +10,7 @@
   &__item {
     padding: 0 18px;
     width: 100%;
-    @include breakpoint($tablet) {
+    @include breakpoint($laptop) {
       width: 50%;
     }
 

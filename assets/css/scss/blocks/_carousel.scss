@@ -16,6 +16,22 @@
     height: 100%;
   }
 
+  .tns-item {
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility .3s, opacity .3s;
+
+    &.tns-slide-active {
+      opacity: 1;
+      visibility: visible;
+
+      + .tns-item {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
   .tns-ovh {
     overflow: visible;
   }

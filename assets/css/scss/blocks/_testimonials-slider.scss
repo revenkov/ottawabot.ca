@@ -5,7 +5,8 @@
   }
 
   &__slides {
-    background: var(--color-grey-3);
+    display: flex;
+    align-items: stretch;
   }
 
   &__slide {
@@ -13,8 +14,9 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
-    background: url('../images/quotes.svg') no-repeat -5px -34px;
+    background: var(--color-grey-3) url('../images/quotes.svg') no-repeat -5px -34px;
     background-size: 284px auto;
+    height: 100%;
     @include breakpoint($tablet) {
       background-size: 292px auto;
     }

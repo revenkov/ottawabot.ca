@@ -15,7 +15,7 @@ class WalkerNavMenu extends Walker_Nav_Menu {
 		$indent = str_repeat( $t, $depth );
 
 		// Default class.
-		$classes = array( 'sub-menu' );
+		$classes = array( 'sub-menu', 'sub-menu-depth-' . $depth );
 
 		/**
 		 * Filters the CSS class(es) applied to a menu list element.

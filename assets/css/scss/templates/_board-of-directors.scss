@@ -71,6 +71,7 @@
     position: absolute;
     right: 20px;
     bottom: 12px;
+    transition: background .3s;
 
     &:before {
       content: '';
@@ -85,6 +86,12 @@
       mask: var(--icon-linkedin) no-repeat center;
       mask-size: contain;
       transition: left .3s;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background: #0171AB;
+      }
     }
   }
 }

@@ -76,9 +76,9 @@
                             <div class="siteFooter__logos">
                                 <?php foreach ( $logos as $logo ) : ?>
                                 <div class="siteFooter__logo">
-                                    <a href="<?php echo $logo['url']; ?>" target="_blank">
+                                    <?php if ( !empty( $logo['url'] ) ) : ?><a href="<?php echo $logo['url']; ?>" target="_blank"><?php endif; ?>
                                         <?php echo wp_get_attachment_image( $logo['logo']['ID'], 'full' ); ?>
-                                    </a>
+                                    <?php if ( !empty( $logo['url'] ) ) : ?></a><?php endif; ?>
                                 </div>
                                 <?php endforeach; ?>
                             </div>

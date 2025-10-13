@@ -34,7 +34,7 @@ $(document).ready(function($) {
         //console.log( scrollTop);
         const $items = $(this).find('.timeline__item');
         $items.each(function (index, element) {
-            if ( parseInt($(element).offset().top - $timeline.offset().top) <= scrollTop /*&& $(element).position().top + $(element).outerHeight() <= scrollTop || $(element).position().top + $(element).outerHeight === scrollTop + $items.outerHeight()*/ ) {
+            if ( parseInt($(element).offset().top - $timeline.offset().top) - 200 <= scrollTop /*&& $(element).position().top + $(element).outerHeight() <= scrollTop || $(element).position().top + $(element).outerHeight === scrollTop + $items.outerHeight()*/ ) {
                 $items.not(this).removeClass('active');
                 $(element).addClass('active');
                 const id = $(element).attr('id');

@@ -63,6 +63,12 @@
       margin-bottom: 20px;
     }
 
+    &--1 {
+      @include breakpoint($tablet) {
+        width: 100%;
+      }
+    }
+
     &--2 {
       @include breakpoint($laptop) {
         order: -1;
@@ -223,11 +229,16 @@
   flex-wrap: wrap;
   gap: 16px 0;
   @include breakpoint($tablet) {
-    flex-direction: row;
+    //flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px 0;
+    max-height: 130px;
   }
   @include breakpoint($laptop) {
     justify-content: space-between;
+  }
+  @include breakpoint($desktop) {
+    gap: 20px 75px;
   }
 
   li {

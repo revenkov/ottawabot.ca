@@ -32,7 +32,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 46px;
+  gap: 30px 46px;
   text-decoration: none;
   height: 100%;
   @include breakpoint($tablet) {
@@ -47,7 +47,9 @@
   }
 
   &__imageCol {
-    width: 38%;
+    @include breakpoint($laptop) {
+      width: 38%;
+    }
   }
 
   &__textCol {
@@ -74,5 +76,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 18px 26px;
+    margin-top: 20px;
   }
 }

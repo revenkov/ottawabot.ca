@@ -11,18 +11,29 @@ $(document).ready(function($) {
         btnClose: $('#btnMenuClose'),
         init: function () {
             $body.append('<div id="navOverlay" class="navOverlay"/>');
-
-            //$menu.list.css('max-height', windowHeight);
-            $document.on('scroll', function () {
-                //$menu.list.css('max-height', windowHeight);
-            });
             $menu.btn.on('click', $menu.toggle);
             $menu.btnClose.on('click', $menu.close);
             $menu.list.on('click', '.menu-item-link-wrapper', function (e) {
-                if ( window.outerWidth < 1600 ) {
+                if ( window.outerWidth < 1260 ) {
                     var $item = $(this).closest('.menu-item');
+                    if ($(this).next('.sub-menu').hasClass('sub-menu-depth-0')) {
+                        $menu.list.find('.menu-item-has-children.open').not($item).find('.sub-menu-depth-0:visible').slideUp();
+                        $menu.list.find('.menu-item-has-children.open:has(.sub-menu-depth-0)').not($item).removeClass('open');
+                    }
                     $item.toggleClass('open');
                     $(this).next('.sub-menu').slideToggle();
+                }
+            });
+            $menu.list.on('mouseover', '.menu-item-has-children', function (e) {
+                if ( window.outerWidth >= 1260 ) {
+                    var $item = $(this).closest('.menu-item');
+                    $item.children('.sub-menu').slideDown(300);
+                }
+            });
+            $menu.list.on('mouseleave', '.menu-item-has-children', function (e) {
+                if ( window.outerWidth >= 1260 ) {
+                    var $item = $(this).closest('.menu-item');
+                    $item.children('.sub-menu').slideUp(300);
                 }
             });
         },

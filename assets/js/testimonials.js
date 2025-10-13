@@ -8,14 +8,16 @@ $(document).ready(function($) {
         tns({
             container: $container[0],
             items: 1,
-            loop: false,
-            gutter: 0,
-            autoplay: false,
+            loop: true,
+            gutter: 36,
+            autoplay: true,
             autoplayButtonOutput: false,
             autoplayHoverPause: true,
+            autoplayTimeout: 5000,
             nav: true,
             navPosition: 'bottom',
             controls: false,
+            mouseDrag: true,
         });
     })
 })

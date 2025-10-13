@@ -7,17 +7,19 @@ $(document).ready(function($) {
         const $container = $carousel.find('[class*="__slides"]');
         tns({
             container: $container[0],
-            loop: false,
+            loop: true,
             gutter: 0,
-            autoplay: false,
+            autoplay: true,
             autoplayButtonOutput: false,
             autoplayHoverPause: true,
+            autoplayTimeout: 5000,
             nav: false,
             navPosition: 'bottom',
             controls: true,
             controlsText: ['', ''],
             controlsPosition: 'bottom',
             autoHeight: false,
+            mouseDrag: true,
             responsive: {
                 0: {
                     gutter: 32,

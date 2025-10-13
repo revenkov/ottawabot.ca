@@ -44,6 +44,10 @@ if ( !empty( $timeline ) ) :
             <div class="timeline__items">
                 <?php foreach ( $timeline as $item ) : ?>
                     <div class="timeline__item" id="<?php echo $item['year']; ?>">
+                        <div class="timeline__itemHeader">
+                            <h2 class="timeline__title" style="color: #<?php echo $item['color']; ?>"><?php echo $item['year']; ?></h2>
+                        </div>
+
                         <?php echo $item['content']; ?>
 
                         <div class="accordion">

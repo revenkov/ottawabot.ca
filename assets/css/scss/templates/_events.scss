@@ -70,17 +70,17 @@
 
 .eventSlide {
   position: relative;
-  background: var(--color-grey-4);
-  @include breakpoint($laptop) {
+  background: var(--color-grey-3);
+  @include breakpoint($tablet) {
     display: flex;
     align-items: stretch;
   }
 
   &__imageCol {
-    @include breakpoint($laptop) {
+    @include breakpoint($tablet) {
       width: 36%;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
     }
   }
 
@@ -92,9 +92,9 @@
     background: var(--color-grey-3);
     @include breakpoint($tablet) {
       padding: 53px var(--grid-column-width);
+      width: 64%;
     }
     @include breakpoint($laptop) {
-      width: 64%;
       padding: 70px 70px;
     }
   }
@@ -126,5 +126,38 @@
     display: block;
     position: absolute;
     inset: 0;
+  }
+}
+
+
+.eventContent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px var(--grid-column-width);
+  @include breakpoint( $tablet ) {
+    flex-direction: row;
+  }
+
+  &__col1 {
+    @include breakpoint( $tablet ) {
+      width: 35%;
+    }
+  }
+
+  &__col2 {
+    @include breakpoint( $tablet ) {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__linkedinLink {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: var(--color-primary);
+    mask: var(--icon-linkedin) no-repeat center;
+    mask-size: contain;
   }
 }

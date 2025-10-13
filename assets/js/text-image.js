@@ -6,7 +6,7 @@ $(document).ready(function($) {
             const $element = $(element);
             const $textImageBlock = $element.parents('.textImageBlock');
             const $textCol = $textImageBlock.find('.textImageBlock__textInner');
-            if ( window.outerWidth > 1260 ) {
+            if ( window.outerWidth >= 1260 ) {
                 $element.appendTo($textCol);
             } else {
                 $element.appendTo($textImageBlock);

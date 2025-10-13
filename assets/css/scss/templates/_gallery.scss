@@ -58,7 +58,13 @@
     @include breakpoint($tablet) {
       left: 36px;
       bottom: 36px;
-      right: 160px;
+      right: 130px;
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+    @include breakpoint( $laptop ) {
+      font-size: 2.25rem;
+      line-height: 3.125rem;
     }
     @include breakpoint($desktop) {
       left: 60px;

@@ -34,6 +34,15 @@
     @include breakpoint( $laptop ) {
       margin-bottom: 40px;
     }
+
+    @media (hover: hover) {
+      &:hover {
+
+        .teamMemberTeaser__button:before {
+          left: calc( 100% - 2px );
+        }
+      }
+    }
   }
 
   &__name {
@@ -99,12 +108,6 @@
       background: currentColor;
       @include breakpoint( $laptop ) {
         right: 16px;
-      }
-    }
-
-    &:hover:before {
-      @media (hover: hover) {
-        left: calc( 100% - 2px );
       }
     }
   }

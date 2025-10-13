@@ -44,8 +44,10 @@ if ( !empty( $posts ) ) :
                 ?>
                 <div class="teamMemberTeaser">
                     <div class="teamMemberTeaser__imageContainer">
-                        <?php echo wp_get_attachment_image( $photo['ID'], 'full' ); ?>
-                        <a href="<?php echo get_the_permalink(); ?>" class="teamMemberTeaser__button" title="Learn more"></a>
+                        <a href="<?php echo get_the_permalink(); ?>" title="Learn more">
+                            <?php echo wp_get_attachment_image( $photo['ID'], 'full' ); ?>
+                            <span class="teamMemberTeaser__button"></span>
+                        </a>
                     </div>
                     <h3 class="h4 teamMemberTeaser__name"><?php echo get_the_title(); ?></h3>
                     <div class="teamMemberTeaser__title"><?php echo $title; ?></div>

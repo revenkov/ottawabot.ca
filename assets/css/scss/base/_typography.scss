@@ -143,6 +143,12 @@ p {
     }
   }
 
+  &:has(.button:nth-child(2)) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 26px;
+  }
+
   &:has(.text-md) {
     margin-bottom: 24px;
   }
@@ -243,6 +249,9 @@ p, ul, ol, blockquote, hr {
   }
 }
 
+.text-blue {
+  color: var(--color-primary);
+}
 
 ul, ol {
   display: flex;

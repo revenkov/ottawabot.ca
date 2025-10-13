@@ -1,7 +1,7 @@
 .timeline {
   position: relative;
   display: flex;
-  margin-right: -16px;
+  margin: 0 -16px;
   @include breakpoint( $tablet ) {
     margin: 0;
   }
@@ -37,6 +37,7 @@
       }
       @include breakpoint( $laptop ) {
         font-size: 30px;
+        max-height: 136px;
       }
 
       &:before {
@@ -74,6 +75,7 @@
       &:hover {
         @media (hover: hover) {
           text-decoration: none;
+          background-color: #F9F9F9;
         }
       }
 
@@ -118,13 +120,7 @@
   }
 
   &__item {
-    padding: 25px 0 0;
-    @include breakpoint( $tablet ) {
-      padding: 45px 0 0;
-    }
-    @include breakpoint( $laptop ) {
-      padding: 50px 0 0;
-    }
+    padding: 50px 0 0;
     @include breakpoint( $desktop ) {
       padding: 55px 0 0;
     }
@@ -142,22 +138,32 @@
     &Header {
       display: flex;
       flex-wrap: wrap;
-      align-items: stretch;
+      flex-direction: column;
       font-weight: 600;
       gap: 10px 33px;
       margin-bottom: 40px;
+      @include breakpoint( $tablet ) {
+        flex-direction: row;
+        align-items: center;
+      }
       @include breakpoint( $laptop ) {
         font-size: 30px;
       }
 
-      h2 {
-        font-size: inherit;
+      h2, .h2 {
         margin: 0;
+        @include breakpoint( $laptop ) {
+          font-size: inherit;
+        }
       }
 
       &Divider {
-        position: relative;
-        width: 3px;
+        display: none;
+        @include breakpoint( $tablet ) {
+          display: block;
+          position: relative;
+          width: 3px;
+        }
 
         &:before {
           content: '';

@@ -48,7 +48,7 @@ if ( !empty( $membership_levels ) ) :
                         <div class="timeline__itemHeader">
                             <h2 class="timeline__title" style="color: #<?php echo $item['color']; ?>"><?php echo $item['title']; ?></h2>
                             <div class="timeline__itemHeaderDivider"></div>
-                            <div class="timeline__price"><?php echo $item['price']; ?></div>
+                            <div class="h2 timeline__price"><?php echo $item['price']; ?></div>
                         </div>
 
                         <?php echo $item['content']; ?>
