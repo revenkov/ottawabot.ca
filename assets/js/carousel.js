@@ -5,7 +5,7 @@ $(document).ready(function($) {
     $('.carousel').each(function(index, element) {
         const $carousel = $(element);
         const $container = $carousel.find('[class*="__slides"]');
-        tns({
+        const slider = tns({
             container: $container[0],
             loop: true,
             gutter: 0,
@@ -32,6 +32,15 @@ $(document).ready(function($) {
                     gutter: 36,
                 }
             }
+        });
+        slider.events.on('dragStart', function() {
+            slider.pause();
+        });
+        slider.events.on('dragMove', function() {
+            slider.pause();
+        });
+        slider.events.on('dragEnd', function() {
+            slider.pause();
         });
     })
 });

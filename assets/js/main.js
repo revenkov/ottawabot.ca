@@ -1,4 +1,5 @@
 import './aos';
+import './hash';
 import './header';
 import './navigation';
 import './flip-numbers';

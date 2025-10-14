@@ -9,7 +9,7 @@ $sections = get_field('sections');
 if ( !empty( $sections ) ) :
     echo '<div class="section">';
     foreach ($sections as $key => $item) :
-        echo '<div class="container container--middle">';
+        echo '<div class="container container--narrow">';
         switch ($item['acf_fc_layout']) {
             case 'text_full_width':
                 ?>
