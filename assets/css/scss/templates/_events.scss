@@ -78,9 +78,22 @@
 
   &__imageCol {
     @include breakpoint($tablet) {
+      position: relative;
       width: 36%;
       display: flex;
       align-items: flex-start;
+    }
+
+    img {
+      @include breakpoint($tablet) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
     }
   }
 

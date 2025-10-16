@@ -5,7 +5,7 @@ $(document).ready(function($) {
     $('.testimonialsSlider').each(function(index, element) {
         const $carousel = $(element);
         const $container = $carousel.find('[class*="__slides"]');
-        tns({
+        const slider = tns({
             container: $container[0],
             items: 1,
             loop: true,
@@ -18,6 +18,15 @@ $(document).ready(function($) {
             navPosition: 'bottom',
             controls: false,
             mouseDrag: true,
+        });
+        slider.events.on('dragStart', function() {
+            slider.pause();
+        });
+        slider.events.on('dragMove', function() {
+            slider.pause();
+        });
+        slider.events.on('dragEnd', function() {
+            slider.pause();
         });
     })
 })

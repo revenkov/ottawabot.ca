@@ -219,4 +219,16 @@ if ( !empty( $featured_testimonials ) ) :
 <?php endif; ?>
 
 
+<?php
+$content = get_field('content');
+if ( !empty( $content ) ) :
+?>
+<div class="section">
+    <div class="container container--narrow">
+        <?php echo $content; ?>
+    </div>
+</div>
+<?php endif; ?>
+
+
 <?php get_footer(); ?>

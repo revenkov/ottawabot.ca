@@ -46,4 +46,7 @@ $links = get_field('links');
 </div>
 
 
+<?php get_template_part('parts/builder'); ?>
+
+
 <?php get_footer(); ?>

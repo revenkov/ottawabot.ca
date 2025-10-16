@@ -10,11 +10,25 @@
   }
 
   .logos {
-    align-items: flex-start;
+    align-items: stretch;
 
     &__item {
       @include breakpoint($laptop) {
         width: calc( (100% - 30px*4)/5);
+      }
+
+      a {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 100%;
+      }
+
+      &Title {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
   }

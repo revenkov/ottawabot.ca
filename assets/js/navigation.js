@@ -24,16 +24,16 @@ $(document).ready(function($) {
                     $(this).next('.sub-menu').slideToggle();
                 }
             });
-            $menu.list.on('mouseover', '.menu-item-has-children', function (e) {
+            $menu.list.on('mouseenter', '.menu-item-has-children', function (e) {
                 if ( window.outerWidth >= 1260 ) {
                     var $item = $(this).closest('.menu-item');
-                    $item.children('.sub-menu').slideDown(300);
+                    $item.children('.sub-menu:hidden').slideDown(200);
                 }
             });
             $menu.list.on('mouseleave', '.menu-item-has-children', function (e) {
                 if ( window.outerWidth >= 1260 ) {
                     var $item = $(this).closest('.menu-item');
-                    $item.children('.sub-menu').slideUp(300);
+                    $item.children('.sub-menu').slideUp(200);
                 }
             });
         },
