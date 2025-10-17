@@ -278,6 +278,9 @@ p:has(.button:nth-child(2)) {
 p:has(.text-md) {
   margin-bottom: 24px;
 }
+p img {
+  width: auto;
+}
 p a {
   color: var(--color-primary);
 }

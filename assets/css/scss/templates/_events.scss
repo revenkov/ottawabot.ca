@@ -84,6 +84,13 @@
       align-items: flex-start;
     }
 
+    &:before {
+      @include breakpoint($laptop) {
+        content: "";
+        padding-bottom: 100%;
+      }
+    }
+
     img {
       @include breakpoint($tablet) {
         position: absolute;

@@ -389,6 +389,9 @@ p:has(.button:nth-child(2)) {
 p:has(.text-md) {
   margin-bottom: 24px;
 }
+p img {
+  width: auto;
+}
 p a {
   color: var(--color-primary);
 }
@@ -4408,6 +4411,12 @@ body {
     width: 36%;
     display: flex;
     align-items: flex-start;
+  }
+}
+@media (min-width: 1260px) {
+  .eventSlide__imageCol:before {
+    content: "";
+    padding-bottom: 100%;
   }
 }
 @media (min-width: 720px) {
