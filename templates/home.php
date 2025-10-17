@@ -209,7 +209,7 @@ if ( !empty( $featured_testimonials ) ) :
 ?>
 <div class="section">
     <div class="container container--wide">
-        <div class="testimonials" data-aos="fade-up">
+        <div class="testimonials">
             <h2 class="testimonials__title">TESTIMONIALS</h2>
 
             <?php get_template_part('parts/testimonials', false, ['testimonials' => $featured_testimonials]); ?>
@@ -224,7 +224,7 @@ $content = get_field('content');
 if ( !empty( $content ) ) :
 ?>
 <div class="section">
-    <div class="container container--narrow">
+    <div class="container container--narrow" data-aos="fade-up">
         <?php echo $content; ?>
     </div>
 </div>

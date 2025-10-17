@@ -54,7 +54,7 @@
                     <div class="siteFooter__col siteFooter__col--2">
                         <div class="siteFooter__colTitle text-md"><?php echo __('Ottawa Board of Trade', 'selectrum'); ?></div>
                         <div class="siteFooter__colContent">
-                            <?php if ( !empty( $address ) ) : ?><div class="siteFooter__address"><a href="https://maps.app.goo.gl/pwmZ5q1pPVSdCLsf7" target="_blank"><?php echo $address; ?></a></div><?php endif; ?>
+                            <?php if ( !empty( $address ) ) : ?><div class="siteFooter__address"><a href="https://maps.app.goo.gl/iZqmDS2cBjLhXSSJ8" target="_blank"><?php echo $address; ?></a></div><?php endif; ?>
 
                             <div class="siteFooter__contacts">
                                 <?php if ( !empty( $phone ) ) : ?><div class="siteFooter__phone"><a href="tel:+1<?php echo preg_replace("/[^0-9]/", "", $phone); ?>"><?php echo $phone; ?></a></div><?php endif; ?>

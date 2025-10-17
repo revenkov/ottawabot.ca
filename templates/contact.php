@@ -23,7 +23,7 @@ $other_contact_categories = get_field('other_contact_categories');
             <div class="contacts__col1" data-aos="fade-up">
                 <h2 class="contacts__title">Ottawa Board of Trade</h2>
                 <div class="contacts__address">
-                    <a href="https://maps.app.goo.gl/pwmZ5q1pPVSdCLsf7" target="_blank"><?php echo $address; ?></a>
+                    <a href="https://maps.app.goo.gl/iZqmDS2cBjLhXSSJ8" target="_blank"><?php echo $address; ?></a>
                 </div>
                 <div class="contacts__categoryTitle text-md">General Inquiries</div>
                 <?php if ( !empty( $phone ) ) : ?>
