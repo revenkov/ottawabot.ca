@@ -241,6 +241,14 @@
         @include breakpoint( $laptop ) {
           margin-left: -15px;
         }
+
+        &--center {
+          margin-left: 0;
+
+          .digit {
+            text-align: center;
+          }
+        }
       }
     }
   }

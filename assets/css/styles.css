@@ -596,7 +596,10 @@ ul li:before {
   }
 }
 .number__counter .digit {
-  text-align: right;
+  text-align: center;
+}
+.number__counter--center .digit {
+  text-align: center;
 }
 .number__description {
   text-transform: uppercase;
@@ -3376,6 +3379,12 @@ body {
   .homeAboutBlock__number .number__counter {
     margin-left: -15px;
   }
+}
+.homeAboutBlock__number .number__counter--center {
+  margin-left: 0;
+}
+.homeAboutBlock__number .number__counter--center .digit {
+  text-align: center;
 }
 
 .homeIconCards {

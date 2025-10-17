@@ -124,7 +124,7 @@ if ( !empty( $carousel ) ) :
 </div>
 <?php endif; ?>
 
-
+<!--
 <div class="section">
     <div class="container container--middle" data-aos="fade-up">
         <div id="mni-calendar-1760625345654" style="overflow: hidden;"></div>
@@ -136,7 +136,7 @@ if ( !empty( $carousel ) ) :
         </script>
     </div>
 </div>
-
+-->
 
 <?php
 $testimonials = get_field('featured_testimonials');

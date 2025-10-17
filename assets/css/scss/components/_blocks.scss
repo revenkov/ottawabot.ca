@@ -86,7 +86,14 @@
     }
 
     .digit {
-      text-align: right;
+      text-align: center;
+    }
+
+    &--center {
+
+      .digit {
+        text-align: center;
+      }
     }
   }
 

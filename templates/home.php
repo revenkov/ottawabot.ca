@@ -89,7 +89,7 @@ $numbers_group = get_field('numbers_group');
                     <div class="homeAboutBlock__numbersDivider"></div>
                     <div class="homeAboutBlock__number">
                         <div class="number" data-to="<?php echo $numbers_group['number']; ?>">
-                            <div class="number__counter"></div>
+                            <div class="number__counter number__counter--center"></div>
                             <div class="number__description text-sm"><?php echo $numbers_group['description_2']; ?></div>
                         </div>
                     </div>
