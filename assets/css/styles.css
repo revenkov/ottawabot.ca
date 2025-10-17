@@ -4050,7 +4050,7 @@ body {
   }
 }
 .page-template-buy-local .logos {
-  align-items: stretch;
+  align-items: flex-start;
 }
 @media (min-width: 1260px) {
   .page-template-buy-local .logos__item {
@@ -4058,16 +4058,8 @@ body {
   }
 }
 .page-template-buy-local .logos__item a {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  height: 100%;
-}
-.page-template-buy-local .logos__itemTitle {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  width: 100%;
 }
 
 .page-template-hire-local {

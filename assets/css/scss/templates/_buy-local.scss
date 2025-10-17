@@ -10,7 +10,7 @@
   }
 
   .logos {
-    align-items: stretch;
+    align-items: flex-start;
 
     &__item {
       @include breakpoint($laptop) {
@@ -18,17 +18,8 @@
       }
 
       a {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        height: 100%;
-      }
-
-      &Title {
-        flex: 1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: block;
+        width: 100%;
       }
     }
   }
