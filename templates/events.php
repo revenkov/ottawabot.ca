@@ -124,19 +124,7 @@ if ( !empty( $carousel ) ) :
 </div>
 <?php endif; ?>
 
-<!--
-<div class="section">
-    <div class="container container--middle" data-aos="fade-up">
-        <div id="mni-calendar-1760625345654" style="overflow: hidden;"></div>
-        <script type="text/javascript" src="https://business.ottawabot.ca/Content/Script/Calendar.min.js"></script>
-        <script type="text/javascript">
-            /*<![CDATA[*/
-            new MNI.Widgets.Calendar("mni-calendar-1760625345654",{"showLinks":true,"popUp":false,"headerFormat":"MMMM yyyy","weekdayFormat":"ddd","styleTemplate":"#@id .mn-widget-calendar{color:#2B2B2B;font-family:\"Montserrat\",sans-serif;font-size:18px;float:left;line-height:150%;text-align:center;width:100%}#@id .mn-widget-calendar a{color:#1D8BCD;font-weight:700;text-decoration:none}#@id .mn-widget-calendar a:hover{color:#78BE21}#@id .mn-widget-calendar-clear{clear:both}#@id .mn-widget-calendar-header{font-weight:700;text-align:center;text-transform:uppercase}#@id .mn-widget-calendar-prev{float:left}#@id .mn-widget-calendar-next{float:right}#@id .mn-widget-calendar-weekday,.mn-widget-calendar-day{display:inline-block;width:14.285714285714286%}#@id .mn-widget-calendar-day-prev,.mn-widget-calendar-day-next{color:#5e5e5e}"}).create();
-            /*]]>*/
-        </script>
-    </div>
-</div>
--->
+<iframe style="border:1px #FFFFFF none" src="https://business.ottawabot.ca/events/" title="iFrame" width="100%" height="900px" scrolling="yes" frameborder="no" allow="fullscreen"></iframe>
 
 <?php
 $testimonials = get_field('featured_testimonials');

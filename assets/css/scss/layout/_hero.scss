@@ -45,4 +45,8 @@
   &__textContainer {
     padding: var(--section-margin) 0;
   }
+
+  &__title {
+    text-transform: uppercase;
+  }
 }

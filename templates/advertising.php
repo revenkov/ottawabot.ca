@@ -29,7 +29,7 @@ if ( !empty( $icon_cards ) ) :
 ?>
 <div class="section">
     <div class="container">
-        <div class="carousel" data-aos="fade-up">
+        <div class="carousel" data-aos="fade-up" id="advertisingCarousel">
             <div class="carousel__slides">
                 <?php foreach ( $icon_cards as $item ) : ?>
                     <div>

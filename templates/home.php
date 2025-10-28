@@ -36,9 +36,21 @@ $button_3 = get_field('button_3');
             </picture>
         <?php endif; ?>
         <div class="homeHero__overlay">
-            <div class="homeHero__text" data-aos="fade-up">
+            <div class="homeHero__text">
                 <h1><?php echo $title; ?></h1>
-                <div class="h4 homeHero__subtitle"><?php echo $subtitle; ?></div>
+                <div class="h4 homeHero__subtitle">
+                    <?php
+                    function explodeSecondSpace($string): array|false
+                    {
+                        // Split on every second space using regex
+                        return preg_split('/(?:\S+\s+\S+)\K\s+/', $string);
+                    }
+                    $result = explodeSecondSpace($subtitle);
+                    foreach ($result as $key => $value) {
+                        echo '<span data-aos="fade-up" data-aos-delay="' . (($key+1) * 1000) . '">' . $value . '</span>';
+                    }
+                    ?>
+                </div>
             </div>
             <div class="homeHero__buttons" data-aos="fade-up">
                 <?php if ( !empty( $button_1 ) ) : ?>
@@ -181,7 +193,7 @@ if ( $query->have_posts() ) :
                 </div>
                 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                     <div class="latestNews__item" data-aos="fade-up">
-                        <?php get_template_part('parts/news_teaser'); ?>
+                        <?php get_template_part('parts/news_teaser2'); ?>
                     </div>
                 <?php endwhile; wp_reset_postdata(); ?>
             </div>
@@ -189,18 +201,6 @@ if ( $query->have_posts() ) :
     </div>
 </div>
 <?php endif; ?>
-
-
-<?php
-$image_2 = get_field('image_2');
-$content_group_4 = get_field('content_group_4');
-get_template_part('parts/text_image', false, [
-    'image' => $image_2,
-    'content' => $content_group_4['content'],
-    'button' => $content_group_4['button'],
-    'image_position' => 2,
-]);
-?>
 
 
 <?php
@@ -229,6 +229,18 @@ if ( !empty( $content ) ) :
     </div>
 </div>
 <?php endif; ?>
+
+
+<?php
+$image_2 = get_field('image_2');
+$content_group_4 = get_field('content_group_4');
+get_template_part('parts/text_image', false, [
+        'image' => $image_2,
+        'content' => $content_group_4['content'],
+        'button' => $content_group_4['button'],
+        'image_position' => 2,
+]);
+?>
 
 
 <?php get_footer(); ?>

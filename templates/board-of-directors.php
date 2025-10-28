@@ -35,10 +35,10 @@ if ( !empty( $board_of_directors ) ) :
                     <div class="boardMemberTeaser__imageContainer">
                         <?php echo wp_get_attachment_image( $item['photo']['ID'], 'full' ); ?>
                         <?php if ( !empty( $item['linkedin'] ) ) : ?>
-                        <a href="<?php echo $item['linkedin']; ?>" class="boardMemberTeaser__button" title="Learn more"></a>
+                            <a href="<?php echo $item['linkedin']; ?>" class="boardMemberTeaser__button" title="Learn more" target="_blank"></a>
                         <?php endif; ?>
                     </div>
-                    <div class="text-md boardMemberTeaser__name"><?php echo $item['full_name']; ?></div>
+                    <div class="text-md boardMemberTeaser__name"><?php echo str_replace(',', ',<br>', $item['full_name']); ?></div>
                     <div class="boardMemberTeaser__title"><?php echo $item['title']; ?></div>
                 </div>
             <?php endforeach; ?>

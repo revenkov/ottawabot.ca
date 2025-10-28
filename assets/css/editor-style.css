@@ -31,7 +31,7 @@
     --grid-columns: 20;
   }
 }
-@media (min-width: 1260px) {
+@media (min-width: 1200px) {
   :root {
     --header-height: 168px;
     --header-offset: 0px;
@@ -167,7 +167,7 @@ h1, .h1 {
     margin-bottom: 32px;
   }
 }
-@media (min-width: 1260px) {
+@media (min-width: 1200px) {
   h1, .h1 {
     font-size: 3.75rem;
     line-height: 3.875rem;
@@ -188,7 +188,7 @@ h2, .h2 {
     margin-bottom: 30px;
   }
 }
-@media (min-width: 1260px) {
+@media (min-width: 1200px) {
   h2, .h2 {
     font-size: 2.25rem;
     line-height: 3.125rem;
@@ -209,7 +209,7 @@ h3, .h3 {
     margin-bottom: 29px;
   }
 }
-@media (min-width: 1260px) {
+@media (min-width: 1200px) {
   h3, .h3 {
     font-size: 1.875rem;
     line-height: 2.625rem;
@@ -230,7 +230,7 @@ h4, .h4 {
     margin-bottom: 30px;
   }
 }
-@media (min-width: 1260px) {
+@media (min-width: 1200px) {
   h4, .h4 {
     font-size: 1.875rem;
     line-height: 2.4375rem;
@@ -249,7 +249,7 @@ h5, .h5 {
     margin-bottom: 24px;
   }
 }
-@media (min-width: 1260px) {
+@media (min-width: 1200px) {
   h5, .h5 {
     font-size: 1.5625rem;
     margin-bottom: 36px;
@@ -265,7 +265,7 @@ a {
   }
 }
 
-@media (min-width: 1260px) {
+@media (min-width: 1200px) {
   p:has(.button, .secondaryButton) {
     margin: 36px 0;
   }
@@ -316,7 +316,7 @@ p, ul, ol, blockquote, hr {
     margin-bottom: 32px;
   }
 }
-@media (min-width: 1260px) {
+@media (min-width: 1200px) {
   p, ul, ol, blockquote, hr {
     margin-bottom: 36px;
   }
@@ -385,7 +385,7 @@ ul li {
     padding-left: 35px;
   }
 }
-@media (min-width: 1260px) {
+@media (min-width: 1200px) {
   ul li {
     padding-left: 45px;
   }

@@ -28,7 +28,7 @@ $(document).ready(function($) {
                     gutter: 34,
                 },
                 1600: {
-                    items: 2,
+                    items: $carousel.attr('id') === 'advertisingCarousel' ? 1: 2,
                     gutter: 36,
                 }
             }
@@ -42,5 +42,5 @@ $(document).ready(function($) {
         slider.events.on('dragEnd', function() {
             slider.pause();
         });
-    })
+    });
 });

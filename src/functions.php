@@ -5,11 +5,11 @@ function selectrum_get_hero_image_post_id() {
     if ( is_singular('team-member') ) {
         return selectrum_filter_id( 2596 );
     }
-
+/*
     if ( is_singular('event') ) {
         return selectrum_filter_id( 2585 );
     }
-
+*/
     if ( is_singular('news') ) {
         return selectrum_filter_id( 2599 );
     }
@@ -41,33 +41,33 @@ function selectrum_get_hero_title() {
 }
 
 function selectrum_get_hero_text() {
-	$text = '<h1 class="sectionHero__title">'.selectrum_get_hero_title().'</h1>';
+	$text = '<h1 class="hero__title">'.selectrum_get_hero_title().'</h1>';
 
     if ( is_singular('team-member') ) {
         $title = get_field('title');
         if ( !empty( $title ) ) {
-            $text .= '<p class="sectionHero__text">'.$title.'</p>';
+            $text .= '<p class="hero__text">'.$title.'</p>';
         }
     }
 
     if ( is_singular('event') ) {
         $date = get_field('date');
         if ( !empty( $date ) ) {
-            $text .= '<p class="sectionHero__text">'.$date.'</p>';
+            $text .= '<p class="hero__text">'.$date.'</p>';
         }
     }
 
     if ( is_singular('news') ) {
         $category = get_field('category');
         if ( !empty( $category ) ) {
-            $text .= '<p class="sectionHero__text">'.$category->name.'</p>';
+            $text .= '<p class="hero__text">'.$category->name.'</p>';
         }
     }
 
     if ( is_singular('newsletter') ) {
         $date = get_field('date');
         if ( !empty( $date ) ) {
-            $text .= '<p class="sectionHero__text">'.date_i18n('F d, Y', strtotime( $date )).'</p>';
+            $text .= '<p class="hero__text">'.date_i18n('F d, Y', strtotime( $date )).'</p>';
         }
     }
 

@@ -5,7 +5,7 @@ $desktop = $hero_images['desktop']['ID'] ?? 3058;
 $tablet = $hero_images['tablet']['ID'] ?? ($desktop ? false : 3056);
 $mobile = $hero_images['mobile']['ID'] ?? ($desktop ? false : 3057);
 ?>
-<div class="container container--fullWidth">
+<div class="container container--fullWidth test">
     <div class="hero">
         <?php if ( !empty( $desktop ) ) : ?>
             <div class="hero__imageContainer">
