@@ -220,18 +220,6 @@ if ( !empty( $featured_testimonials ) ) :
 
 
 <?php
-$content = get_field('content');
-if ( !empty( $content ) ) :
-?>
-<div class="section">
-    <div class="container container--narrow" data-aos="fade-up">
-        <?php echo $content; ?>
-    </div>
-</div>
-<?php endif; ?>
-
-
-<?php
 $image_2 = get_field('image_2');
 $content_group_4 = get_field('content_group_4');
 get_template_part('parts/text_image', false, [
@@ -241,6 +229,32 @@ get_template_part('parts/text_image', false, [
         'image_position' => 2,
 ]);
 ?>
+
+
+<?php
+$logos = get_field('logos');
+if ( !empty( $logos ) ) :
+?>
+<div class="section">
+    <div class="container">
+        <h2 style="text-align: center;">Pillar Partners</h2>
+
+        <?php get_template_part('parts/logos_carousel', false, ['logos' => $logos]); ?>
+    </div>
+</div>
+<?php endif; ?>
+
+
+<?php
+$content = get_field('content');
+if ( !empty( $content ) ) :
+?>
+<div class="section disclaimerSection" data-aos="fade-up">
+    <div class="container">
+        <div class="disclaimerSection__inner"><?php echo $content; ?></div>
+    </div>
+</div>
+<?php endif; ?>
 
 
 <?php get_footer(); ?>

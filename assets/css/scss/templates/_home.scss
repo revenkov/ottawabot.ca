@@ -1,3 +1,13 @@
+.page-template-home {
+
+  .siteContent {
+    @include breakpoint( $laptop ) {
+      padding-bottom: 0;
+    }
+  }
+}
+
+
 .homeHero {
   position: relative;
   height: calc( 100vh - var(--header-height) );
@@ -697,3 +707,49 @@
 }
 
 
+.disclaimerSection {
+  position: relative;
+  overflow: hidden;
+  @include breakpoint($laptop) {
+    margin: 0;
+    background: var(--color-grey-3);
+  }
+
+  &__inner {
+    position: relative;
+    @include breakpoint($laptop) {
+      padding: 30px 520px 30px 0;
+    }
+    @include breakpoint($desktop) {
+      padding: 50px 520px 50px 0;
+    }
+
+    &:after {
+      @include breakpoint($laptop) {
+        content: '';
+        position: absolute;
+        left: calc(100% - 200px);
+        top: 0;
+        height: 100%;
+        background: #ffffff;
+        width: 100vw;
+      }
+    }
+  }
+
+  .container {
+
+    &:after {
+      @include breakpoint($laptop) {
+        content: '';
+        position: absolute;
+        right: calc(var(--container-padding-x) - 167px);
+        background: #ffffff;
+        width: 500px;
+        height: 500px;
+        bottom: -230px;
+        border-radius: 100%;
+      }
+    }
+  }
+}

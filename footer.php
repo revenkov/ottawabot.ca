@@ -36,7 +36,7 @@
             </div>
 
             <div class="siteFooter__inner">
-                <div class="h1 siteFooter__slogan"><?php echo __('The Voice of Business for Ottawa', 'selectrum'); ?></div>
+                <div class="h1 siteFooter__slogan"><?php echo __('Ottawa Voice of Business', 'selectrum'); ?></div>
                 <div class="siteFooter__cols">
                     <div class="siteFooter__col siteFooter__col--1">
                         <div class="siteFooter__colTitle text-md"><?php echo __('Quicklinks', 'selectrum'); ?></div>

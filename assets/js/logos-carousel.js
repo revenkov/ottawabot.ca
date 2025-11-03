@@ -2,14 +2,13 @@ import $ from 'jquery/src/jquery';
 import { tns } from 'tiny-slider';
 
 $(document).ready(function($) {
-    $('.testimonialsSlider').each(function(index, element) {
+    $('.logosCarousel').each(function(index, element) {
         const $carousel = $(element);
         const $container = $carousel.find('[class*="__slides"]');
         const slider = tns({
             container: $container[0],
-            items: 1,
             loop: true,
-            gutter: 36,
+            gutter: 0,
             autoplay: true,
             autoplayButtonOutput: false,
             autoplayHoverPause: true,
@@ -19,7 +18,24 @@ $(document).ready(function($) {
             controls: true,
             controlsText: ['', ''],
             controlsPosition: 'bottom',
+            autoHeight: false,
             mouseDrag: true,
+            responsive: {
+                0: {
+                    items: 2,
+                    gutter: 32,
+                },
+                640: {
+                    items: 3,
+                    gutter: 34,
+                },
+                960: {
+                    items: 4,
+                },
+                1200: {
+                    items: 5
+                },
+            }
         });
         slider.events.on('dragStart', function() {
             slider.pause();
@@ -30,5 +46,5 @@ $(document).ready(function($) {
         slider.events.on('dragEnd', function() {
             slider.pause();
         });
-    })
-})
+    });
+});

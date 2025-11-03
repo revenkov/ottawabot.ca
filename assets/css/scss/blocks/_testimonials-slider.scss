@@ -49,7 +49,8 @@
     }
   }
 
-  .tns-nav {
+  .tns-controls {
+    justify-content: center;
     margin-top: 22px;
     @include breakpoint($tablet) {
       margin-top: 32px;

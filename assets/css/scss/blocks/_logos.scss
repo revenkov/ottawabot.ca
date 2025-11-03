@@ -1,11 +1,14 @@
 .logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  color: var(--color-primary);
-  @include breakpoint($laptop) {
-    gap: 30px;
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    color: var(--color-primary);
+    @include breakpoint($laptop) {
+      gap: 30px;
+    }
   }
 
   &__item {

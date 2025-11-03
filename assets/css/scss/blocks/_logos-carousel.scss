@@ -1,0 +1,38 @@
+.logosCarousel {
+
+  &__slides {
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    img {
+      filter: grayscale(100%);
+      transition: filter .3s;
+    }
+
+    &:hover img {
+      @media (hover:hover) {
+        filter: grayscale(0);
+      }
+    }
+  }
+
+  .tns-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    @include breakpoint($tablet) {
+      margin-top: 40px;
+    }
+    @include breakpoint($laptop) {
+      margin-top: 50px;
+    }
+  }
+}
