@@ -3946,6 +3946,9 @@ body {
     padding-left: 26%;
   }
 }
+.page-template-achievements .accordion__header .ui-accordion-header-icon {
+  color: var(--color);
+}
 
 .page-template-affinity-programs .siteContent {
   position: relative;
