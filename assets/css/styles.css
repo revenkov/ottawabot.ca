@@ -620,6 +620,31 @@ body[data-aos-delay="6000"] [data-aos].aos-animate {
   text-transform: uppercase;
 }
 
+.languages {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 0 10px;
+}
+@media (min-width: 720px) {
+  .languages {
+    justify-content: flex-end;
+    margin: -30px 0 30px;
+  }
+}
+@media (min-width: 1200px) {
+  .languages {
+    margin: 0 calc(var(--container-padding-x) / -2) 10px;
+  }
+}
+.languages__divider {
+  display: inline-block;
+  margin: 0 10px;
+}
+.languages a {
+  color: var(--color-primary);
+}
+
 input[type=text],
 input[type=number],
 input[type=tel],
@@ -3898,12 +3923,19 @@ body {
   .disclaimerSection .container:after {
     content: "";
     position: absolute;
-    right: calc(var(--container-padding-x) - 167px);
+    right: var(--container-padding-x);
     background: #ffffff;
+    width: 488px;
+    height: 488px;
+    bottom: -220px;
+    border-radius: 100%;
+  }
+}
+@media (min-width: 1600px) {
+  .disclaimerSection .container:after {
     width: 500px;
     height: 500px;
     bottom: -230px;
-    border-radius: 100%;
   }
 }
 
@@ -4402,14 +4434,25 @@ body {
     margin: 0;
   }
 }
+@media (min-width: 1200px) {
+  .benefits {
+    gap: 36px;
+  }
+}
 .benefits__card {
   position: relative;
   width: 100%;
 }
+@media (min-width: 1200px) {
+  .benefits__card {
+    min-width: calc((100% - 36px) / 2);
+    flex: 1;
+  }
+}
 @media (min-width: 1600px) {
   .benefits__card {
     width: auto;
-    flex: 1;
+    min-width: auto;
   }
 }
 .benefits__cardImageBlock {

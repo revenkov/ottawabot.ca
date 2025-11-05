@@ -743,12 +743,17 @@
       @include breakpoint($laptop) {
         content: '';
         position: absolute;
-        right: calc(var(--container-padding-x) - 167px);
+        right: var(--container-padding-x);
         background: #ffffff;
+        width: 488px;
+        height: 488px;
+        bottom: -220px;
+        border-radius: 100%;
+      }
+      @include breakpoint($desktop) {
         width: 500px;
         height: 500px;
         bottom: -230px;
-        border-radius: 100%;
       }
     }
   }

@@ -17,6 +17,15 @@ $content_group_1 = get_field('content_group_1');
 ?>
 <div class="section">
     <div class="container">
+        <nav class="languages">
+            <?php if ( get_the_ID() !== selectrum_filter_id( 2592 ) ) : ?><a href="<?php echo selectrum_get_permalink( 2592 ); ?>"><?php endif; ?>
+                English
+            <?php if ( get_the_ID() !== selectrum_filter_id( 2592 ) ) : ?></a><?php endif; ?>
+            <span class="languages__divider">|</span>
+            <?php if ( get_the_ID() !== selectrum_filter_id( 5423 ) ) : ?><a href="<?php echo selectrum_get_permalink( 5423 ); ?>"><?php endif; ?>
+                Français
+            <?php if ( get_the_ID() !== selectrum_filter_id( 5423 ) ) : ?></a><?php endif; ?>
+        </nav>
         <div class="textImageBlock textImageBlock--1">
             <div class="textImageBlock__cols">
                 <div class="textImageBlock__textCol" data-aos="fade-up">

@@ -7,13 +7,20 @@
   @include breakpoint($tablet) {
     margin: 0;
   }
+  @include breakpoint($laptop) {
+    gap: 36px;
+  }
 
   &__card {
     position: relative;
     width: 100%;
+    @include breakpoint($laptop) {
+      min-width: calc( ( 100% - 36px ) / 2 );
+      flex: 1;
+    }
     @include breakpoint($desktop) {
       width: auto;
-      flex: 1;
+      min-width: auto;
     }
 
     &ImageBlock {

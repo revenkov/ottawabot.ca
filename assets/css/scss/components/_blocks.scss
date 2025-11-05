@@ -101,3 +101,27 @@
     text-transform: uppercase;
   }
 }
+
+
+.languages {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 0 10px;
+  @include breakpoint($tablet) {
+    justify-content: flex-end;
+    margin: -30px 0 30px;
+  }
+  @include breakpoint($laptop) {
+    margin: 0 calc( var(--container-padding-x) / -2 ) 10px;
+  }
+
+  &__divider {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  a {
+    color: var(--color-primary);
+  }
+}
