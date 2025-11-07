@@ -3982,57 +3982,84 @@ body {
   color: var(--color);
 }
 
-.page-template-affinity-programs .siteContent {
+.page-template-affinity-programs {
+  /*
+  .siteContent {
+    position: relative;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      display: none;
+      width: 350px;
+      height: 350px;
+      border-radius: 100%;
+      position: absolute;
+      top: 780px;
+      right: 0;
+      translate: 60% 0;
+      background: var(--color-green);
+      @include breakpoint( $laptop ) {
+        display: block;
+      }
+      @include breakpoint( $desktop ) {
+        width: 522px;
+        height: 522px;
+        translate: 50% 0;
+      }
+    }
+
+    &:after {
+      content: '';
+      display: none;
+      width: 422px;
+      height: 422px;
+      border-radius: 100%;
+      position: absolute;
+      top: 2000px;
+      left: 0;
+      translate: -60% 0;
+      background: url("../images/circles.svg") no-repeat center;
+      background-size: contain;
+      @include breakpoint( $laptop ) {
+        display: block;
+      }
+      @include breakpoint( $desktop ) {
+        width: 614px;
+        height: 614px;
+        translate: -50% 0;
+      }
+    }
+  }
+  */
+}
+.page-template-affinity-programs .timeline {
   position: relative;
-  overflow: hidden;
 }
-.page-template-affinity-programs .siteContent:before {
+.page-template-affinity-programs .timeline__nav:before {
   content: "";
-  display: none;
-  width: 350px;
-  height: 350px;
-  border-radius: 100%;
   position: absolute;
-  top: 780px;
-  right: 0;
-  translate: 60% 0;
-  background: var(--color-green);
-}
-@media (min-width: 1200px) {
-  .page-template-affinity-programs .siteContent:before {
-    display: block;
-  }
-}
-@media (min-width: 1600px) {
-  .page-template-affinity-programs .siteContent:before {
-    width: 522px;
-    height: 522px;
-    translate: 50% 0;
-  }
-}
-.page-template-affinity-programs .siteContent:after {
-  content: "";
-  display: none;
-  width: 422px;
-  height: 422px;
-  border-radius: 100%;
-  position: absolute;
-  top: 2000px;
-  left: 0;
-  translate: -60% 0;
-  background: url("../images/circles.svg") no-repeat center;
+  bottom: -80px;
+  right: 16px;
+  width: 220px;
+  height: 220px;
+  background: url("../images/circles.svg") no-repeat center center;
   background-size: contain;
 }
-@media (min-width: 1200px) {
-  .page-template-affinity-programs .siteContent:after {
-    display: block;
+@media (min-width: 720px) {
+  .page-template-affinity-programs .timeline__nav:before {
+    bottom: -237px;
+    right: 70px;
+    width: 422px;
+    height: 422px;
   }
 }
-@media (min-width: 1600px) {
-  .page-template-affinity-programs .siteContent:after {
-    width: 614px;
-    height: 614px;
-    translate: -50% 0;
+@media (min-width: 1200px) {
+  .page-template-affinity-programs .timeline__nav:before {
+    width: 822px;
+    height: 822px;
+    right: 400px;
+    bottom: -387px;
   }
 }
 
@@ -4445,14 +4472,9 @@ body {
 }
 @media (min-width: 1200px) {
   .benefits__card {
-    min-width: calc((100% - 36px) / 2);
-    flex: 1;
-  }
-}
-@media (min-width: 1600px) {
-  .benefits__card {
     width: auto;
     min-width: auto;
+    flex: 1;
   }
 }
 .benefits__cardImageBlock {
@@ -4474,6 +4496,16 @@ body {
   padding: 32px 16px;
 }
 @media (min-width: 720px) {
+  .benefits__cardContentBlock {
+    padding: 65px 65px 80px;
+  }
+}
+@media (min-width: 1200px) {
+  .benefits__cardContentBlock {
+    padding: 48px 32px;
+  }
+}
+@media (min-width: 1600px) {
   .benefits__cardContentBlock {
     padding: 65px 65px 80px;
   }

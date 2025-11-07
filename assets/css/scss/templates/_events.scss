@@ -15,12 +15,9 @@
     position: relative;
     width: 100%;
     @include breakpoint($laptop) {
-      min-width: calc( ( 100% - 36px ) / 2 );
-      flex: 1;
-    }
-    @include breakpoint($desktop) {
       width: auto;
       min-width: auto;
+      flex: 1;
     }
 
     &ImageBlock {
@@ -43,6 +40,12 @@
       color: #ffffff;
       padding: 32px 16px;
       @include breakpoint($tablet) {
+        padding: 65px 65px 80px;
+      }
+      @include breakpoint($laptop) {
+        padding: 48px 32px;
+      }
+      @include breakpoint($desktop) {
         padding: 65px 65px 80px;
       }
     }

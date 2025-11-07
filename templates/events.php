@@ -124,7 +124,6 @@ if ( !empty( $carousel ) ) :
 </div>
 <?php endif; ?>
 
-<iframe style="border:1px #FFFFFF none" src="https://business.ottawabot.ca/events/" title="iFrame" width="100%" height="900px" scrolling="yes" frameborder="no" allow="fullscreen"></iframe>
 
 <?php
 $testimonials = get_field('featured_testimonials');
