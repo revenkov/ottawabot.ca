@@ -6002,6 +6002,18 @@ body {
 .tns-controls {
   display: flex;
   gap: 34px;
+  justify-content: center;
+  margin-top: 22px;
+}
+@media (min-width: 720px) {
+  .tns-controls {
+    margin-top: 32px;
+  }
+}
+@media (min-width: 1200px) {
+  .tns-controls {
+    margin-top: 44px;
+  }
 }
 .tns-controls button {
   position: relative;

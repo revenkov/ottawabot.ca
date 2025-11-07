@@ -13,9 +13,11 @@ $(document).ready(function($) {
             autoplayButtonOutput: false,
             autoplayHoverPause: true,
             autoplayTimeout: 5000,
-            nav: true,
+            nav: false,
             navPosition: 'bottom',
-            controls: false,
+            controls: true,
+            controlsText: ['', ''],
+            controlsPosition: 'bottom',
             autoHeight: true,
             mouseDrag: true,
         });

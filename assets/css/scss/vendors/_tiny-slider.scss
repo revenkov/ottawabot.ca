@@ -17,6 +17,14 @@
 .tns-controls {
   display: flex;
   gap: 34px;
+  justify-content: center;
+  margin-top: 22px;
+  @include breakpoint($tablet) {
+    margin-top: 32px;
+  }
+  @include breakpoint($laptop) {
+    margin-top: 44px;
+  }
 
   button {
     position: relative;

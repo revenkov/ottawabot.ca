@@ -12,9 +12,11 @@ $(document).ready(function($) {
             autoplay: true,
             autoplayButtonOutput: false,
             autoplayHoverPause: true,
-            nav: true,
+            nav: false,
             navPosition: 'bottom',
-            controls: false,
+            controls: true,
+            controlsText: ['', ''],
+            controlsPosition: 'bottom',
             autoHeight: true,
             mouseDrag: true,
         });
