@@ -3203,7 +3203,7 @@ body {
 }
 @media (min-width: 1200px) {
   .homeHero__text {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
   }
 }
@@ -4064,6 +4064,9 @@ body {
     right: 400px;
     bottom: -387px;
   }
+}
+.page-template-affinity-programs .accordion__header .ui-accordion-header-icon {
+  color: var(--color);
 }
 
 .programs {
