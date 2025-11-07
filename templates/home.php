@@ -184,18 +184,18 @@ if ( $query->have_posts() ) :
 <div class="section">
     <div class="container">
         <div class="latestNews">
+            <div class="latestNews__intro" data-aos="fade-up">
+                <?php echo $content_group_3['content']; ?>
+            </div>
             <div class="latestNews__items">
-                <div class="latestNews__item" data-aos="fade-up">
-                    <div class="latestNews__intro">
-                        <?php echo $content_group_3['content']; ?>
-                        <?php get_template_part('parts/button', false, $content_group_3['button']); ?>
-                    </div>
-                </div>
                 <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                     <div class="latestNews__item" data-aos="fade-up">
                         <?php get_template_part('parts/news_teaser2'); ?>
                     </div>
                 <?php endwhile; wp_reset_postdata(); ?>
+            </div>
+            <div class="latestNews__footer" data-aos="fade-up">
+                <?php get_template_part('parts/button', false, $content_group_3['button']); ?>
             </div>
         </div>
     </div>

@@ -535,7 +535,7 @@
 .latestNews {
   position: relative;
   margin: 0 calc( var(--container-padding-x)/-2 ) 136px;
-  padding: 20px calc( var(--container-padding-x)/2 );
+  padding: 30px calc( var(--container-padding-x)/2 );
   @include breakpoint($tablet) {
     margin: 0 calc( var(--container-padding-x) * 1 ) 156px;
     padding: 40px var(--container-padding-x);
@@ -554,38 +554,44 @@
     z-index: 10;
   }
 
+  &__intro {
+    position: relative;
+    z-index: 20;
+    @include breakpoint($laptop) {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
   &__items {
     position: relative;
     display: flex;
     align-items: stretch;
     flex-wrap: wrap;
     gap: 22px 30px;
+    margin: 30px 0;
     z-index: 20;
     @include breakpoint($tablet) {
       gap: 36px 36px;
     }
     @include breakpoint($laptop) {
       max-width: 1492px;
-      margin: 0 auto;
+      margin: 50px auto;
     }
   }
 
   &__item {
     width: 100%;
     @include breakpoint($laptop) {
-      width: calc( ( 100% - 36px ) / 2 );
+      width: calc( ( 100% - 36px * 2 ) / 3 );
     }
   }
 
-  &__intro {
-    padding: 10px 0;
-    @include breakpoint($tablet) {
-      padding: 15px 0;
-    }
-    @include breakpoint($laptop) {
-      max-width: 430px;
-      padding: 50px 0 0;
-    }
+  &__footer {
+    position: relative;
+    z-index: 20;
+    text-align: center;
   }
 
   &:after {
