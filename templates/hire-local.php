@@ -152,7 +152,7 @@ if ( !empty( $logos ) ) :
 ?>
 <div class="section">
     <div class="container container--middle">
-        <h2 style="text-align: center" data-aos="fade-up">Our Key Leading Partners</h2>
+        <h2 style="text-align: center" data-aos="fade-up"><?php echo get_the_ID() === 5423 ? 'Nos principaux partenaires' : 'Our Key Leading Partners'; ?></h2>
 
         <div class="logos2">
             <?php foreach ( $logos as $item ) : ?>

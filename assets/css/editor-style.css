@@ -357,12 +357,6 @@ p:last-child, ul:last-child, ol:last-child, blockquote:last-child, hr:last-child
   letter-spacing: 3.2px;
   font-weight: 500;
 }
-@media (min-width: 1600px) {
-  .text-sm {
-    line-height: 16px;
-  }
-}
-
 .text-blue {
   color: var(--color-primary);
 }

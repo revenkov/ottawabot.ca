@@ -249,7 +249,7 @@ p, ul, ol, blockquote, hr {
   letter-spacing: 3.2px;
   font-weight: 500;
   @include breakpoint( $desktop ) {
-    line-height: 16px;
+    //line-height: 16px;
   }
 }
 
