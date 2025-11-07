@@ -3212,6 +3212,10 @@ body {
   margin-top: 12px;
   font-weight: 400;
 }
+.homeHero__subtitle span {
+  display: inline-block;
+  margin: 0 5px;
+}
 .homeHero__buttons {
   display: flex;
   flex-wrap: wrap;
