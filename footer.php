@@ -31,7 +31,7 @@
                         </div>
                         <button class="newsletterBlock__formButton" type="submit" title="<?php echo __('Submit', 'selectrum'); ?>"></button>
                     </form>
-                    <div class="newsletterBlock__text"><?php echo __('Get news, insights, and exclusive perks—right to your inbox!', 'selectrum'); ?></div>
+                    <div class="newsletterBlock__text"><?php echo __('Get news, insights, and exclusive perks right to your inbox!', 'selectrum'); ?></div>
                 </div>
             </div>
 

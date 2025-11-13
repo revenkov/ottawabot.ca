@@ -9,7 +9,6 @@ use Selectrum\WalkerNavMenu;
 	<meta name="viewport" content="width=device-width">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-    <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="icon" type="image/x-icon" href="<?php echo selectrum_get_image_url('favicon/favicon.ico'); ?>">
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo selectrum_get_image_url('favicon/apple-touch-icon-57x57.png'); ?>" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo selectrum_get_image_url('favicon/apple-touch-icon-114x114.png'); ?>" />

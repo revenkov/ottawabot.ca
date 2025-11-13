@@ -24,6 +24,18 @@ if ( !empty( $content) ) :
 
 
 <?php
+$content = get_field('content_3');
+if ( !empty( $content ) ) :
+    ?>
+    <div class="section">
+        <div class="container container--narrow" data-aos="fade-up">
+            <?php echo $content; ?>
+        </div>
+    </div>
+<?php endif; ?>
+
+
+<?php
 $content = get_field('content_2');
 $icon_cards = get_field('icon_cards');
 ?>
@@ -51,18 +63,6 @@ $icon_cards = get_field('icon_cards');
         </div>
     <?php endif; ?>
 </div>
-
-
-<?php
-$content = get_field('content_3');
-if ( !empty( $content ) ) :
-?>
-<div class="section">
-    <div class="container container--narrow" data-aos="fade-up">
-        <?php echo $content; ?>
-    </div>
-</div>
-<?php endif; ?>
 
 
 <?php get_footer(); ?>
