@@ -164,7 +164,7 @@ if ( !empty( $featured_events ) ) :
                 <?php endforeach; ?>
             </div>
             <div class="featuredEvents__pagination" data-aos="fade-up">
-                <a class="button" href="<?php echo selectrum_get_permalink( 2585 ); ?>">Browse all events</a>
+                <a class="button" href="https://business.ottawabot.ca/events">Browse all events</a>
             </div>
         </div>
     </div>

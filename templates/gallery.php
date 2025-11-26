@@ -27,8 +27,11 @@ if ( !empty( $content ) ) :
 <?php
 $flickr = new PhpFlickr(FLICKR_API_KEY, FLICKR_API_SECRET);
 $cache = new Symfony\Component\Cache\Adapter\FilesystemAdapter('PhpFlickr', 0, wp_get_upload_dir()['basedir'] . '/cache/');
+if ( isset($_REQUEST['clearCache']) ) {
+    $cache->clear();
+}
 $flickr->setCache($cache);
-$flickr->setCacheDefaultExpiry( 60 * 60 * 24 * 30 );
+$flickr->setCacheDefaultExpiry(60 * 60 * 24);
 $lists = $flickr->photosets()->getList('78514975@N07', $_REQUEST['pagination'] ?? 1, 6);
 ?>
 <div class="section">

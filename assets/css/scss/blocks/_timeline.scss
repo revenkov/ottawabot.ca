@@ -8,10 +8,12 @@
 
   &__nav {
     min-width: 85px;
+    max-width: 100px;
     position: sticky;
     top: calc( var(--section-margin) + var(--header-offset) );
     @include breakpoint( $tablet ) {
       min-width: 246px;
+      max-width: none;
     }
     @include breakpoint( $desktop ) {
       min-width: 460px;
@@ -28,7 +30,7 @@
       padding: 0;
       max-height: 140px;
       flex: 1;
-      font-size: 20px;
+      font-size: 16px;
       line-height: 1.2;
       font-weight: 600;
       @include breakpoint( $tablet ) {
