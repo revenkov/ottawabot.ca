@@ -159,6 +159,7 @@ h1, .h1 {
   line-height: 2.4375rem;
   font-weight: 500;
   margin-bottom: 10px;
+  text-transform: none;
 }
 @media (min-width: 720px) {
   h1, .h1 {
@@ -201,6 +202,7 @@ h3, .h3 {
   line-height: 1.875rem;
   font-weight: 600;
   margin-bottom: 21px;
+  text-transform: none;
 }
 @media (min-width: 720px) {
   h3, .h3 {
@@ -222,6 +224,7 @@ h4, .h4 {
   line-height: 1.625rem;
   font-weight: 600;
   margin-bottom: 24px;
+  text-transform: none;
 }
 @media (min-width: 720px) {
   h4, .h4 {
@@ -243,6 +246,7 @@ h5, .h5 {
   line-height: 1.1;
   font-weight: 500;
   margin-bottom: 20px;
+  text-transform: none;
 }
 @media (min-width: 720px) {
   h5, .h5 {

@@ -45,6 +45,7 @@ h1, .h1 {
   line-height: 2.4375rem;
   font-weight: 500;
   margin-bottom: 10px;
+  text-transform: none;
   @include breakpoint($tablet) {
     font-size: 2.5rem;
     line-height: 3rem;
@@ -79,6 +80,7 @@ h3, .h3 {
   line-height: 1.875rem;
   font-weight: 600;
   margin-bottom: 21px;
+  text-transform: none;
   @include breakpoint($tablet) {
     font-size: 1.75rem;
     line-height: 2.1875rem;
@@ -96,6 +98,7 @@ h4, .h4 {
   line-height: 1.625rem;
   font-weight: 600;
   margin-bottom: 24px;
+  text-transform: none;
   @include breakpoint($tablet) {
     font-size: 1.5rem;
     line-height: 1.875rem;
@@ -113,6 +116,7 @@ h5, .h5 {
   line-height: 1.1;
   font-weight: 500;
   margin-bottom: 20px;
+  text-transform: none;
   @include breakpoint($tablet) {
     margin-bottom: 24px;
   }

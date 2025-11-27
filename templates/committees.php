@@ -37,7 +37,7 @@ $committees = get_posts([
                     <div class="committeeTeaser" style="--hover-color: #<?php echo $color; ?>;">
                         <div class="imageBlock imageBlock--formatted committeeTeaser__imageBlock"><?php echo wp_get_attachment_image( $background_image['ID'], 'full' ); ?></div>
                         <div class="committeeTeaser__content">
-                            <h3><?php echo get_the_title(); ?></h3>
+                            <h2 class="h3"><?php echo get_the_title(); ?></h2>
                         </div>
                         <button class="committeeTeaser__button" type="button" data-fancybox data-src="#<?php echo $post->post_name; ?>" title="Learn more"></button>
                         <div class="committeePopup" id="<?php echo $post->post_name; ?>" style="display: none;">

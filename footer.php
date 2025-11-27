@@ -22,7 +22,7 @@
         <div class="container">
             <div class="newsletterBlock" data-aos="fade-up">
                 <div class="newsletterBlock__inner">
-                    <h3 class="newsletterBlock__title"><?php echo __('Sign Up For Updates', 'selectrum'); ?></h3>
+                    <div class="h3 newsletterBlock__title"><?php echo __('Sign Up For Updates', 'selectrum'); ?></div>
                     <form class="newsletterBlock__form">
                         <input type="hidden" name="action" value="newsletter_form">
                         <div class="newsletterBlock__formField">

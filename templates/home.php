@@ -232,7 +232,8 @@ get_template_part('parts/text_image', false, [
 
 
 <?php
-$logos = get_field('logos');
+// --- Load logos from post ID 2574 - Pillar Page
+$logos = get_field('logos', 2574);
 if ( !empty( $logos ) ) :
 ?>
 <div class="section">

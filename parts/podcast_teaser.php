@@ -14,7 +14,7 @@ $watch_online = get_field('watch_online');
         <div class="podcastTeaser__content">
             <p class="podcastTeaser__episode">Episode <?php echo $episode_number; ?></p>
             <div>
-                <h3 class="h4 podcastTeaser__title"><?php echo get_the_title(); ?></h3>
+                <div class="h4 podcastTeaser__title"><?php echo get_the_title(); ?></div>
                 <p class="podcastTeaser__description"><?php echo $description; ?></p>
             </div>
         </div>

@@ -79,7 +79,7 @@ $lists = $flickr->photosets()->getList('78514975@N07', $_REQUEST['pagination'] ?
                                     >
                                 </div>
                                 <a class="galleryTeaser__content" href="https://www.flickr.com/photos/ottawa_board_of_trade/albums/<?php echo $photoset['id']; ?>" target="_blank">
-                                    <h3 class="galleryTeaser__title"><?php echo $photoset['title']; ?></h3>
+                                    <div class="h3 galleryTeaser__title"><?php echo $photoset['title']; ?></div>
                                     <span class="galleryTeaser__button"></span>
                                 </a>
                             </div>
